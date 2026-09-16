@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🍞 Bread Diary</title>
+<style>
+  :root{
+    --bg:#f6efe3; --panel:#fffaf1; --ink:#3a2a18; --muted:#8a7355;
+    --line:#e4d6bd; --accent:#b5651d; --accent2:#e0a458; --good:#5a7d3c;
+    --bad:#b03a2e; --shadow:0 6px 22px rgba(90,60,20,.12);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:radial-gradient(1200px 600px at 80% -10%,#fff4dd,transparent),var(--bg);color:var(--ink);}
+  header{padding:26px 22px 14px;max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between}
+  h1{margin:0;font-size:26px;letter-spacing:.3px}
+  h1 small{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-top:3px}
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap}
+  button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);
+    padding:8px 13px;border-radius:10px;transition:.15s;box-shadow:0 1px 0 rgba(255,255,255,.6) inset}
+  button:hover{border-color:var(--accent);transform:translateY(-1px)}
+  button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  button.primary:hover{background:#9c5414}
+  button.ghost{background:transparent}
+  button.danger{color:var(--bad);border-color:#e7c4bf}
+  main{max-width:1180px;margin:0 auto;padding:0 22px 60px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:600;background:#fdf6ea}
+  tbody tr{cursor:pointer}
+  tbody tr:hover{background:#fff6e6}
+  tbody tr:last-child td{border-bottom:none}
+  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600;border:1px solid transparent}
+  .pill.yeast{background:#fdebd2;color:#a9641b;border-color:#f2d3a6}
+  .pill.sour{background:#e7f0dd;color:#4f7433;border-color:#cde0ba}
+  .pill.hybrid{background:#eee6f8;color:#6a4aa8;border-color:#dccdf2}
+  .pill.progress{background:#e2edf7;color:#2f6690;border-color:#c7ddf0}
+  .pill.baked{background:#eaf3e2;color:#4f7433;border-color:#d3e6c2}
+  .stars{color:var(--accent2);letter-spacing:1px;white-space:nowrap}
+  .muted{color:var(--muted)}
+  .num{font-variant-numeric:tabular-nums}
+  .wrap-scroll{overflow-x:auto}
+  /* modal */
+  .overlay{position:fixed;inset:0;background:rgba(40,26,10,.5);backdrop-filter:blur(2px);display:none;z-index:50;padding:24px;overflow-y:auto}
+  .overlay.open{display:block}
+  .modal{max-width:900px;margin:24px auto;background:var(--panel);border-radius:18px;box-shadow:var(--shadow);border:1px solid var(--line);overflow:hidden}
+  .modal header{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:10px;max-width:none}
+  .modal .body{padding:22px}
+  .modal .foot{padding:16px 22px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+  .kv{margin:0}
+  .kv dt{font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin-top:10px}
+  .kv dd{margin:1px 0 0}
+  h3.section{font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);margin:22px 0 6px;border-bottom:1px dashed var(--line);padding-bottom:5px}
+  .metric-chips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0}
+  .chip{background:#fbf2e2;border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:13px;min-width:96px}
+  .chip b{display:block;font-size:16px}
+  .chip span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+  .photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:8px}
+  .photos img{width:100%;height:140px;object-fit:cover;border-radius:10px;border:1px solid var(--line);cursor:zoom-in}
+  .empty{text-align:center;padding:50px 20px;color:var(--muted)}
+  /* form */
+  label.f{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin:12px 0 3px}
+  input,select,textarea{width:100%;font:inherit;padding:9px 11px;border:1px solid var(--line);border-radius:9px;background:#fffdf8;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:2px solid #f0d7ac;border-color:var(--accent2)}
+  textarea{resize:vertical;min-height:64px}
+  .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:600px){.row3,.row2{grid-template-columns:1fr}}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:#3a2a18;color:#fff;
+    padding:11px 18px;border-radius:12px;opacity:0;pointer-events:none;transition:.25s;z-index:99;font-size:14px}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .compare-pick{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+  .compare-pick label{display:flex;gap:6px;align-items:center;background:var(--panel);border:1px solid var(--line);padding:7px 11px;border-radius:10px;cursor:pointer;font-size:14px}
+  .cmp-table th:first-child,.cmp-table td:first-child{position:sticky;left:0;background:#fdf6ea}
+  .help{font-size:12.5px;color:var(--muted);margin:4px 0 0}
+  .tag{font-size:11px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>🍞 Bread Diary <small><span id="count">0</span> bakes recorded · last updated <span id="updated">—</span></small></h1>
+  </div>
+  <div class="toolbar">
+    <button class="primary" onclick="openForm()">+ Add bake</button>
+    <button onclick="exportJSON()">Export JSON</button>
+    <button onclick="exportDataJs()">Export data.js</button>
+    <button onclick="copyClipboard()">Copy data</button>
+    <button class="ghost" onclick="document.getElementById('importFile').click()">Import</button>
+    <button class="ghost" onclick="reloadFromFile()" title="Discard browser edits and reload from data.js">Reload data.js</button>
+    <input type="file" id="importFile" accept=".json,.js" style="display:none" onchange="importFile(event)">
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <div class="wrap-scroll">
+      <table id="mainTable">
+        <thead>
+          <tr>
+            <th style="width:34px"></th>
+            <th>#</th>
+            <th>Date</th>
+            <th>Bake</th>
+            <th>Type</th>
+            <th>Total flour</th>
+            <th>Hydration</th>
+            <th>Levain</th>
+            <th>Yeast</th>
+            <th>Salt</th>
+            <th>Room</th>
+            <th>Status</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div id="emptyState" class="empty" style="display:none">No bakes yet. Click <b>+ Add bake</b> to log your first loaf.</div>
+  </div>
+
+  <div id="compareBar" style="margin-top:18px;display:none">
+    <button class="primary" onclick="openCompare()">Compare selected</button>
+    <span class="muted" id="selCount" style="margin-left:10px"></span>
+  </div>
+</main>
+
+<!-- DETAIL MODAL -->
+<div class="overlay" id="detailOverlay" onclick="if(event.target===this)closeDetail()">
+  <div class="modal">
+    <header>
+      <div><div id="dTitle" style="font-size:20px;font-weight:700"></div><div id="dSub" class="muted" style="font-size:13px"></div></div>
+      <div style="display:flex;gap:8px">
+        <button onclick="editCurrent()">Edit</button>
+        <button class="ghost" onclick="closeDetail()">✕</button>
+      </div>
+    </header>
+    <div class="body" id="dBody"></div>
+    <div class="foot">
+      <button class="danger" onclick="deleteCurrent()">Delete</button>
+      <button class="primary" onclick="closeDetail()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- FORM MODAL -->
+<div class="overlay" id="formOverlay" onclick="if(event.target===this)closeForm()">
+  <div class="modal">
+    <header>
+      <div><div id="fTitle" style="font-size:20px;font-weight:700">Add bake</div><div class="muted" style="font-size:13px">Fields left blank are treated as 0 / none.</div></div>
+      <button class="ghost" onclick="closeForm()">✕</button>
+    </header>
+    <div class="body" id="fBody"></div>
+    <div class="foot">
+      <button class="ghost" onclick="closeForm()">Cancel</button>
+      <button class="primary" onclick="saveForm()">Save bake</button>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARE MODAL -->
+<div class="overlay" id="compareOverlay" onclick="if(event.target===this)closeCompare()">
+  <div class="modal" style="max-width:1050px">
+    <header>
+      <div><div style="font-size:20px;font-weight:700">Compare bakes</div><div class="muted" style="font-size:13px">Side-by-side of the selected loaves.</div></div>
+      <button class="ghost" onclick="closeCompare()">✕</button>
+    </header>
+    <div class="body" id="cmpBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script>
+/* ---------------- state ---------------- */
+const STORAGE_KEY = "breadDiary.v1";
+let bakes = [];
+let selected = new Set();
+let currentId = null;
+let editingId = null;
+
+const RECIPE_FIELDS = [
+  ["breadFlour","Bread flour"],["wholemealFlour","Wholemeal flour"],["plainFlour","Plain flour"],["otherFlour","Other flour"],
+  ["water","Water"],["salt","Salt"],["yeast","Instant yeast"],["levain","Levain"],["oil","Olive oil"],["honey","Honey"],
+  ["chia","Chia (soaked)"],["flax","Flaxseed"],["pumpkinSeed","Pumpkin seeds"],["sunflowerSeed","Sunflower seeds"],["otherSeeds","Other seeds"]
+];
+const PROCESS_FIELDS = [
+  ["levainBuild","Levain build"],["mixing","Mixing / autolyse"],["folds","Folds"],["bulk","Bulk"],
+  ["retard","Cold retard"],["shaping","Shaping"],["proof","Final proof"],["bake","Bake"],["cooling","Cooling"]
+];
+
+function num(v){ v=parseFloat(v); return isNaN(v)?0:v; }
+function esc(s){ return (s==null?"":String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* ---------------- metrics ---------------- */
+function metrics(b){
+  const r = b.recipe||{};
+  const levain = num(r.levain);
+  const levainFlour = levain/2, levainWater = levain/2; // assume 100% levain
+  const flour = num(r.breadFlour)+num(r.wholemealFlour)+num(r.plainFlour)+num(r.otherFlour);
+  const totalFlour = flour + levainFlour;
+  const totalWater = num(r.water) + levainWater;
+  return {
+    totalFlour: totalFlour,
+    hydration: totalFlour? (totalWater/totalFlour*100):0,
+    levainPct: totalFlour? (levain/totalFlour*100):0,
+    yeastPct:  totalFlour? (num(r.yeast)/totalFlour*100):0,
+    saltPct:   totalFlour? (num(r.salt)/totalFlour*100):0,
+    wholePct:  totalFlour? (num(r.wholemealFlour)/totalFlour*100):0
+  };
+}
+function totalSeedWeight(r){ r=r||{}; return num(r.chia)+num(r.flax)+num(r.pumpkinSeed)+num(r.sunflowerSeed)+num(r.otherSeeds); }
+
+/* ---------------- load / save ---------------- */
+function load(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(raw){ bakes = JSON.parse(raw); return; }
+  }catch(e){ console.warn(e); }
+  bakes = (window.BAKES||[]).map(b=>JSON.parse(JSON.stringify(b)));
+}
+function persist(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(bakes)); }
+  catch(e){ toast("⚠ Storage full — remove some photos or export & clear."); }
+}
+
+/* ---------------- render ---------------- */
+function leaveningClass(l){
+  if(/sour/i.test(l)) return "sour";
+  if(/hybrid/i.test(l)) return "hybrid";
+  return "yeast";
+}
+function stars(n){ if(n==null||n==="") return '<span class="muted">—</span>'; n=+n; return '<span class="stars">'+ "★".repeat(n)+"☆".repeat(5-n) +'</span>'; }
+
+function render(){
+  const tb = document.getElementById("tbody");
+  tb.innerHTML = "";
+  document.getElementById("count").textContent = bakes.length;
+  document.getElementById("emptyState").style.display = bakes.length? "none":"block";
+  bakes.slice().sort((a,b)=> (b.number||0)-(a.number||0)).forEach(b=>{
+    const m = metrics(b);
+    const tr = document.createElement("tr");
+    tr.onclick = (e)=>{ if(e.target.type==="checkbox") return; openDetail(b.id); };
+    tr.innerHTML =
+      '<td><input type="checkbox" data-id="'+b.id+'" '+(selected.has(b.id)?"checked":"")+' onclick="toggleSel(event,\''+b.id+'\')"></td>'+
+      '<td class="num">'+esc(b.number||"")+'</td>'+
+      '<td class="num">'+esc(b.date||"")+(b.dateNote?'<div class="tag">'+esc(b.dateNote)+'</div>':'')+'</td>'+
+      '<td><b>'+esc(b.title||"Untitled")+'</b></td>'+
+      '<td><span class="pill '+leaveningClass(b.leavening)+'">'+esc(b.leavening||"")+'</span></td>'+
+      '<td class="num">'+m.totalFlour.toFixed(0)+' g</td>'+
+      '<td class="num">'+m.hydration.toFixed(0)+'%<div class="tag">'+m.wholePct.toFixed(0)+'% whole</div></td>'+
+      '<td class="num">'+(m.levainPct? m.levainPct.toFixed(0)+"%":"—")+'</td>'+
+      '<td class="num">'+(m.yeastPct? m.yeastPct.toFixed(2)+"%":"—")+'</td>'+
+      '<td class="num">'+m.saltPct.toFixed(1)+'%</td>'+
+      '<td>'+esc((b.environment&&b.environment.temp)||"—")+'</td>'+
+      '<td><span class="pill '+(/progress|planned/i.test(b.status||"")?"progress":"baked")+'">'+esc(b.status||"—")+'</span></td>'+
+      '<td>'+stars(b.rating)+'</td>';
+    tb.appendChild(tr);
+  });
+  renderCompareBar();
+}
+function renderCompareBar(){
+  const bar = document.getElementById("compareBar");
+  bar.style.display = selected.size? "block":"none";
+  document.getElementById("selCount").textContent = selected.size+" selected";
+}
+function toggleSel(e,id){
+  e.stopPropagation();
+  if(e.target.checked) selected.add(id); else selected.delete(id);
+  renderCompareBar();
+}
+function toggleAllSel(){}
+
+/* ---------------- detail ---------------- */
+function openDetail(id){
+  currentId = id;
+  const b = bakes.find(x=>x.id===id); if(!b) return;
+  const m = metrics(b);
+  document.getElementById("dTitle").textContent = "#"+b.number+" · "+b.title;
+  document.getElementById("dSub").innerHTML = esc(b.date||"")+(b.dateNote?' ('+esc(b.dateNote)+')':'')+' · <span class="pill '+leaveningClass(b.leavening)+'">'+esc(b.leavening||"")+'</span> · '+esc(b.status||"")+' · '+stars(b.rating);
+
+  let html = '<div class="metric-chips">'+
+    chip("Total flour", m.totalFlour.toFixed(0)+" g")+
+    chip("Hydration", m.hydration.toFixed(0)+"%")+
+    chip("Levain", m.levainPct.toFixed(0)+"%")+
+    chip("Yeast", m.yeastPct.toFixed(2)+"%")+
+    chip("Salt", m.saltPct.toFixed(1)+"%")+
+    chip("Whole grain", m.wholePct.toFixed(0)+"%")+
+    chip("Room", esc((b.environment&&b.environment.temp)||"—"))+
+    chip("Humidity", esc((b.environment&&b.environment.humidity)||"—"))+
+  '</div>';
+
+  html += '<div class="grid2">';
+  // recipe
+  html += '<div><h3 class="section">Recipe (grams)</h3><dl class="kv">';
+  RECIPE_FIELDS.forEach(([k,lbl])=>{
+    const v = num((b.recipe||{})[k]);
+    if(v) html += '<dt>'+esc(lbl)+'</dt><dd class="num">'+v+' g</dd>';
+  });
+  if((b.recipe||{}).otherFlourNote) html += '<dt>Other flour note</dt><dd>'+esc(b.recipe.otherFlourNote)+'</dd>';
+  if((b.recipe||{}).otherSeedsNote) html += '<dt>Other seeds note</dt><dd>'+esc(b.recipe.otherSeedsNote)+'</dd>';
+  html += '<dt>Total seeds</dt><dd class="num">'+totalSeedWeight(b.recipe).toFixed(0)+' g</dd>';
+  html += '</dl></div>';
+  // process
+  html += '<div><h3 class="section">Process</h3><dl class="kv">';
+  PROCESS_FIELDS.forEach(([k,lbl])=>{
+    const v = (b.process||{})[k];
+    if(v) html += '<dt>'+esc(lbl)+'</dt><dd>'+esc(v)+'</dd>';
+  });
+  html += '</dl></div></div>';
+
+  html += '<h3 class="section">Notes & verdict</h3>';
+  if(b.notes) html += '<p>'+esc(b.notes)+'</p>';
+  if(b.verdict) html += '<p><b>Verdict:</b> '+esc(b.verdict)+'</p>';
+  if(b.improvements) html += '<p><b>Next time:</b> '+esc(b.improvements)+'</p>';
+
+  html += '<h3 class="section">Photos</h3>';
+  if(b.photos && b.photos.length){
+    html += '<div class="photos">'+ b.photos.map(p=>'<img src="'+esc(p)+'" onclick="window.open(this.src)">').join("") +'</div>';
+  } else {
+    html += '<p class="muted">No photos yet. Use <b>Edit → Add photo</b> to attach some.</p>';
+  }
+
+  document.getElementById("dBody").innerHTML = html;
+  document.getElementById("detailOverlay").classList.add("open");
+}
+function chip(label,val){ return '<div class="chip"><b>'+val+'</b><span>'+label+'</span></div>'; }
+function closeDetail(){ document.getElementById("detailOverlay").classList.remove("open"); }
+function editCurrent(){ closeDetail(); openForm(currentId); }
+function deleteCurrent(){
+  if(!confirm("Delete this bake permanently?")) return;
+  bakes = bakes.filter(x=>x.id!==currentId);
+  selected.delete(currentId);
+  persist(); render(); closeDetail(); toast("Bake deleted");
+}
+
+/* ---------------- form ---------------- */
+function fld(k,lbl,val,type,attrs){
+  val = val==null?"":val;
+  if(type==="area") return '<label class="f">'+lbl+'</label><textarea data-k="'+k+'" '+(attrs||"")+'>'+esc(val)+'</textarea>';
+  return '<label class="f">'+lbl+'</label><input data-k="'+k+'" type="'+(type||"text")+'" value="'+esc(val)+'" '+(attrs||"")+'>';
+}
+function openForm(id){
+  editingId = id||null;
+  const b = id? bakes.find(x=>x.id===id) : {recipe:{},environment:{},process:{},photos:[]};
+  document.getElementById("fTitle").textContent = id? "Edit bake #"+b.number : "Add bake";
+  const r = b.recipe||{}, env=b.environment||{}, pr=b.process||{};
+
+  let html = '<h3 class="section">Basics</h3><div class="row3">'+
+    fld("title","Title",b.title,"text",'placeholder="e.g. Seeded Sourdough"')+
+    fld("date","Date",b.date,"date")+
+    fld("number","Bake #",b.number,"number")+
+  '</div><div class="row3">'+
+    '<label class="f">Leavening</label><select data-k="leavening">'+["Instant yeast","Sourdough","Hybrid"].map(o=>'<option '+(b.leavening===o?"selected":"")+'>'+o+'</option>').join("")+'</select>'+
+    fld("status","Status",b.status,"text",'placeholder="Baked / In progress"')+
+    fld("rating","Rating (1–5)",b.rating,"number",'min="1" max="5"')+
+  '</div>'+
+  '<div class="row2">'+ fld("dateNote","Date note",b.dateNote,"text",'placeholder="approx. (undated)"') + '<div></div>' + '</div>';
+
+  html += '<h3 class="section">Recipe (grams)</h3><div class="row3">';
+  RECIPE_FIELDS.forEach(([k,lbl])=>{ html += fld("recipe."+k,lbl,num(r[k])||"", "number", 'step="0.1" min="0"'); });
+  html += '</div><div class="row2">'+ fld("recipe.otherFlourNote","Other flour note",r.otherFlourNote) + fld("recipe.otherSeedsNote","Other seeds note",r.otherSeedsNote) +'</div>';
+
+  html += '<h3 class="section">Environment</h3><div class="row2">'+
+    fld("environment.temp","Room temp",env.temp,"text",'placeholder="29 °C"')+
+    fld("environment.humidity","Humidity",env.humidity,"text",'placeholder="89 %"')+
+  '</div>';
+
+  html += '<h3 class="section">Process</h3>';
+  PROCESS_FIELDS.forEach(([k,lbl])=>{ html += fld("process."+k,lbl,pr[k],"area"); });
+
+  html += '<h3 class="section">Notes &amp; verdict</h3>'+
+    fld("notes","Observations",b.notes,"area")+
+    fld("verdict","Verdict",b.verdict,"area")+
+    fld("improvements","What to change next time",b.improvements,"area");
+
+  html += '<h3 class="section">Photos</h3>'+
+    '<input type="file" id="photoInput" accept="image/*" multiple onchange="addPhotos(event)">'+
+    '<p class="help">Photos are resized and saved inside the diary.</p>'+
+    '<div class="photos" id="formPhotos"></div>';
+
+  document.getElementById("fBody").innerHTML = html;
+  window._formPhotos = (b.photos||[]).slice();
+  renderFormPhotos();
+  document.getElementById("formOverlay").classList.add("open");
+}
+function renderFormPhotos(){
+  const el = document.getElementById("formPhotos"); if(!el) return;
+  el.innerHTML = (window._formPhotos||[]).map((p,i)=>'<div style="position:relative"><img src="'+esc(p)+'" style="width:100%;height:120px;object-fit:cover;border-radius:10px;border:1px solid var(--line)"><button class="danger" style="position:absolute;top:6px;right:6px;padding:2px 8px" onclick="rmPhoto('+i+')">✕</button></div>').join("");
+}
+function rmPhoto(i){ window._formPhotos.splice(i,1); renderFormPhotos(); }
+function addPhotos(e){
+  const files=[...e.target.files];
+  files.forEach(file=>{
+    const reader=new FileReader();
+    reader.onload=ev=>{
+      const img=new Image();
+      img.onload=()=>{
+        const max=1400, scale=Math.min(1,max/Math.max(img.width,img.height));
+        const c=document.createElement("canvas"); c.width=img.width*scale; c.height=img.height*scale;
+        c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+        window._formPhotos.push(c.toDataURL("image/jpeg",0.82));
+        renderFormPhotos();
+      };
+      img.src=ev.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+  e.target.value="";
+}
+function getFormVal(k){
+  const el=document.querySelector('[data-k="'+k+'"]'); if(!el) return undefined;
+  return el.value;
+}
+function saveForm(){
+  const b = editingId? bakes.find(x=>x.id===editingId) : {id:"b"+Date.now(),recipe:{},environment:{},process:{}};
+  b.title=getFormVal("title")||"Untitled";
+  b.date=getFormVal("date")||"";
+  b.dateNote=getFormVal("dateNote")||"";
+  b.number=num(getFormVal("number"))||maxNumber()+1;
+  b.leavening=getFormVal("leavening");
+  b.status=getFormVal("status")||"Baked";
+  const rv=getFormVal("rating"); b.rating = rv===""||rv==null? null : num(rv);
+  b.recipe=b.recipe||{}; b.environment=b.environment||{}; b.process=b.process||{};
+  Object.keys(b.recipe).forEach(k=>{}); // keep notes
+  RECIPE_FIELDS.forEach(([k])=>{ b.recipe[k]=num(getFormVal("recipe."+k)); });
+  b.recipe.otherFlourNote=getFormVal("recipe.otherFlourNote")||"";
+  b.recipe.otherSeedsNote=getFormVal("recipe.otherSeedsNote")||"";
+  b.environment.temp=getFormVal("environment.temp")||"";
+  b.environment.humidity=getFormVal("environment.humidity")||"";
+  PROCESS_FIELDS.forEach(([k])=>{ b.process[k]=getFormVal("process."+k)||""; });
+  b.notes=getFormVal("notes")||"";
+  b.verdict=getFormVal("verdict")||"";
+  b.improvements=getFormVal("improvements")||"";
+  b.photos=(window._formPhotos||[]).slice();
+
+  if(!editingId) bakes.push(b);
+  persist(); render(); closeForm(); toast("Saved ✓");
+}
+function maxNumber(){ return bakes.reduce((m,b)=>Math.max(m,num(b.number)),0); }
+function closeForm(){ document.getElementById("formOverlay").classList.remove("open"); editingId=null; }
+
+/* ---------------- compare ---------------- */
+function openCompare(){
+  const sel = bakes.filter(b=>selected.has(b.id));
+  if(sel.length<2){ toast("Select 2+ bakes to compare"); return; }
+  const rows = [
+    ["Bake", b=>"#"+b.number+" "+b.title],
+    ["Date", b=>b.date||"—"],
+    ["Type", b=>b.leavening||"—"],
+    ["Status", b=>b.status||"—"],
+    ["Total flour", b=>metrics(b).totalFlour.toFixed(0)+" g"],
+    ["Hydration", b=>metrics(b).hydration.toFixed(0)+"%"],
+    ["Whole grain", b=>metrics(b).wholePct.toFixed(0)+"%"],
+    ["Levain", b=>metrics(b).levainPct?metrics(b).levainPct.toFixed(0)+"%":"—"],
+    ["Instant yeast", b=>metrics(b).yeastPct?metrics(b).yeastPct.toFixed(2)+"%":"—"],
+    ["Salt", b=>metrics(b).saltPct.toFixed(1)+"%"],
+    ["Total seeds", b=>totalSeedWeight(b.recipe).toFixed(0)+" g"],
+    ["Room temp", b=>(b.environment&&b.environment.temp)||"—"],
+    ["Retard", b=>(b.process&&b.process.retard)||"—"],
+    ["Proof", b=>(b.process&&b.process.proof)||"—"],
+    ["Bake", b=>(b.process&&b.process.bake)||"—"],
+    ["Rating", b=>b.rating==null?"—":"★".repeat(+b.rating)],
+    ["Verdict", b=>b.verdict||"—"]
+  ];
+  let html='<div class="wrap-scroll"><table class="cmp-table"><thead><tr><th>Field</th>'+sel.map(b=>'<th>#'+b.number+'</th>').join("")+'</tr></thead><tbody>';
+  rows.forEach(([lbl,fn])=>{
+    html+='<tr><td><b>'+esc(lbl)+'</b></td>'+sel.map(b=>'<td>'+esc(fn(b))+'</td>').join("")+'</tr>';
+  });
+  html+='</tbody></table></div>';
+  document.getElementById("cmpBody").innerHTML=html;
+  document.getElementById("compareOverlay").classList.add("open");
+}
+function closeCompare(){ document.getElementById("compareOverlay").classList.remove("open"); }
+
+/* ---------------- export / import ---------------- */
+function download(name, text, mime){
+  const blob=new Blob([text],{type:mime||"text/plain"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+}
+function exportJSON(){ download("bread-diary.json", JSON.stringify(bakes,null,2),"application/json"); toast("Exported JSON"); }
+function exportDataJs(){ download("data.js", "window.BAKES = "+JSON.stringify(bakes,null,2)+";\n","text/javascript"); toast("Exported data.js — replace your file"); }
+function copyClipboard(){
+  navigator.clipboard.writeText(JSON.stringify(bakes,null,2)).then(()=>toast("Copied to clipboard"),()=>toast("Copy failed"));
+}
+function importFile(e){
+  const f=e.target.files[0]; if(!f) return;
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    let txt=ev.target.result;
+    try{
+      let data;
+      const m=txt.match(/\[[\s\S]*\]/); // pull array out of data.js if needed
+      data=JSON.parse(m?m[0]:txt);
+      if(!Array.isArray(data)) throw 0;
+      if(!confirm("Import "+data.length+" bakes? This REPLACES the current diary.")) return;
+      bakes=data; selected.clear(); persist(); render(); toast("Imported "+data.length+" bakes");
+    }catch(err){ toast("⚠ Could not parse file"); }
+  };
+  reader.readAsText(f);
+  e.target.value="";
+}
+
+function reloadFromFile(){
+  if(!confirm("Discard any in-browser edits and reload from data.js?")) return;
+  try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
+  location.reload();
+}
+
+/* ---------------- toast ---------------- */
+let toastT;
+function toast(msg){
+  const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show");
+  clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("show"),2200);
+}
+
+/* ---------------- boot ---------------- */
+load();
+document.getElementById("updated").textContent = new Date().toLocaleDateString();
+render();
+</script>
+</body>
+</html>
