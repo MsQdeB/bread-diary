@@ -91,9 +91,9 @@ window.BAKES = [
       bake: "Planned: 210 °C / 15 min with steam, then 190 °C / ~40 min.",
       cooling: "Cool fully on a rack."
     },
-    notes: "First sourdough attempt. Levain from a bakery. Warm, humid conditions (29 °C / 89 %) so fermentation is fast. Went with pure sourdough (no instant yeast).",
+    notes: "First sourdough attempt. Levain from a bakery. Warm, humid conditions (29 °C / 89 %) so fermentation is fast. Went with pure sourdough (no instant yeast). Dough came together well after the first stretch & fold — pale, well-hydrated, chia gel visible. Seeds (flax + pumpkin) are too coarse and sitting proud on the surface — unevenly distributed.",
     verdict: "Pending — baking tomorrow morning.",
-    improvements: "Watch the final proof carefully to avoid over-proofing in the heat.",
+    improvements: "Watch the final proof carefully to avoid over-proofing in the heat. CRACK/CHOP the flax and pumpkin seeds (or soak the flax) so they distribute evenly instead of sitting whole on the surface.",
     photos: []
   }
 ];
