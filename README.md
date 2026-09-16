@@ -1,52 +1,63 @@
 # 🍞 Bread Diary
 
-A little local web app to log and compare your bakes.
+A self-contained local web app for logging, comparing and costing bread bakes.
+No build step, no dependencies — everything runs in the browser.
 
 ## Files
-- `index.html`  — the app (open this in your browser)
-- `data.js`     — the bake data (the source of truth the agent updates)
-- `images/`     — photos (optional; you can also add photos inside the app)
+| File | Purpose |
+|---|---|
+| `index.html` | The app shell (tabs, modals). Open this. |
+| `styles.css` | Styling (light + dark themes, print styles). |
+| `app.js` | All app logic. |
+| `data.js` | **Bake data** (`window.BAKES`) — the source of truth I update. |
+| `config.js` | Ingredient prices, settings, starter log seed. |
+| `manifest.json`, `sw.js`, `icon.svg` | PWA: install to home screen, works offline. |
 
-## How to open it
+## How to open
+**Double-click `index.html`** — works offline.
 
-**Easiest (double-click):**
-Open `index.html` in Chrome/Safari/Firefox. Everything works offline.
-
-**Most reliable (recommended) — tiny local server:**
-In-browser edits are saved to localStorage, which some browsers restrict on
-`file://`. To guarantee saving works, run a one-line server:
-
+For reliable saving (localStorage is restricted on `file://` in some browsers),
+run a tiny server:
 ```bash
 cd ~/bread-diary
 python3 -m http.server 8080
 ```
+then open http://localhost:8080
 
-Then open: http://localhost:8080
+## Tabs / features
+- **Bakes** — table of every bake with auto metrics (total flour, hydration %,
+  whole-grain %, levain %, salt %, room temp, **cost/loaf**, status, rating).
+  Search, filter by type, sort by date / rating / hydration / cost. Click a row
+  for full detail (recipe, process, scorecard, cost, notes, photos). **Print** a
+  recipe card from the detail view.
+- **Compare** — tick any bakes for a side-by-side table.
+- **Insights** — KPIs + charts: rating by bake, hydration vs rating, cost/loaf,
+  and scorecard averages.
+- **Calculator** — Baker's % calculator + recipe scaler (scale to a target dough
+  weight or to N loaves).
+- **Schedule** — bake timeline generator. Enter start time + kitchen temp and it
+  computes every step's clock time (durations auto-adjust for warmth); edit any
+  step and the timeline re-flows.
+- **Starter** — log feedings (ratio, temp, grams, rise, time-to-peak).
+- **Costing** — set ingredient prices (per kg) + energy/packaging/labour
+  settings, currency; see a per-bake cost breakdown and margins.
+- **Troubleshoot** — searchable library of common bread problems → causes & fixes.
 
-## What it does
-- **Table view** — every bake with auto-computed metrics:
-  total flour, hydration %, whole-grain %, levain %, instant-yeast %,
-  salt %, room temp, status, rating.
-- **Click any row** → full detail: recipe (grams), process timeline,
-  notes/verdict, and photos.
-- **+ Add bake** → log a new loaf (or edit an existing one).
-- **Checkboxes + Compare selected** → side-by-side comparison of any bakes.
-- **Photos** → attach images in the edit form; they're auto-resized and stored.
-- **Export JSON / data.js / Copy** → get your data out.
-- **Import** → load a JSON (or a `data.js`) back in.
-- **Reload data.js** → discard browser edits and re-read the file.
+## Data & storage
+- Everything is saved in your browser's `localStorage` (key `breadDiary.v2`).
+- **Export JSON** — full data (bakes + prices + settings + starter).
+- **Export data.js** — just the bakes, to replace `data.js`.
+- **CSV** — spreadsheet export of bakes.
+- **Import** — load a JSON or `data.js`.
+- **Reload files** — discard browser edits and re-read `data.js` / `config.js`.
 
 ## How updates work
-Tell me about a bake in chat (recipe + process + outcome/photos) and I'll
-update `data.js` directly. Then either:
-- click **Reload data.js** in the app, or
-- just reopen the page.
+Tell me about a bake in chat (recipe + process + outcome/photos) and I'll update
+`data.js`. Then click **Reload files** in the app (or reopen it).
 
-Your own in-app edits live in the browser (localStorage) and take precedence
-until you reload from the file.
-
-## Notes on metrics
-- Hydration includes the levain contribution (assumes a 100% hydration levain,
-  i.e. equal flour & water). So `total flour = flours + levain/2`,
-  `total water = water + levain/2`.
-- Baker's % are relative to the total flour (including levain flour).
+## Metrics notes
+- Hydration counts the levain's water (assumes a 100 % hydration levain):
+  `total flour = flours + levain/2`, `total water = water + levain/2`.
+- Baker's % are relative to total flour (incl. levain flour).
+- Cost = ingredient grams × price/kg + energy/bake + packaging/loaf × makes +
+  labour (rate × hours). Editable in **Costing**.
