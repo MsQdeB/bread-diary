@@ -83,15 +83,15 @@ window.BAKES = [
     process: {
       levainBuild: "Bakery starter, kept 2 days in fridge. Built levain 12:00 PM: 40 g starter + 40 g bread flour + 40 g water (1:1:1). Doubled & domed by ~3:00 PM.",
       mixing: "Split: 100 g levain → dough; 20 g → re-fed (20:20:20) as keeper. Mixed flours + water + levain (autolyse 30 min), then added salt, oil, honey, seeds + soaked chia.",
-      folds: "3 sets of folds (stretch & coil), 30 min apart.",
-      bulk: "Room temp until puffy.",
-      retard: "Cold retard overnight (planned 8–14 hrs).",
+      folds: "3 sets of folds (stretch & coil), 30 min apart. Dough smooth, domed and glossy after fold #3.",
+      bulk: "Room temp until puffy & domed (~40–50% rise) — reached by 7:00 PM.",
+      retard: "Fridge from 7:00 PM (overnight retard, ~12 hrs).",
       shaping: "Planned: shape cold from the fridge, taut roll into the tin.",
       proof: "Planned: 40–50 min at room temp (hot kitchen — watch closely).",
       bake: "Planned: 210 °C / 15 min with steam, then 190 °C / ~40 min.",
       cooling: "Cool fully on a rack."
     },
-    notes: "First sourdough attempt. Levain from a bakery. Warm, humid conditions (29 °C / 89 %) so fermentation is fast. Went with pure sourdough (no instant yeast). Dough came together well after the first stretch & fold — pale, well-hydrated, chia gel visible. Seeds (flax + pumpkin) are too coarse and sitting proud on the surface — unevenly distributed.",
+    notes: "First sourdough attempt. Levain from a bakery. Warm, humid conditions (29 °C / 89 %) so fermentation is fast. Went with pure sourdough (no instant yeast). Dough came together well after the first stretch & fold — pale, well-hydrated, chia gel visible. Seeds (flax + pumpkin) were too coarse and sat proud on the surface at first, but 3 sets of folds distributed them well. Keeper (20 g) fed 1:1:1 and refrigerated after ~2 hrs. Bulk dough went into the fridge at 7:00 PM — puffy, domed and glossy (~40–50% rise).",
     verdict: "Pending — baking tomorrow morning.",
     improvements: "Watch the final proof carefully to avoid over-proofing in the heat. CRACK/CHOP the flax and pumpkin seeds (or soak the flax) so they distribute evenly instead of sitting whole on the surface.",
     photos: []

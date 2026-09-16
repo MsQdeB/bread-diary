@@ -33,5 +33,6 @@ window.SETTINGS = {
 };
 
 window.STARTER_LOG = [
-  // { id, date, time, ratio, starter, flour, water, temp, rise, peakTime, notes }
+  { id: "s1", date: "2026-09-16", time: "12:00", ratio: "1:1:1", starter: 40, flour: 40, water: 40, temp: "29 °C", rise: "doubled", peakTime: "3 h", notes: "Bakery starter woken from 2 days in fridge. Built levain; doubled & domed by ~3 PM." },
+  { id: "s2", date: "2026-09-16", time: "15:00", ratio: "1:1:1", starter: 20, flour: 20, water: 20, temp: "29 °C", rise: "bubbly, partial rise", peakTime: "~2 h", notes: "Keeper split off after baking levain. Fed and left out ~2 h, then refrigerated at ~5 PM." }
 ];
