@@ -534,8 +534,10 @@ function renderCosting(){
   document.getElementById("setPack").value=num(s.packagingPerLoaf);
   document.getElementById("setRate").value=num(s.laborRate);
   document.getElementById("setHours").value=num(s.laborHours);
-  document.getElementById("priceBody").innerHTML=(window.INGREDIENTS||[]).map(i=>
-    '<tr><td>'+esc(i.label)+'</td><td><input type="number" step="0.01" value="'+num(state.prices[i.key])+'" oninput="setPrice(\''+i.key+'\',this.value)"></td></tr>').join("");
+  document.getElementById("priceBody").innerHTML=(window.INGREDIENTS||[]).map(i=>{
+    const extra = i.key==="levain" ? ' <button class="tiny" onclick="autoLevainPrice()" title="Set to (bread flour + water) / 2 — the cost of a 100% hydration levain">auto</button>' : '';
+    return '<tr><td>'+esc(i.label)+extra+'</td><td><input type="number" step="0.01" value="'+num(state.prices[i.key])+'" oninput="setPrice(\''+i.key+'\',this.value)"></td></tr>';
+  }).join("");
   const sel=document.getElementById("costPick");
   const prev=sel.value;
   sel.innerHTML=state.bakes.slice().sort((a,b)=>num(b.number)-num(a.number)).map(b=>'<option value="'+b.id+'">#'+b.number+' '+esc(b.title)+'</option>').join("");
@@ -543,6 +545,12 @@ function renderCosting(){
   renderCostDetail();
 }
 function setPrice(k,v){ state.prices[k]=num(v); persist(); }
+function autoLevainPrice(){
+  // 100% hydration levain = half flour, half water
+  state.prices.levain=(num(state.prices.breadFlour)+num(state.prices.water))/2;
+  persist(); renderCosting(); renderTable();
+  toast("Levain set to "+money(state.prices.levain)+"/kg");
+}
 function saveSettings(){
   state.settings.currency=document.getElementById("setCurrency").value;
   state.settings.energyPerBake=num(document.getElementById("setEnergy").value);
