@@ -97,5 +97,53 @@ window.BAKES = [
     verdict: "First sourdough — success. Open, even, seed-studded crumb; good oven spring; deep golden crust; mild flavour (12 h retard + early bake worked). Slightly denser band near the bottom from uneven shaping.",
     improvements: "1) Dough was wet/sticky when shaping — normal for sourdough (acid-relaxed gluten); next time use WET hands + bench scraper and add little flour. 2) Shaping: couldn't flatten into an even rectangle (sticky) → uneven roll → lopsided top + dense band at the base. Flatten only ~2 cm roughly, use a scraper, pre-shape + 15 min rest. 3) Final proof went in slack and only ~2/3 up the tin — shape tighter. 4) Bake 65 min (target 55) — get a cheap instant-read thermometer and bake to 93–96 °C. 5) CRACK/CHOP + soak the seeds — worked well via folds, keep doing it. 6) Bottom looked slightly moist/dense: normal — mostly SHAPING compression (denser base band) + high hydration (wholemeal+chia) + cutting after only ~1 h. NOT a real underbake (tastes good, cuts cleanly, base feels firm). Fixes: get a thermometer & bake to 93–96 °C; shape tighter; cool 2 h+; try a baking steel/darker tin; consider dropping hydration ~3–5%. Do NOT simply add 10 more min (risks dry crust without fixing the dense band).",
     photos: ["images/bake2-bulk.jpg", "images/bake2-crumb1.jpg", "images/bake2-crumb2.jpg"]
+  },
+  {
+    id: "b3",
+    number: 3,
+    date: "2026-09-19",
+    dateNote: "order: pickup Sat 11 AM, pre-sliced",
+    title: "Mum's Balance Loaf (white-forward, no seeds)",
+    leavening: "Sourdough",
+    status: "Planned",
+    rating: null,
+    tags: "order, no seeds, tin loaf, 25% wholemeal",
+    makes: 1,
+    sellPrice: null,
+    recipe: {
+      breadFlour: 235,
+      wholemealFlour: 90,
+      plainFlour: 0,
+      otherFlour: 0,
+      otherFlourNote: "",
+      water: 220,
+      salt: 6.5,
+      yeast: 0,
+      levain: 70,
+      oil: 12,
+      honey: 12,
+      chia: 0,
+      flax: 0,
+      pumpkinSeed: 0,
+      sunflowerSeed: 0,
+      otherSeeds: 0,
+      otherSeedsNote: ""
+    },
+    environment: { temp: "29 °C", humidity: "~87 %" },
+    process: {
+      levainBuild: "Fri 1 PM: feed keeper; build levain 20 g starter + 25 g bread flour + 25 g water (1:1:1). Ready ~4 PM.",
+      mixing: "Fri ~4 PM: mix flours + water + levain (autolyse 30 min), then add salt, oil (12 g), honey (12 g). No seeds.",
+      folds: "3 sets of folds, 30 min apart.",
+      bulk: "Fri: room temp until puffy (~40–50%).",
+      retard: "Fri ~8 PM: cold bulk in fridge overnight (~11 hrs).",
+      shaping: "Sat ~7:10 AM: pre-shape + rest, then final shape — taut even roll into the tin. Focus: even tension.",
+      proof: "Sat: final proof 40–50 min at 29 °C (watch closely — hot kitchen).",
+      bake: "Sat ~8:05 AM: 210 °C / 15 min with steam, then 190 °C / ~40 min (to 93–96 °C if thermometer available).",
+      cooling: "Cool fully on a rack; slice ~10:45 AM for 11 AM pickup."
+    },
+    notes: "Order for Mum — pickup Sat 11 AM, pre-sliced. White-forward balance: wholemeal cut to 25% (from 37% in bake #2), no seeds/chia, oil + honey kept for a soft enriched crumb. Less absorbent (more white flour) → may feel wetter; hold back ~10 g water if needed.",
+    verdict: "Planned — bake Sat 19 Sep morning.",
+    improvements: "Watch shaping (use wet hands + scraper); slice only when fully cool; keep it mild (don't over-retard).",
+    photos: []
   }
 ];
