@@ -58,8 +58,10 @@ window.BAKES = [
     dateNote: "",
     title: "Seeded Sourdough (first sourdough!)",
     leavening: "Sourdough",
-    status: "In progress",
-    rating: null,
+    status: "Baked",
+    rating: 4,
+    score: { crumb: 4, spring: 4, crust: 4, sour: 4, flavour: 4 },
+    makes: 1,
     recipe: {
       breadFlour: 180,
       wholemealFlour: 105,
@@ -92,8 +94,8 @@ window.BAKES = [
       cooling: "Cooled fully on a rack before slicing."
     },
     notes: "First sourdough attempt. Levain from a bakery. Warm, humid conditions (29 °C / 89 %) so fermentation is fast. Went with pure sourdough (no instant yeast). Dough came together well after the first stretch & fold — pale, well-hydrated, chia gel visible. Seeds (flax + pumpkin) were too coarse and sat proud on the surface at first, but 3 sets of folds distributed them well. Keeper (20 g) fed 1:1:1 and refrigerated after ~2 hrs. Bulk dough went into the fridge at 7:00 PM — puffy, domed and glossy (~40–50% rise).",
-    verdict: "Pending — baking tomorrow morning.",
-    improvements: "Watch the final proof carefully to avoid over-proofing in the heat. CRACK/CHOP the flax and pumpkin seeds (or soak the flax) so they distribute evenly instead of sitting whole on the surface.",
-    photos: []
+    verdict: "First sourdough — success. Open, even, seed-studded crumb; good oven spring; deep golden crust; mild flavour (12 h retard + early bake worked). Slightly denser band near the bottom from uneven shaping.",
+    improvements: "1) Dough was wet/sticky when shaping — normal for sourdough (acid-relaxed gluten); next time use WET hands + bench scraper and add little flour. 2) Shaping: couldn't flatten into an even rectangle (sticky) → uneven roll → lopsided top + dense band at the base. Flatten only ~2 cm roughly, use a scraper, pre-shape + 15 min rest. 3) Final proof went in slack and only ~2/3 up the tin — shape tighter. 4) Bake 65 min (target 55) — get a cheap instant-read thermometer and bake to 93–96 °C. 5) CRACK/CHOP + soak the seeds — worked well via folds, keep doing it.",
+    photos: ["images/bake2-bulk.jpg", "images/bake2-crumb1.jpg", "images/bake2-crumb2.jpg"]
   }
 ];
