@@ -24,7 +24,11 @@ const SCORE_FIELDS = [["crumb","Crumb"],["spring","Oven spring"],["crust","Crust
 function num(v){ v=parseFloat(v); return isNaN(v)?0:v; }
 function esc(s){ return (s==null?"":String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 function cur(){ return (state.settings.currency||"$")+" "; }
-function money(n){ return cur()+(Math.round(n*100)/100).toFixed(2); }
+function money(n){
+  const d=(state.settings.decimals!=null)?Number(state.settings.decimals):2;
+  const v=isFinite(n)?n:0;
+  return cur()+v.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
+}
 let toastT;
 function toast(msg){ const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("show"),2400); }
 
@@ -530,6 +534,7 @@ function delStarter(id){ if(!confirm("Delete this feeding?")) return; state.star
 function renderCosting(){
   const s=state.settings;
   document.getElementById("setCurrency").value=s.currency||"$";
+  document.getElementById("setDecimals").value=(s.decimals!=null?s.decimals:2);
   document.getElementById("setEnergy").value=num(s.energyPerBake);
   document.getElementById("setPack").value=num(s.packagingPerLoaf);
   document.getElementById("setRate").value=num(s.laborRate);
@@ -553,6 +558,7 @@ function autoLevainPrice(){
 }
 function saveSettings(){
   state.settings.currency=document.getElementById("setCurrency").value;
+  state.settings.decimals=num(document.getElementById("setDecimals").value);
   state.settings.energyPerBake=num(document.getElementById("setEnergy").value);
   state.settings.packagingPerLoaf=num(document.getElementById("setPack").value);
   state.settings.laborRate=num(document.getElementById("setRate").value);

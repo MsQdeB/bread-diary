@@ -131,19 +131,19 @@ window.BAKES = [
     },
     environment: { temp: "29 °C", humidity: "~87 %" },
     process: {
-      levainBuild: "Fri 1 PM: feed keeper; build levain 20 g starter + 25 g bread flour + 25 g water (1:1:1). Ready ~4 PM.",
-      mixing: "Fri ~4 PM: mix flours + water + levain (autolyse 30 min), then add salt, oil (12 g), honey (12 g). No seeds.",
-      folds: "3 sets of folds, 30 min apart.",
-      bulk: "Fri: room temp until puffy (~40–50%).",
-      retard: "Fri ~8 PM: cold bulk in fridge overnight (~11 hrs).",
-      shaping: "Sat ~7:10 AM: pre-shape + rest, then final shape — taut even roll into the tin. Focus: even tension.",
-      proof: "Sat: final proof 40–50 min at 29 °C (watch closely — hot kitchen).",
-      bake: "Sat ~8:05 AM: 210 °C / 15 min with steam, then 190 °C / ~40 min (to 93–96 °C if thermometer available).",
-      cooling: "Cool fully on a rack; slice ~10:45 AM for 11 AM pickup."
+      levainBuild: "Fri 1 PM: feed keeper (keep ~20–30 g); build levain — 20 g starter + 25 g bread flour + 25 g water (1:1:1). Ready ~4 PM.",
+      mixing: "Fri ~4 PM: mix flours + water + levain (autolyse 30 min), then add salt, olive oil (12 g), honey (12 g). No seeds.",
+      folds: "Fri: 3 sets of folds, 30 min apart.",
+      bulk: "Fri: room temp until puffy & domed (~40–50%).",
+      retard: "—",
+      shaping: "Fri evening: SHAPE straight into the oiled tin (taut, even roll). Then a short room-temp proof ~20–40 min until slightly puffed (NOT to the rim), then cover and refrigerate overnight. (Cold-PROOF method — final proof happens in the fridge.)",
+      proof: "Fri night → Sat: cold proof in the tin in the fridge (~10–14 hrs). Bake straight from the fridge in the morning.",
+      bake: "Sat morning: preheat 210 °C + steam 20–30 min, score the cold loaf, then bake 210 °C / 15 min → 190 °C / ~45 min (a little longer than usual because it's cold). Target 93–96 °C.",
+      cooling: "Cool fully on a rack (~1.5–2 h); slice ~10:45 AM for 11 AM pickup."
     },
-    notes: "Order for Mum — pickup Sat 11 AM, pre-sliced. White-forward balance: wholemeal cut to 25% (from 37% in bake #2), no seeds/chia, oil + honey kept for a soft enriched crumb. Less absorbent (more white flour) → may feel wetter; hold back ~10 g water if needed.",
-    verdict: "Planned — bake Sat 19 Sep morning.",
-    improvements: "Watch shaping (use wet hands + scraper); slice only when fully cool; keep it mild (don't over-retard).",
+    notes: "Order for Mum — pickup Sat 11 AM, pre-sliced. White-forward balance: wholemeal cut to 25% (from 37% in bake #2), no seeds/chia, oil + honey kept for a soft enriched crumb. Method: COLD PROOF — do all the work Friday, shape Friday night, bake straight from the fridge Saturday (bake time is flexible — no early rise needed). Less absorbent (more white flour) → may feel wetter; hold back ~10 g water if needed.",
+    verdict: "Planned — cold-proof; bake Sat 19 Sep morning (flexible, straight from fridge).",
+    improvements: "Judge the proof before chilling (slightly puffed, not to the rim). Cold dough → add a few minutes bake time. Shape with wet hands + scraper. Slice only when fully cool.",
     photos: []
   }
 ];
