@@ -86,10 +86,10 @@ window.BAKES = [
       folds: "3 sets of folds (stretch & coil), 30 min apart. Dough smooth, domed and glossy after fold #3.",
       bulk: "Room temp until puffy & domed (~40–50% rise) — reached by 7:00 PM.",
       retard: "Fridge from 7:00 PM (overnight retard, ~12 hrs).",
-      shaping: "Planned: shape cold from the fridge, taut roll into the tin.",
-      proof: "Planned: 40–50 min at room temp (hot kitchen — watch closely).",
-      bake: "Planned: 210 °C / 15 min with steam, then 190 °C / ~40 min.",
-      cooling: "Cool fully on a rack."
+      shaping: "Shaped cold from the fridge at ~8:20 AM. Dough was soft, slack and a little sticky (acid-relaxed gluten at 73% hydration + wholemeal + chia gel). Light flour dust, taut roll into the oiled tin.",
+      proof: "Final proof at room temp (29 °C / 87%). Dough went in slack and only rose ~2/3 up the tin. Poke test: spring-back slowed at ~45 min → baked. (Deliberately baked on the early side to keep it mild.)",
+      bake: "210 °C / 15 min with steam (water tray), then 190 °C / 50 min — 65 min total. Good oven spring at 15 min; pulled away from tin; deep golden seed-flecked crust.",
+      cooling: "Cooled fully on a rack before slicing."
     },
     notes: "First sourdough attempt. Levain from a bakery. Warm, humid conditions (29 °C / 89 %) so fermentation is fast. Went with pure sourdough (no instant yeast). Dough came together well after the first stretch & fold — pale, well-hydrated, chia gel visible. Seeds (flax + pumpkin) were too coarse and sat proud on the surface at first, but 3 sets of folds distributed them well. Keeper (20 g) fed 1:1:1 and refrigerated after ~2 hrs. Bulk dough went into the fridge at 7:00 PM — puffy, domed and glossy (~40–50% rise).",
     verdict: "Pending — baking tomorrow morning.",
