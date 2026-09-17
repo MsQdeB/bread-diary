@@ -11,7 +11,8 @@ No build step, no dependencies — everything runs in the browser.
 | `app.js` | All app logic. |
 | `data.js` | **Bake data** (`window.BAKES`) — the source of truth I update. |
 | `config.js` | Ingredient prices, settings, starter log seed. |
-| `manifest.json`, `sw.js`, `icon.svg` | PWA: install to home screen, works offline. |
+| `checklist.html` | Standalone tickable checklist for a specific bake. |
+| `BAKING-CHECKLIST.md` | Markdown bake plan/checklist. |
 
 ## How to open
 **Double-click `index.html`** — works offline.
@@ -41,6 +42,10 @@ then open http://localhost:8080
 - **Starter** — log feedings (ratio, temp, grams, rise, time-to-peak).
 - **Costing** — set ingredient prices (per kg) + energy/packaging/labour
   settings, currency; see a per-bake cost breakdown and margins.
+- **Checklists** — reusable checklists (tickable, saved): **Starter maintenance**,
+  **Bake-day prep**, and **Order/shop list**. Plus, **every bake gets its own
+auto-generated checklist** (open a bake → **Checklist**) built from that
+  recipe's steps — tick it off, reset, or print.
 - **Troubleshoot** — searchable library of common bread problems → causes & fixes.
 
 ## Data & storage

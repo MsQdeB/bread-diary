@@ -106,6 +106,7 @@ function showTab(name){
   if(name==="calculator") renderCalcInputs();
   if(name==="schedule"){ applySchedDefaults(); recalcSchedule(); }
   if(name==="starter") renderStarter();
+  if(name==="checklists") renderChecklists();
   if(name==="costing"){ renderCosting(); }
   if(name==="troubleshoot") renderTroubleshoot();
 }
@@ -608,6 +609,134 @@ function renderTroubleshoot(){
     '<div class="section-title" style="margin-top:12px">Likely causes</div><ul style="margin:4px 0 0 18px">'+t.causes.map(c=>'<li>'+esc(c)+'</li>').join("")+'</ul>'+
     '<div class="section-title">Fixes</div><ul style="margin:4px 0 0 18px">'+t.fixes.map(c=>'<li>'+esc(c)+'</li>').join("")+'</ul></div>').join("") || '<p class="muted">No matches.</p>';
 }
+
+/* ---------- checklists ---------- */
+const CL_TEMPLATES = {
+  starter: {
+    icon:"🫙", title:"Starter maintenance (weekly)", sub:"Keep the keeper strong with minimum fuss.",
+    tasks:[
+      "Take the jar out of the fridge",
+      "Pour off all but ~20–30 g of starter",
+      "Feed 1:1:1 (equal flour + water, by weight)",
+      "Stir well; scrape down the sides",
+      "Leave ~2 h at room temp until bubbly",
+      "Back into the fridge",
+      "Write the date on the jar"
+    ]
+  },
+  bakeprep: {
+    icon:"🥖", title:"Bake-day prep", sub:"Set yourself up before mixing.",
+    tasks:[
+      "Check starter is active (doubles in 6–8 h); feed if needed",
+      "Weigh out the flours",
+      "Soak chia / prep seeds (if using)",
+      "Oil or line the loaf tin",
+      "Clear counter space; get bowl, dough scraper, towels out",
+      "Set a small bowl of water for wet-hand folds",
+      "Preheat oven ~30 min before baking (if same day)"
+    ]
+  },
+  order: {
+    icon:"🛒", title:"Order / shop list", sub:"Restock before a bake.",
+    tasks:[
+      "Bread flour",
+      "Wholemeal flour",
+      "Instant yeast (for hybrids/gifts)",
+      "Salt",
+      "Olive oil",
+      "Honey",
+      "Seeds — flax, pumpkin, chia, sunflower",
+      "Loaf bags / parchment",
+      "Instant-read thermometer"
+    ]
+  }
+};
+
+function clKey(store){ return "breadDiary.ticks."+store; }
+function getTicks(store){ try{ return JSON.parse(localStorage.getItem(clKey(store))||"{}"); }catch(e){ return {}; } }
+function setTick(store,id,val){ const t=getTicks(store); if(val) t[id]=1; else delete t[id]; try{ localStorage.setItem(clKey(store),JSON.stringify(t)); }catch(e){} }
+
+function clTaskHTML(store,id,label,sub,time,checked){
+  return '<label class="cl-task" style="display:flex;gap:12px;align-items:flex-start;padding:8px 4px;border-bottom:1px solid var(--line);cursor:pointer">'+
+    '<input class="cl-box" type="checkbox" data-store="'+esc(store)+'" data-id="'+esc(id)+'" '+(checked?"checked":"")+' style="margin-top:3px;width:18px;height:18px;accent-color:var(--accent);flex:none">'+
+    '<span style="flex:1">'+(time?'<b style="color:var(--accent);font-size:12px;margin-right:6px">'+esc(time)+'</b>':'')+'<b style="display:block">'+esc(label)+'</b>'+(sub?'<small class="muted">'+esc(sub)+'</small>':'')+'</span></label>';
+}
+function clCard(store,title,sub,tasks){
+  const ticks=getTicks(store);
+  let n=0; tasks.forEach(t=>{ if(ticks[t.id]) n++; });
+  const total=tasks.length, p=total?Math.round(n/total*100):0;
+  return '<div class="card pad" id="clcard-'+esc(store)+'" style="margin-bottom:16px">'+
+    '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">'+
+      '<div><div style="font-weight:700;font-size:17px">'+esc(title)+'</div>'+(sub?'<div class="muted" style="font-size:13px">'+esc(sub)+'</div>':'')+'</div>'+
+      '<div style="display:flex;gap:8px;align-items:center">'+
+        '<div style="width:130px;height:9px;background:var(--line);border-radius:6px;overflow:hidden"><i class="cl-fill" style="display:block;height:100%;background:var(--good);width:'+p+'%;transition:.25s"></i></div>'+
+        '<span class="muted cl-pct">'+n+'/'+total+'</span>'+
+        '<button class="tiny noprint" onclick="resetStore(\''+esc(store)+'\')">Reset</button>'+
+      '</div>'+
+    '</div>'+
+    '<div style="margin-top:8px">'+tasks.map(t=>clTaskHTML(store,t.id,t.t,t.sub,t.time,ticks[t.id])).join("")+'</div></div>';
+}
+function refreshClCard(store){
+  const card=document.getElementById("clcard-"+store); if(!card) return;
+  const boxes=[...card.querySelectorAll(".cl-box")];
+  const total=boxes.length, n=boxes.filter(b=>b.checked).length, p=total?Math.round(n/total*100):0;
+  const pctEl=card.querySelector(".cl-pct"); if(pctEl) pctEl.textContent=n+"/"+total;
+  const fill=card.querySelector(".cl-fill"); if(fill) fill.style.width=p+"%";
+}
+function resetStore(store){
+  if(!confirm("Clear ticks for this checklist?")) return;
+  try{ localStorage.removeItem(clKey(store)); }catch(e){}
+  if(store.indexOf("bake.")===0) openChecklist(store.slice(5)); else renderChecklists();
+}
+function renderChecklists(){
+  const el=document.getElementById("checklistTemplates"); if(!el) return;
+  el.innerHTML=Object.keys(CL_TEMPLATES).map(k=>{
+    const t=CL_TEMPLATES[k];
+    const tasks=t.tasks.map((txt,i)=>({id:"t"+i, t:txt, sub:"", time:""}));
+    return clCard(k, t.icon+" "+t.title, t.sub, tasks);
+  }).join("");
+}
+function bakeChecklistTasks(b){
+  const p=b.process||{}; const tasks=[];
+  const add=(label,sub)=>tasks.push({id:"c"+tasks.length, t:label, sub:sub||"", time:""});
+  if(p.levainBuild) add("Build the levain", p.levainBuild);
+  if(p.mixing) add("Mix + autolyse", p.mixing);
+  if(p.folds) add("Folds", p.folds);
+  if(p.bulk) add("Bulk ferment", p.bulk);
+  if(p.retard && p.retard!=="—") add("Cold retard", p.retard);
+  if(p.shaping) add("Shape", p.shaping);
+  if(p.proof) add("Final proof", p.proof);
+  add("Preheat oven", "~30 min before baking");
+  add("Score the top", "One confident centre slash with a sharp blade");
+  if(p.bake) add("Bake", p.bake);
+  if(p.cooling) add("Cool fully", p.cooling);
+  if(/order|slice/i.test(b.tags||"")) add("Slice & bag", "Slice once fully cool, then bag");
+  else add("Slice & enjoy", "Once fully cool");
+  return tasks;
+}
+function openChecklist(id){
+  const b=state.bakes.find(x=>x.id===id); if(!b) return;
+  currentId=id; const store="bake."+id;
+  document.getElementById("clTitle").textContent="✅ "+b.title;
+  document.getElementById("clSub").innerHTML="#"+b.number+" · "+esc(b.date||"")+" · "+esc(b.leavening||"");
+  const r=b.recipe||{};
+  const ing=RECIPE_FIELDS.map(([k,l])=>{const v=num(r[k]); return v?'<span class="badge">'+esc(l)+" "+v+"g</span>":'';}).join(" ");
+  let body='<div class="section-title">Recipe</div><div class="metric-chips">'+ing+'</div>';
+  body+='<div class="section-title">Steps</div>';
+  body+=clCard(store, "Steps", "Tick as you go", bakeChecklistTasks(b));
+  document.getElementById("clBody").innerHTML=body;
+  document.getElementById("checklistOverlay").classList.add("open");
+}
+function closeChecklist(){ document.getElementById("checklistOverlay").classList.remove("open"); }
+function resetBakeChecklist(){ resetStore("bake."+currentId); }
+function printChecklist(){ window.print(); }
+
+document.addEventListener("change", e=>{
+  if(e.target && e.target.classList && e.target.classList.contains("cl-box")){
+    setTick(e.target.dataset.store, e.target.dataset.id, e.target.checked);
+    refreshClCard(e.target.dataset.store);
+  }
+});
 
 /* ---------- print ---------- */
 function printRecipe(){

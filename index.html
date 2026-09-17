@@ -37,6 +37,7 @@
   <button data-tab="calculator" onclick="showTab('calculator')">Calculator</button>
   <button data-tab="schedule" onclick="showTab('schedule')">Schedule</button>
   <button data-tab="starter" onclick="showTab('starter')">Starter</button>
+  <button data-tab="checklists" onclick="showTab('checklists')">Checklists</button>
   <button data-tab="costing" onclick="showTab('costing')">Costing</button>
   <button data-tab="troubleshoot" onclick="showTab('troubleshoot')">Troubleshoot</button>
 </nav>
@@ -175,6 +176,12 @@
     </div><div id="costDetail"></div></div>
   </section>
 
+  <!-- CHECKLISTS -->
+  <section class="view" id="view-checklists">
+    <p class="help" style="margin-top:0">Reusable checklists — ticks save in this browser. Each bake also has its own auto-generated checklist (open a bake → <b>Checklist</b>).</p>
+    <div id="checklistTemplates"></div>
+  </section>
+
   <!-- TROUBLESHOOT -->
   <section class="view" id="view-troubleshoot">
     <div class="toolbar2"><input id="tsSearch" placeholder="Search problems (e.g. dense, sour, pale)…" oninput="renderTroubleshoot()" style="min-width:260px"></div>
@@ -187,7 +194,7 @@
   <div class="modal wide">
     <header>
       <div><div id="dTitle" style="font-size:20px;font-weight:700"></div><div id="dSub" class="muted" style="font-size:13px"></div></div>
-      <div style="display:flex;gap:8px"><button onclick="printRecipe()">Print</button><button onclick="editCurrent()">Edit</button><button class="ghost" onclick="closeDetail()">✕</button></div>
+      <div style="display:flex;gap:8px"><button onclick="openChecklist(currentId)">Checklist</button><button onclick="printRecipe()">Print</button><button onclick="editCurrent()">Edit</button><button class="ghost" onclick="closeDetail()">✕</button></div>
     </header>
     <div class="body" id="dBody"></div>
     <div class="foot noprint"><button class="danger" onclick="deleteCurrent()">Delete</button><button class="primary" onclick="closeDetail()">Close</button></div>
@@ -220,8 +227,19 @@
   </div>
 </div>
 
-<!-- PRINT MODAL -->
-<div class="overlay" id="printOverlay">
+<!-- CHECKLIST MODAL -->
+<div class="overlay" id="checklistOverlay" onclick="if(event.target===this)closeChecklist()">
+  <div class="modal">
+    <header>
+      <div><div id="clTitle" style="font-size:20px;font-weight:700">Checklist</div><div id="clSub" class="muted" style="font-size:13px"></div></div>
+      <div style="display:flex;gap:8px" class="noprint"><button onclick="printChecklist()">Print</button><button class="ghost" onclick="closeChecklist()">✕</button></div>
+    </header>
+    <div class="body" id="clBody"></div>
+    <div class="foot"><button onclick="resetBakeChecklist()">Reset ticks</button><button class="primary" onclick="closeChecklist()">Close</button></div>
+  </div>
+</div>
+
+<!-- PRINT MODAL --><div class="overlay" id="printOverlay">
   <div class="modal">
     <div class="foot noprint"><button class="ghost" onclick="closePrint()">Close</button><button class="primary" onclick="window.print()">Print / Save PDF</button></div>
     <div class="body"><div class="recipe-card" id="printBody"></div></div>
