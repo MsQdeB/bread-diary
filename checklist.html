@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#b5651d">
+<title>🍞 Bake Checklist — Mum's Balance Loaf</title>
+<style>
+  :root{--bg:#f6efe3;--panel:#fffaf1;--ink:#3a2a18;--muted:#8a7355;--line:#e4d6bd;--accent:#b5651d;--good:#5a7d3c;--bad:#b03a2e;--chip:#fbf2e2}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  .wrap{max-width:760px;margin:0 auto;padding:26px 20px 80px}
+  h1{font-size:24px;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 6px 22px rgba(90,60,20,.12);padding:18px;margin-bottom:16px}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);margin:0 0 10px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+  .task{display:flex;gap:12px;align-items:flex-start;padding:9px 4px;border-bottom:1px solid #f0e6d4;cursor:pointer}
+  .task:last-child{border-bottom:none}
+  .task input{margin-top:3px;width:19px;height:19px;accent-color:var(--accent);flex:none;cursor:pointer}
+  .task.done .lbl{text-decoration:line-through;color:var(--muted)}
+  .lbl{flex:1}
+  .lbl b{display:block}
+  .lbl small{color:var(--muted)}
+  .time{font-variant-numeric:tabular-nums;font-weight:600;color:var(--accent);min-width:66px;flex:none;font-size:13px;padding-top:2px}
+  .bar{position:sticky;top:0;background:var(--bg);padding:10px 0;display:flex;gap:10px;align-items:center;z-index:5;flex-wrap:wrap}
+  button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 14px;border-radius:10px}
+  button:hover{border-color:var(--accent)}
+  button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .progress{flex:1;height:10px;background:#eadfca;border-radius:6px;overflow:hidden;min-width:120px}
+  .progress > i{display:block;height:100%;background:var(--good);width:0;transition:.25s}
+  .note{background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px;margin-top:6px}
+  .tag{display:inline-block;font-size:11px;background:var(--chip);border:1px solid var(--line);border-radius:8px;padding:1px 7px;color:var(--muted)}
+  a{color:var(--accent)}
+  .done-msg{display:none;text-align:center;color:var(--good);font-weight:600;padding:10px}
+  @media print{.bar{display:none}.task input{display:none}.task::before{content:"☐  ";font-size:18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🍞 Bake Checklist — "Mum's Balance Loaf"</h1>
+  <div class="sub">Order · pickup <b>Sat 19 Sep, 11:00 AM</b> · pre-sliced · cold-proof method · tin loaf</div>
+
+  <div class="bar">
+    <div class="progress"><i id="prog"></i></div>
+    <span id="pct" class="sub" style="margin:0">0%</span>
+    <button id="reset">Reset</button>
+    <button onclick="window.print()">Print</button>
+    <a href="index.html"><button class="primary">Open diary</button></a>
+  </div>
+
+  <div class="note">Ticks save in this browser. Numbers in <span class="tag">g</span> are for one ~645 g loaf.</div>
+
+  <div class="card">
+    <h2>Friday 18 Sep — prep &amp; cold proof</h2>
+    <div class="task"><input type="checkbox" data-id="f1"><span class="lbl"><b>Feed the keeper</b><small>Keep ~20–30 g of starter; feed 1:1:1; ~2 h at room temp; then fridge.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="f2"><span class="time">1:00 PM</span><span class="lbl"><b>Build the levain</b><small>20 g starter + 25 g bread flour + 25 g water → ~70 g. Cover, room temp.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="f3"><span class="time">~4:00 PM</span><span class="lbl"><b>Mix + autolyse</b><small>235 g bread flour + 90 g wholemeal + 220 g water + 70 g levain. Rest 30 min.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="f4"><span class="time">4:30 PM</span><span class="lbl"><b>Add salt, oil, honey</b><small>6.5 g salt + 12 g olive oil + 12 g honey. Mix in. No seeds.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="f5"><span class="time">5:00 PM</span><span class="lbl"><b>Fold #1</b><small>Wet hands. Stretch &amp; fold or coil fold.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="f6"><span class="time">5:30 PM</span><span class="lbl"><b>Fold #2</b></span></div>
+    <div class="task"><input type="checkbox" data-id="f7"><span class="time">6:00 PM</span><span class="lbl"><b>Fold #3</b><small>Dough should be smooth, domed, glossy.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="f8"><span class="time">~7:00 PM</span><span class="lbl"><b>Bulk until puffy</b><small>Wait for ~40–50% rise, domed &amp; jiggly. (29 °C → fast.)</small></span></div>
+    <div class="task"><input type="checkbox" data-id="f9"><span class="time">~8:00 PM</span><span class="lbl"><b>Shape into the tin</b><small>Taut, even roll. Seam down. Build top tension.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="f10"><span class="time">+20–40 min</span><span class="lbl"><b>Short room-temp proof</b><small>Just until slightly puffed — NOT to the rim.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="f11"><span class="time">~9:00 PM</span><span class="lbl"><b>Cover &amp; into the FRIDGE</b><small>Cold proof overnight (~10–14 h). Done for the night ✅</small></span></div>
+  </div>
+
+  <div class="card">
+    <h2>Saturday 19 Sep — bake straight from cold</h2>
+    <div class="task"><input type="checkbox" data-id="s1"><span class="time">≥30 min before</span><span class="lbl"><b>Preheat 210 °C + steam tray</b><small>Water in a tray on the lower shelf. Aim to bake by ~8:30 AM.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s2"><span class="lbl"><b>Take tin from fridge</b><small>Do NOT warm it — bake straight from cold.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s3"><span class="lbl"><b>Score</b><small>One confident centre slash (cold dough scores easily).</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s4"><span class="lbl"><b>Bake 210 °C / 15 min</b><small>With steam. Don't open the door.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s5"><span class="lbl"><b>Drop to 190 °C / ~45 min</b><small>Remove steam tray, rotate loaf. Cold start = a few min longer.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s6"><span class="lbl"><b>Check done</b><small>Deep golden, hollow tap, internal <b>93–96 °C</b>. Tent with foil if top darkens early.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s7"><span class="lbl"><b>Cool on a rack ~1.5–2 h</b><small>Fully cool before slicing.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s8"><span class="time">~10:45 AM</span><span class="lbl"><b>Slice &amp; bag</b><small>Even ~1.5 cm slices. Wrap soon so it doesn't dry.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s9"><span class="time">11:00 AM</span><span class="lbl"><b>Pickup</b> 🎉</span></div>
+    <div class="done-msg" id="done">All done — good luck with the order! 🍞</div>
+  </div>
+
+  <div class="note">
+    <b>Notes:</b> More white flour = less absorbent → dough may feel wetter; hold back ~10 g water if needed.
+    Wholemeal 25% (lighter than bake #2). Keep it mild — don't over-proof before chilling.
+  </div>
+</div>
+
+<script>
+  const KEY = "breadDiary.checklist.b3";
+  const boxes = [...document.querySelectorAll('.task input')];
+  function load(){ let s={}; try{ s=JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){}
+    boxes.forEach(b=>{ b.checked=!!s[b.dataset.id]; mark(b); }); update(); }
+  function save(){ const s={}; boxes.forEach(b=>s[b.dataset.id]=b.checked); try{ localStorage.setItem(KEY,JSON.stringify(s)); }catch(e){} }
+  function mark(b){ b.closest('.task').classList.toggle('done', b.checked); }
+  function update(){ const n=boxes.filter(b=>b.checked).length; const p=Math.round(n/boxes.length*100);
+    document.getElementById('prog').style.width=p+'%'; document.getElementById('pct').textContent=p+'% ('+n+'/'+boxes.length+')';
+    document.getElementById('done').style.display = (n===boxes.length)?'block':'none'; }
+  boxes.forEach(b=>b.addEventListener('change',()=>{ mark(b); save(); update(); }));
+  document.querySelectorAll('.task').forEach(t=>t.addEventListener('click',e=>{ if(e.target.tagName!=='INPUT'){ const i=t.querySelector('input'); i.checked=!i.checked; i.dispatchEvent(new Event('change')); }}));
+  document.getElementById('reset').onclick=()=>{ if(confirm('Clear all ticks?')){ boxes.forEach(b=>b.checked=false); mark&&boxes.forEach(mark); save(); update(); } };
+  load();
+</script>
+</body>
+</html>

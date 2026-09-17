@@ -143,7 +143,7 @@ window.BAKES = [
     },
     notes: "Order for Mum — pickup Sat 11 AM, pre-sliced. White-forward balance: wholemeal cut to 25% (from 37% in bake #2), no seeds/chia, oil + honey kept for a soft enriched crumb. Method: COLD PROOF — do all the work Friday, shape Friday night, bake straight from the fridge Saturday (bake time is flexible — no early rise needed). Less absorbent (more white flour) → may feel wetter; hold back ~10 g water if needed.",
     verdict: "Planned — cold-proof; bake Sat 19 Sep morning (flexible, straight from fridge).",
-    improvements: "Judge the proof before chilling (slightly puffed, not to the rim). Cold dough → add a few minutes bake time. Shape with wet hands + scraper. Slice only when fully cool.",
+    improvements: "PREP FRI 18 SEP (see checklist.html): feed keeper; build levain 1 PM; mix ~4 PM; folds 4:30–6; bulk; shape ~8 PM; short proof; fridge ~9 PM. SAT: preheat 210 + steam 30 min; score cold loaf; bake 210/15 → 190/~45; cool 1.5–2 h; slice ~10:45; pickup 11:00. Judge proof before chilling (slightly puffed, not to the rim). Cold dough → add a few minutes bake time. Shape with wet hands + scraper. Slice only when fully cool.",
     photos: []
   }
 ];

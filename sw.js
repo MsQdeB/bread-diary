@@ -1,6 +1,6 @@
 // Bread Diary service worker — offline caching (works when served over http/https)
 const CACHE = "bread-diary-v2";
-const ASSETS = ["./", "index.html", "styles.css", "app.js", "data.js", "config.js", "manifest.json", "icon.svg"];
+const ASSETS = ["./", "index.html", "checklist.html", "styles.css", "app.js", "data.js", "config.js", "manifest.json", "icon.svg"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
