@@ -172,7 +172,7 @@ window.BAKES = [
     environment: { temp: "29 °C", humidity: "~87 %" },
     process: {
       levainBuild: "Levain MIXED Mon 7:00 PM — 30 g starter + 40 g bread flour + 40 g water (=110 g). At 29 °C it peaks in ~2.5–3 h (ready ~9:30–10 PM). Keep some starter as the keeper.",
-      mixing: "Mix ONE combined ~1000 g batch: dissolve the 109 g levain into 338 g WATER, then add 363 g bread flour + 138 g wholemeal. Autolyse 30 min. Add salt 10 g + olive oil 19 g + honey 19 g. Then DIVIDE: ~800 g → this large loaf, ~200 g → the small loaf (#6).",
+      mixing: "Mix ONE combined ~1000 g batch: dissolve the levain into 338 g WATER, then add 363 g bread flour + 138 g wholemeal. Autolyse 20–30 min. Add salt 10 g + olive oil 19 g + honey 19 g (+ 1 g instant yeast as insurance, since levain was slightly under-peaked / short bulk). Then DIVIDE: ~800 g → large loaf, ~200 g → small loaf (#6). NOTE: only ~100 g levain actually used (vs 109 g planned).",
       folds: "3 sets of folds, 30 min apart (wet hands, gentle).",
       bulk: "Bulk until puffy & domed (~40–50%).",
       retard: "—",
