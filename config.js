@@ -4,24 +4,25 @@
 // app settings, and a starter-feeding log.
 // Keys match the recipe fields used per bake.
 // Prices are per kg, in VND (Vietnam).
+// Source: "NO WASTE TO GO" zero-waste bulk refill shop, Da Nang — retail prices in VND per gram, x1000 to get per kg.
 // ============================================================
 
 window.INGREDIENTS = [
-  { key: "breadFlour",    label: "Bread flour",    price: 25000 },
-  { key: "wholemealFlour",label: "Wholemeal flour",price: 40000 },
-  { key: "plainFlour",    label: "Plain flour",    price: 22000 },
-  { key: "otherFlour",    label: "Other flour",    price: 45000 },
-  { key: "water",         label: "Water",          price: 200 },
-  { key: "salt",          label: "Salt",           price: 12000 },
-  { key: "yeast",         label: "Instant yeast",  price: 250000 },
-  { key: "levain",        label: "Levain (starter)",price: 12600 },
-  { key: "oil",           label: "Olive oil",      price: 150000 },
-  { key: "honey",         label: "Honey",          price: 250000 },
-  { key: "chia",          label: "Chia seed",      price: 250000 },
-  { key: "flax",          label: "Flaxseed",       price: 80000 },
-  { key: "pumpkinSeed",   label: "Pumpkin seeds",  price: 300000 },
-  { key: "sunflowerSeed", label: "Sunflower seeds",price: 100000 },
-  { key: "otherSeeds",    label: "Other seeds",    price: 150000 }
+  { key: "breadFlour",    label: "Bread flour",     price: 30000 },   // 30đ/g
+  { key: "wholemealFlour",label: "Wholemeal flour", price: 65000 },   // 65đ/g
+  { key: "plainFlour",    label: "All-purpose flour",price: 28000 },  // 28đ/g
+  { key: "otherFlour",    label: "Other flour",     price: 30000 },
+  { key: "water",         label: "Water",           price: 200 },
+  { key: "salt",          label: "Sea salt (coarse)",price: 27000 },   // 27đ/g
+  { key: "yeast",         label: "Instant yeast",   price: 250000 },  // not on list — estimate
+  { key: "levain",        label: "Levain (starter)",price: 15100 },   // ~ (bread flour + water) / 2
+  { key: "oil",           label: "Olive oil",       price: 370000 },  // 370đ/g
+  { key: "honey",         label: "Honey",           price: 150000 },  // 150đ/g
+  { key: "chia",          label: "Chia seed",       price: 160000 },  // 160đ/g
+  { key: "flax",          label: "Flaxseed (raw)",  price: 120000 },  // 120đ/g
+  { key: "pumpkinSeed",   label: "Pumpkin seeds",   price: 260000 },  // 260đ/g
+  { key: "sunflowerSeed", label: "Sunflower seeds", price: 150000 },  // 150đ/g
+  { key: "otherSeeds",    label: "Other seeds",     price: 150000 }
 ];
 
 window.SETTINGS = {
