@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#b5651d">
-<title>🍞 Bake Checklist — Mum's Balance Loaf</title>
+<title>🍞 Combined Bake — Large + Small tin loaves</title>
 <style>
   :root{--bg:#f6efe3;--panel:#fffaf1;--ink:#3a2a18;--muted:#8a7355;--line:#e4d6bd;--accent:#b5651d;--good:#5a7d3c;--bad:#b03a2e;--chip:#fbf2e2}
   *{box-sizing:border-box}
   body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-  .wrap{max-width:760px;margin:0 auto;padding:26px 20px 80px}
+  .wrap{max-width:780px;margin:0 auto;padding:26px 20px 80px}
   h1{font-size:24px;margin:0 0 4px}
   .sub{color:var(--muted);font-size:14px;margin-bottom:18px}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 6px 22px rgba(90,60,20,.12);padding:18px;margin-bottom:16px}
@@ -21,7 +21,7 @@
   .lbl{flex:1}
   .lbl b{display:block}
   .lbl small{color:var(--muted)}
-  .time{font-variant-numeric:tabular-nums;font-weight:600;color:var(--accent);min-width:66px;flex:none;font-size:13px;padding-top:2px}
+  .time{font-variant-numeric:tabular-nums;font-weight:600;color:var(--accent);min-width:70px;flex:none;font-size:13px;padding-top:2px}
   .bar{position:sticky;top:0;background:var(--bg);padding:10px 0;display:flex;gap:10px;align-items:center;z-index:5;flex-wrap:wrap}
   button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 14px;border-radius:10px}
   button:hover{border-color:var(--accent)}
@@ -31,14 +31,17 @@
   .note{background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px;margin-top:6px}
   .tag{display:inline-block;font-size:11px;background:var(--chip);border:1px solid var(--line);border-radius:8px;padding:1px 7px;color:var(--muted)}
   a{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  td,th{padding:5px 8px;text-align:left;border-bottom:1px solid #f0e6d4}
+  th{color:var(--muted);font-size:12px;text-transform:uppercase}
   .done-msg{display:none;text-align:center;color:var(--good);font-weight:600;padding:10px}
   @media print{.bar{display:none}.task input{display:none}.task::before{content:"☐  ";font-size:18px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>🍞 Bake Checklist — "Mum's Balance Loaf"</h1>
-  <div class="sub">Order · pickup <b>Sat 19 Sep, 11:00 AM</b> · pre-sliced · cold-proof method · tin loaf</div>
+  <h1>🍞 Combined Bake — Large + Small tin loaves</h1>
+  <div class="sub">One dough, two tins · <b>Large 20×10×9 cm (~800 g)</b> + <b>Small 13.5×6.5×3 cm (~200 g)</b></div>
 
   <div class="bar">
     <div class="progress"><i id="prog"></i></div>
@@ -48,45 +51,71 @@
     <a href="index.html"><button class="primary">Open diary</button></a>
   </div>
 
-  <div class="note">Ticks save in this browser. Numbers in <span class="tag">g</span> are for one ~645 g loaf.</div>
-
   <div class="card">
-    <h2>Friday 18 Sep — prep &amp; cold proof</h2>
-    <div class="task"><input type="checkbox" data-id="f1"><span class="lbl"><b>Feed the keeper</b><small>Keep ~20–30 g of starter; feed 1:1:1; ~2 h at room temp; then fridge.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="f2"><span class="time">1:00 PM</span><span class="lbl"><b>Build the levain</b><small>20 g starter + 25 g bread flour + 25 g water → ~70 g. Cover, room temp.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="f3"><span class="time">~4:00 PM</span><span class="lbl"><b>Mix + autolyse</b><small>235 g bread flour + 90 g wholemeal + 220 g water + 70 g levain. Rest 30 min.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="f4"><span class="time">4:30 PM</span><span class="lbl"><b>Add salt, oil, honey</b><small>6.5 g salt + 12 g olive oil + 12 g honey. Mix in. No seeds.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="f5"><span class="time">5:00 PM</span><span class="lbl"><b>Fold #1</b><small>Wet hands. Stretch &amp; fold or coil fold.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="f6"><span class="time">5:30 PM</span><span class="lbl"><b>Fold #2</b></span></div>
-    <div class="task"><input type="checkbox" data-id="f7"><span class="time">6:00 PM</span><span class="lbl"><b>Fold #3</b><small>Dough should be smooth, domed, glossy.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="f8"><span class="time">~7:00 PM</span><span class="lbl"><b>Bulk until puffy</b><small>Wait for ~40–50% rise, domed &amp; jiggly. (29 °C → fast.)</small></span></div>
-    <div class="task"><input type="checkbox" data-id="f9"><span class="time">~8:00 PM</span><span class="lbl"><b>Shape into the tin</b><small>Taut, even roll. Seam down. Build top tension.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="f10"><span class="time">+20–40 min</span><span class="lbl"><b>Short room-temp proof</b><small>Just until slightly puffed — NOT to the rim.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="f11"><span class="time">~9:00 PM</span><span class="lbl"><b>Cover &amp; into the FRIDGE</b><small>Cold proof overnight (~10–14 h). Done for the night ✅</small></span></div>
+    <h2>One combined batch (~1000 g dough)</h2>
+    <table>
+      <tr><th>Ingredient</th><th>g</th></tr>
+      <tr><td>Bread flour</td><td>363</td></tr>
+      <tr><td>Wholemeal flour</td><td>138</td></tr>
+      <tr><td>Water</td><td>338</td></tr>
+      <tr><td>Levain</td><td>109</td></tr>
+      <tr><td>Salt</td><td>10</td></tr>
+      <tr><td>Olive oil</td><td>19</td></tr>
+      <tr><td>Honey</td><td>19</td></tr>
+    </table>
+    <div class="note">Shared levain: <b>30 g starter + 40 g bread flour + 40 g water = 110 g</b>. Divide the finished dough: <b>~800 g → large</b>, <b>~200 g → small</b>. Both ≈ 71% hydration, 25% wholemeal.</div>
   </div>
 
   <div class="card">
-    <h2>Saturday 19 Sep — bake straight from cold</h2>
-    <div class="task"><input type="checkbox" data-id="s1"><span class="time">≥30 min before</span><span class="lbl"><b>Preheat 210 °C + steam tray</b><small>Water in a tray on the lower shelf. Aim to bake by ~8:30 AM.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="s2"><span class="lbl"><b>Take tin from fridge</b><small>Do NOT warm it — bake straight from cold.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="s3"><span class="lbl"><b>Score</b><small>One confident centre slash (cold dough scores easily).</small></span></div>
-    <div class="task"><input type="checkbox" data-id="s4"><span class="lbl"><b>Bake 210 °C / 15 min</b><small>With steam. Don't open the door.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="s5"><span class="lbl"><b>Drop to 190 °C / ~45 min</b><small>Remove steam tray, rotate loaf. Cold start = a few min longer.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="s6"><span class="lbl"><b>Check done</b><small>Deep golden, hollow tap, internal <b>93–96 °C</b>. Tent with foil if top darkens early.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="s7"><span class="lbl"><b>Cool on a rack ~1.5–2 h</b><small>Fully cool before slicing.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="s8"><span class="time">~10:45 AM</span><span class="lbl"><b>Slice &amp; bag</b><small>Even ~1.5 cm slices. Wrap soon so it doesn't dry.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="s9"><span class="time">11:00 AM</span><span class="lbl"><b>Pickup</b> 🎉</span></div>
-    <div class="done-msg" id="done">All done — good luck with the order! 🍞</div>
+    <h2>Prep &amp; mix</h2>
+    <div class="task"><input type="checkbox" data-id="p1"><span class="lbl"><b>Build the shared levain</b><small>30 g starter + 40 g bread flour + 40 g water (=110 g). Ready ~3 h at 29 °C.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="p2"><span class="lbl"><b>Feed the keeper</b><small>Keep some starter back; feed 1:1:1; ~2 h room temp; fridge.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="m1"><span class="lbl"><b>Dissolve levain in water</b><small>109 g levain into 338 g water — stir until dispersed.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="m2"><span class="lbl"><b>Add flours → autolyse</b><small>363 g bread + 138 g wholemeal. Rest 30 min.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="m3"><span class="lbl"><b>Add salt, oil, honey</b><small>10 g salt + 19 g olive oil + 19 g honey. Mix in.</small></span></div>
+  </div>
+
+  <div class="card">
+    <h2>Folds &amp; bulk</h2>
+    <div class="task"><input type="checkbox" data-id="f1"><span class="time">+0 min</span><span class="lbl"><b>Fold #1</b><small>Wet hands. Stretch &amp; fold or coil fold.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="f2"><span class="time">+30 min</span><span class="lbl"><b>Fold #2</b></span></div>
+    <div class="task"><input type="checkbox" data-id="f3"><span class="time">+60 min</span><span class="lbl"><b>Fold #3</b><small>Dough smooth, domed, glossy.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="b1"><span class="lbl"><b>Bulk until puffy</b><small>~40–50% rise, domed &amp; jiggly (29 °C = fast).</small></span></div>
+  </div>
+
+  <div class="card">
+    <h2>Divide, shape &amp; cold proof</h2>
+    <div class="task"><input type="checkbox" data-id="d1"><span class="lbl"><b>Divide the dough</b><small>~800 g → large, ~200 g → small.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="d2"><span class="lbl"><b>Shape LARGE → 20×10×9 tin</b><small>Taut even roll, seam down. Oil the tin.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="d3"><span class="lbl"><b>Shape SMALL → 13.5×6.5×3 tin</b><small>Gently; shallow tin (loaf rises above the rim). Oil it well.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="d4"><span class="lbl"><b>Cover both &amp; into the FRIDGE</b><small>Cold proof overnight. The fridge IS the final rise.</small></span></div>
+  </div>
+
+  <div class="card">
+    <h2>Bake (⚠️ different times!)</h2>
+    <div class="task"><input type="checkbox" data-id="k1"><span class="lbl"><b>Preheat 210 °C + steam tray</b><small>≥30 min. Bake straight from the fridge.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="k2"><span class="lbl"><b>Score the LARGE loaf</b><small>Cold dough scores easily — one confident centre slash.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="k3"><span class="time">0–15 min</span><span class="lbl"><b>Large in @ 210 °C</b><small>Don't open the door.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="k4"><span class="time">15 min</span><span class="lbl"><b>Drop to 190 °C — add the SMALL loaf</b><small>Remove steam tray, rotate the large.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="k5"><span class="time">~+25 min</span><span class="lbl"><b>SMALL loaf out</b><small>~20–25 min in oven. Check internal 93–96 °C. Tent with foil if it browns early.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="k6"><span class="time">~55 min</span><span class="lbl"><b>LARGE loaf out</b><small>Total ~55 min. Deep golden, hollow tap, internal 93–96 °C.</small></span></div>
+  </div>
+
+  <div class="card">
+    <h2>Cool &amp; finish</h2>
+    <div class="task"><input type="checkbox" data-id="z1"><span class="lbl"><b>Cool both on a rack</b><small>Large ~1–2 h, small ~1 h. Fully cool before slicing.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="z2"><span class="lbl"><b>Slice &amp; enjoy</b> 🎉</span></div>
+    <div class="done-msg" id="done">All done — enjoy the two loaves! 🍞</div>
   </div>
 
   <div class="note">
-    <b>Notes:</b> More white flour = less absorbent → dough may feel wetter; hold back ~10 g water if needed.
-    Wholemeal 25% (lighter than bake #2). Keep it mild — don't over-proof before chilling.
+    <b>Notes:</b> One dough for both tins (same hydration/wholemeal). Mix <b>one bowl</b>, divide before shaping.
+    Small shallow tin browns fast — watch it. No scoring on the small loaf needed (optional).
   </div>
 </div>
 
 <script>
-  const KEY = "breadDiary.checklist.b3";
+  const KEY = "breadDiary.checklist.combined46";
   const boxes = [...document.querySelectorAll('.task input')];
   function load(){ let s={}; try{ s=JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){}
     boxes.forEach(b=>{ b.checked=!!s[b.dataset.id]; mark(b); }); update(); }
@@ -97,7 +126,7 @@
     document.getElementById('done').style.display = (n===boxes.length)?'block':'none'; }
   boxes.forEach(b=>b.addEventListener('change',()=>{ mark(b); save(); update(); }));
   document.querySelectorAll('.task').forEach(t=>t.addEventListener('click',e=>{ if(e.target.tagName!=='INPUT'){ const i=t.querySelector('input'); i.checked=!i.checked; i.dispatchEvent(new Event('change')); }}));
-  document.getElementById('reset').onclick=()=>{ if(confirm('Clear all ticks?')){ boxes.forEach(b=>b.checked=false); mark&&boxes.forEach(mark); save(); update(); } };
+  document.getElementById('reset').onclick=()=>{ if(confirm('Clear all ticks?')){ boxes.forEach(b=>b.checked=false); boxes.forEach(mark); save(); update(); } };
   load();
 </script>
 </body>

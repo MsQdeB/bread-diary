@@ -172,7 +172,7 @@ window.BAKES = [
     environment: { temp: "29 °C", humidity: "~87 %" },
     process: {
       levainBuild: "Build the SHARED levain — 30 g starter + 40 g bread flour + 40 g water (=110 g). Keep some starter as the keeper (feed 1:1:1, fridge). Ready ~3 h at 29 °C.",
-      mixing: "Dissolve the 87 g levain into 270 g WATER first, then add the flours (290 g bread + 110 g wholemeal). Autolyse 30 min. Then add salt 8 g + olive oil 15 g + honey 15 g.",
+      mixing: "Mix ONE combined ~1000 g batch: dissolve the 109 g levain into 338 g WATER, then add 363 g bread flour + 138 g wholemeal. Autolyse 30 min. Add salt 10 g + olive oil 19 g + honey 19 g. Then DIVIDE: ~800 g → this large loaf, ~200 g → the small loaf (#6).",
       folds: "3 sets of folds, 30 min apart (wet hands, gentle).",
       bulk: "Bulk until puffy & domed (~40–50%).",
       retard: "—",
@@ -260,7 +260,7 @@ window.BAKES = [
     environment: { temp: "29 °C", humidity: "~87 %" },
     process: {
       levainBuild: "Shared levain with the large loaf (bake #4) — 110 g total.",
-      mixing: "Dissolve the 22 g levain into 68 g WATER, add flours (73 g bread + 28 g wholemeal). Autolyse 30 min. Then add salt 2 g + olive oil 4 g + honey 4 g.",
+      mixing: "Divided from the ONE combined batch mixed for bake #4 — take ~200 g of the finished dough (don't mix this separately).",
       folds: "2–3 gentle folds, 30 min apart.",
       bulk: "Bulk until puffy.",
       retard: "—",
