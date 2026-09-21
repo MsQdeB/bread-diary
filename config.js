@@ -38,5 +38,5 @@ window.SETTINGS = {
 window.STARTER_LOG = [
   { id: "s1", date: "2026-09-16", time: "12:00", ratio: "1:1:1", starter: 40, flour: 40, water: 40, temp: "29 °C", rise: "doubled", peakTime: "3 h", notes: "Bakery starter woken from 2 days in fridge. Built levain; doubled & domed by ~3 PM." },
   { id: "s2", date: "2026-09-16", time: "15:00", ratio: "1:1:1", starter: 20, flour: 20, water: 20, temp: "29 °C", rise: "bubbly, partial rise", peakTime: "~2 h", notes: "Keeper split off after baking levain. Fed and left out ~2 h, then refrigerated at ~5 PM." },
-  { id: "s3", date: "2026-09-21", time: "19:00", ratio: "1:1:1", starter: 30, flour: 40, water: 40, temp: "29 °C", rise: "almost doubled", peakTime: "~3 h", notes: "Levain for the combined bake (#4 large + #6 small). Slightly under-peaked at ~3 h (float test sank) but used anyway + 1 g instant yeast as insurance. Chia folded into the whole dough; went to a cold bulk at 11 PM." }
+  { id: "s3", date: "2026-09-21", time: "19:00", ratio: "1:1:1", starter: 30, flour: 40, water: 40, temp: "29 °C", rise: "almost doubled", peakTime: "~3 h", notes: "Levain for the combined bake (#4 large + #6 small). Slightly under-peaked at ~3 h (float test sank) but used anyway + 0.8 g instant yeast as insurance. Chia folded into the whole dough; went to a cold bulk at 11 PM." }
 ];
