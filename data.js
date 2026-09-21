@@ -235,11 +235,11 @@ window.BAKES = [
     number: 6,
     date: "2026-09-22",
     dateNote: "started Mon 21 Sep; bake overnight",
-    title: "Sourdough Tin Loaf — SMALL (13.5×6.5×3 cm)",
+    title: "Sourdough Tin Loaf — SMALL (seeded, 13.5×6.5×3 cm)",
     leavening: "Sourdough",
     status: "Planned",
     rating: null,
-    tags: "tin loaf, small",
+    tags: "tin loaf, small, seeded, mine",
     makes: 1,
     sellPrice: null,
     recipe: {
@@ -254,8 +254,8 @@ window.BAKES = [
       levain: 22,
       oil: 4,
       honey: 4,
-      chia: 0, flax: 0, pumpkinSeed: 0, sunflowerSeed: 0, otherSeeds: 0,
-      otherSeedsNote: ""
+      chia: 3, flax: 5, pumpkinSeed: 5, sunflowerSeed: 5, otherSeeds: 0,
+      otherSeedsNote: "SEEDS ADDED TO THIS LOAF ONLY, after dividing (cracked + soaked). Large loaf stays plain for the parents."
     },
     environment: { temp: "29 °C", humidity: "~87 %" },
     process: {
@@ -264,12 +264,12 @@ window.BAKES = [
       folds: "2–3 gentle folds, 30 min apart.",
       bulk: "Bulk until puffy.",
       retard: "—",
-      shaping: "Shape gently into the oiled 13.5×6.5×3 cm tin (shallow — the loaf rises above the rim).",
+      shaping: "After dividing, add ~15 g cracked + soaked seeds to THIS 200 g portion: press flat, scatter seeds, fold/laminates in (1–2 folds). Then shape gently into the oiled 13.5×6.5×3 cm tin (shallow — the loaf rises above the rim).",
       proof: "Cold proof in the fridge overnight with the large loaf. The fridge is the final rise.",
       bake: "Bakes much FASTER than the large loaf: ~190 °C / ~20–25 min (internal 93–96 °C). Easiest: put it in when you drop the big loaf to 190 °C. Watch the top — small tins brown fast; tent with foil if needed.",
       cooling: "Cool on a rack ~1 h."
     },
-    notes: "Small shallow tin (13.5×6.5×3 cm) — ~200 g dough, fills the pan then domes above. Shares the levain and the overnight cold proof with the large loaf.",
+    notes: "Small shallow pastry tin (13.5×6.5×3 cm) — ~200 g dough, seeded (cracked+soaked flax/pumpkin/sunflower/chia, ~15 g). MY loaf; the large loaf is kept plain for the parents. Shares the levain and the overnight cold proof.",
     verdict: "Planned — bake straight from the fridge.",
     improvements: "Different size = different bake time; check by internal temp, not the clock.",
     photos: []
