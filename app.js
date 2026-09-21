@@ -707,7 +707,9 @@ function bakeChecklistTasks(b){
   if(p.shaping) add("Shape", p.shaping);
   if(p.proof) add("Final proof", p.proof);
   add("Preheat oven", "~30 min before baking");
-  add("Score the top", "One confident centre slash with a sharp blade");
+  const isTray=/focaccia|tray/i.test((b.title||"")+" "+(b.tags||""));
+  if(isTray) add("Dimple & top", "Press dimples with oiled fingers; drizzle olive oil + toppings");
+  else add("Score the top", "One confident centre slash with a sharp blade");
   if(p.bake) add("Bake", p.bake);
   if(p.cooling) add("Cool fully", p.cooling);
   if(/order|slice/i.test(b.tags||"")) add("Slice & bag", "Slice once fully cool, then bag");
