@@ -146,7 +146,7 @@ window.BAKES = [
     id: "b4",
     number: 4,
     date: "2026-09-22",
-    dateNote: "levain mixed Mon 7 PM; bake overnight",
+    dateNote: "levain Mon 7 PM · cold bulk from 11 PM · bake Tue AM",
     title: "Sourdough Tin Loaf — LARGE (20×10×9 cm)",
     leavening: "Sourdough",
     status: "Planned",
@@ -169,20 +169,20 @@ window.BAKES = [
       chia: 20, flax: 0, pumpkinSeed: 0, sunflowerSeed: 0, otherSeeds: 0,
       otherSeedsNote: "CHIA mixed into the WHOLE dough tonight (both loaves). ~20 g here; ~5 g to the small loaf. Added before bulk, then cold-bulked."
     },
-    environment: { temp: "29 °C", humidity: "~87 %" },
+    environment: { temp: "29 °C", humidity: "89 %" },
     process: {
       levainBuild: "Levain MIXED Mon 7:00 PM — 30 g starter + 40 g bread flour + 40 g water (=110 g). At 29 °C it peaks in ~2.5–3 h (ready ~9:30–10 PM). Keep some starter as the keeper.",
       mixing: "Mix ONE combined ~1000 g batch: dissolve the levain into 338 g WATER, then add 363 g bread flour + 138 g wholemeal. Autolyse 20–30 min. Add salt 10 g + olive oil 19 g + honey 19 g (+ 1 g instant yeast as insurance, since levain was slightly under-peaked / short bulk). Then DIVIDE: ~800 g → large loaf, ~200 g → small loaf (#6). NOTE: only ~100 g levain actually used (vs 109 g planned).",
-      folds: "3 sets of folds, 30 min apart (wet hands, gentle).",
-      bulk: "Fold in the chia (whole dough), then 2–3 folds ~25–30 min apart. Then cover & refrigerate for a COLD BULK overnight (unshaped).",
-      retard: "Cold bulk in the fridge overnight (dough left unshaped).",
+      folds: "Autolyse ~20 min, then mixed in salt 10 g + oil 19 g + honey 19 g + 1 g instant yeast. Folded the chia gel into the whole dough. 2 coil folds ~25–30 min apart — dough came together into a smooth, domed ball.",
+      bulk: "Cold bulk began Mon 11:00 PM (dough left UNshaped in the fridge).",
+      retard: "Cold bulk: Mon 11 PM → Tue morning.",
       shaping: "Tue AM: divide ~800 g (large) / ~200 g (small). Shape this large portion taut into the oiled 20×10×9 cm tin (cold dough shapes easily).",
       proof: "Tue AM: final proof at room temp — 30–45 min at 29 °C. Ready when domed + a poke springs back slowly. Don't over-proof.",
       bake: "Tue AM: preheat 210 °C + steam. Score one centre slash. Bake 210 °C / 15 min → 190 °C / ~40–45 min. Small loaf goes in at the 15-min mark (~25 min). Internal 93–96 °C.",
       cooling: "Cool on a rack ~1–2 h before slicing."
     },
-    notes: "LARGE tin loaf (20×10×9 cm), ~800 g dough. White-forward balance (25% wholemeal). CHIA mixed into the whole dough before the cold bulk (both loaves get chia).",
-    verdict: "Planned — bake straight from the fridge.",
+    notes: "LARGE tin loaf (20×10×9 cm), ~800 g dough. White-forward balance (25% wholemeal). CHIA mixed into the WHOLE dough before the cold bulk (both loaves get chia). ~100 g levain total (a touch under the 109 g planned) + 1 g instant yeast for insurance. Dough got torn when squeezing to even out the add-ins — it re-united cleanly with folds. LESSON: mix early (pincer/Rubaud while shaggy), fold late; never squeeze a formed dough.",
+    verdict: "Planned — cold-bulked overnight (from Mon 11 PM); bake Tue morning.",
     improvements: "Mix levain into the water first. Cold dough → a few extra minutes. Large tin bakes ~55 min total.",
     photos: []
   },
@@ -234,7 +234,7 @@ window.BAKES = [
     id: "b6",
     number: 6,
     date: "2026-09-22",
-    dateNote: "levain mixed Mon 7 PM; bake overnight",
+    dateNote: "levain Mon 7 PM · cold bulk from 11 PM · bake Tue AM",
     title: "Sourdough Tin Loaf — SMALL (seeded, 13.5×6.5×3 cm)",
     leavening: "Sourdough",
     status: "Planned",
@@ -269,8 +269,8 @@ window.BAKES = [
       bake: "Bakes much FASTER than the large loaf: ~190 °C / ~20–25 min (internal 93–96 °C). Put it in when you drop the large loaf to 190 °C. Watch the top.",
       cooling: "Cool on a rack ~1 h."
     },
-    notes: "Small shallow pastry tin (13.5×6.5×3 cm) — ~200 g dough, with FLAX + PUMPKIN (~16 g, cracked/soaked) added after dividing. MY loaf; the large loaf gets only chia. Shares the levain and the overnight cold proof.",
-    verdict: "Planned — bake straight from the fridge.",
+    notes: "Small shallow pastry tin (13.5×6.5×3 cm) — ~200 g dough. Chia already in the whole dough; FLAX + PUMPKIN (~16 g, cracked/soaked) added at the divide. MY loaf. Shares the levain and the overnight cold bulk.",
+    verdict: "Planned — cold-bulked overnight (from Mon 11 PM); bake Tue morning.",
     improvements: "Different size = different bake time; check by internal temp, not the clock.",
     photos: []
   }
