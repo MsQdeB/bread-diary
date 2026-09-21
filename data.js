@@ -166,8 +166,8 @@ window.BAKES = [
       levain: 87,
       oil: 15,
       honey: 15,
-      chia: 25, flax: 0, pumpkinSeed: 0, sunflowerSeed: 0, otherSeeds: 0,
-      otherSeedsNote: "CHIA (25 g) soaked in ~75 g water, added to the LARGE loaf only after dividing. Keep it looking plain-ish for the parents."
+      chia: 20, flax: 0, pumpkinSeed: 0, sunflowerSeed: 0, otherSeeds: 0,
+      otherSeedsNote: "CHIA mixed into the WHOLE dough tonight (both loaves). ~20 g here; ~5 g to the small loaf. Added before bulk, then cold-bulked."
     },
     environment: { temp: "29 °C", humidity: "~87 %" },
     process: {
@@ -181,7 +181,7 @@ window.BAKES = [
       bake: "Preheat 210 °C + steam. Straight from the fridge, score one centre slash. Bake 210 °C / 15 min → 190 °C / ~40–45 min (internal 93–96 °C).",
       cooling: "Cool on a rack ~1–2 h before slicing."
     },
-    notes: "LARGE tin loaf (20×10×9 cm), ~800 g dough. Shares the levain + cold proof with the small loaf (bake #6). White-forward balance (25% wholemeal). CHIA (25 g, soaked) added after dividing — subtle, keeps it plain-ish for the parents.",
+    notes: "LARGE tin loaf (20×10×9 cm), ~800 g dough. White-forward balance (25% wholemeal). CHIA mixed into the whole dough before the cold bulk (both loaves get chia).",
     verdict: "Planned — bake straight from the fridge.",
     improvements: "Mix levain into the water first. Cold dough → a few extra minutes. Large tin bakes ~55 min total.",
     photos: []
@@ -254,8 +254,8 @@ window.BAKES = [
       levain: 22,
       oil: 4,
       honey: 4,
-      chia: 0, flax: 8, pumpkinSeed: 8, sunflowerSeed: 0, otherSeeds: 0,
-      otherSeedsNote: "FLAX + PUMPKIN only (~16 g, cracked/soaked), added to the SMALL loaf after dividing."
+      chia: 5, flax: 8, pumpkinSeed: 8, sunflowerSeed: 0, otherSeeds: 0,
+      otherSeedsNote: "CHIA (5 g) went in with the whole dough tonight. FLAX + PUMPKIN (~16 g, cracked/soaked) added to the SMALL loaf at the divide."
     },
     environment: { temp: "29 °C", humidity: "~87 %" },
     process: {
