@@ -166,8 +166,8 @@ window.BAKES = [
       levain: 87,
       oil: 15,
       honey: 15,
-      chia: 0, flax: 0, pumpkinSeed: 0, sunflowerSeed: 0, otherSeeds: 0,
-      otherSeedsNote: ""
+      chia: 25, flax: 0, pumpkinSeed: 0, sunflowerSeed: 0, otherSeeds: 0,
+      otherSeedsNote: "CHIA (25 g) soaked in ~75 g water, added to the LARGE loaf only after dividing. Keep it looking plain-ish for the parents."
     },
     environment: { temp: "29 °C", humidity: "~87 %" },
     process: {
@@ -181,7 +181,7 @@ window.BAKES = [
       bake: "Preheat 210 °C + steam. Straight from the fridge, score one centre slash. Bake 210 °C / 15 min → 190 °C / ~40–45 min (internal 93–96 °C).",
       cooling: "Cool on a rack ~1–2 h before slicing."
     },
-    notes: "LARGE tin loaf (20×10×9 cm), ~800 g dough. Shares the levain + cold proof with the small loaf (bake #6). White-forward balance (25% wholemeal), no seeds.",
+    notes: "LARGE tin loaf (20×10×9 cm), ~800 g dough. Shares the levain + cold proof with the small loaf (bake #6). White-forward balance (25% wholemeal). CHIA (25 g, soaked) added after dividing — subtle, keeps it plain-ish for the parents.",
     verdict: "Planned — bake straight from the fridge.",
     improvements: "Mix levain into the water first. Cold dough → a few extra minutes. Large tin bakes ~55 min total.",
     photos: []
@@ -254,8 +254,8 @@ window.BAKES = [
       levain: 22,
       oil: 4,
       honey: 4,
-      chia: 3, flax: 5, pumpkinSeed: 5, sunflowerSeed: 5, otherSeeds: 0,
-      otherSeedsNote: "SEEDS ADDED TO THIS LOAF ONLY, after dividing (cracked + soaked). Large loaf stays plain for the parents."
+      chia: 0, flax: 8, pumpkinSeed: 8, sunflowerSeed: 0, otherSeeds: 0,
+      otherSeedsNote: "FLAX + PUMPKIN only (~16 g, cracked/soaked), added to the SMALL loaf after dividing."
     },
     environment: { temp: "29 °C", humidity: "~87 %" },
     process: {
@@ -269,7 +269,7 @@ window.BAKES = [
       bake: "Bakes much FASTER than the large loaf: ~190 °C / ~20–25 min (internal 93–96 °C). Easiest: put it in when you drop the big loaf to 190 °C. Watch the top — small tins brown fast; tent with foil if needed.",
       cooling: "Cool on a rack ~1 h."
     },
-    notes: "Small shallow pastry tin (13.5×6.5×3 cm) — ~200 g dough, seeded (cracked+soaked flax/pumpkin/sunflower/chia, ~15 g). MY loaf; the large loaf is kept plain for the parents. Shares the levain and the overnight cold proof.",
+    notes: "Small shallow pastry tin (13.5×6.5×3 cm) — ~200 g dough, with FLAX + PUMPKIN (~16 g, cracked/soaked) added after dividing. MY loaf; the large loaf gets only chia. Shares the levain and the overnight cold proof.",
     verdict: "Planned — bake straight from the fridge.",
     improvements: "Different size = different bake time; check by internal temp, not the clock.",
     photos: []
