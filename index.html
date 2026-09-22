@@ -24,6 +24,7 @@
       <button onclick="copyClipboard()">Copy</button>
       <button class="ghost edit-only" onclick="document.getElementById('importFile').click()">Import</button>
       <button class="ghost edit-only" onclick="reloadFromFile()">Reload files</button>
+      <button class="ghost edit-only" onclick="saveToGitHub()">⬆ Save to GitHub</button>
       <button class="ghost" onclick="toggleDark()" id="darkBtn" title="Toggle dark mode">🌙</button>
       <input type="file" id="importFile" accept=".json,.js" style="display:none" onchange="importFile(event)">
     </div>

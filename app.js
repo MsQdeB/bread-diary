@@ -814,6 +814,46 @@ function importFile(e){
 }
 function reloadFromFile(){ if(!confirm("Discard browser edits and reload from the data files?")) return; try{ localStorage.removeItem(KEY); }catch(e){} location.reload(); }
 
+/* ---------- save to GitHub (self-serve publish) ---------- */
+function ghConfig(){ try{ return JSON.parse(localStorage.getItem("breadDiary.gh")||"{}"); }catch(e){ return {}; } }
+function ghSaveConfig(c){ try{ localStorage.setItem("breadDiary.gh", JSON.stringify(c)); }catch(e){} }
+function b64utf8(s){ return btoa(unescape(encodeURIComponent(s))); }
+async function ghCommit(cfg, path, content, message){
+  const api = "https://api.github.com/repos/"+cfg.owner+"/"+cfg.repo+"/contents/"+path;
+  const headers = { "Authorization":"Bearer "+cfg.token, "Accept":"application/vnd.github+json" };
+  const getRes = await fetch(api+"?ref="+encodeURIComponent(cfg.branch), { headers });
+  let sha;
+  if(getRes.ok){ sha = (await getRes.json()).sha; }
+  else if(getRes.status===404){ sha = undefined; }
+  else { throw new Error("read "+getRes.status+": "+((await getRes.json()).message||"")); }
+  const body = { message, content: b64utf8(content), branch: cfg.branch };
+  if(sha) body.sha = sha;
+  const putRes = await fetch(api, { method:"PUT", headers, body: JSON.stringify(body) });
+  if(!putRes.ok){ throw new Error("write "+putRes.status+": "+((await putRes.json()).message||"")); }
+}
+async function saveToGitHub(){
+  let c = ghConfig();
+  if(!c.token){
+    const t = prompt("Paste a GitHub token (fine-grained PAT with 'Contents: Read and write' for MsQdeB/bread-diary).\nIt's stored ONLY in this browser.");
+    if(!t) return;
+    c = { token: t.trim(), owner: "MsQdeB", repo: "bread-diary", branch: "main" };
+    ghSaveConfig(c);
+  }
+  const dataJs = "// Auto-saved from the app\nwindow.BAKES = "+JSON.stringify(state.bakes,null,2)+";\n";
+  const ings = (window.INGREDIENTS||[]).map(i=>({ key:i.key, label:i.label, price:num(state.prices[i.key]) }));
+  const configJs = "// Auto-saved from the app\nwindow.INGREDIENTS = "+JSON.stringify(ings,null,2)+";\n\nwindow.SETTINGS = "+JSON.stringify(state.settings,null,2)+";\n\nwindow.STARTER_LOG = "+JSON.stringify(state.starter||[],null,2)+";\n";
+  const msg = "Update from app ("+new Date().toISOString().slice(0,16).replace("T"," ")+")";
+  try{
+    toast("Saving…");
+    await ghCommit(c, "data.js", dataJs, msg+" — data.js");
+    await ghCommit(c, "config.js", configJs, msg+" — config.js");
+    toast("Saved to GitHub ✓ — site updates in ~1 min");
+  }catch(err){
+    toast("Save failed: "+err.message);
+    if(confirm("Save failed ("+err.message+").\n\nClear the saved GitHub token and try again?")){ try{ localStorage.removeItem("breadDiary.gh"); }catch(e){} }
+  }
+}
+
 /* ---------- boot ---------- */
 load();
 if(READONLY) document.body.classList.add("readonly");
