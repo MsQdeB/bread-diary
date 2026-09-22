@@ -183,7 +183,7 @@ window.BAKES = [
     },
     notes: "LARGE tin loaf (20×10×9 cm), ~800 g dough. White-forward balance (25% wholemeal). CHIA mixed into the WHOLE dough before the cold bulk (both loaves get chia). ~100 g levain total (a touch under the 109 g planned) + 0.8 g instant yeast for insurance. Dough got torn when squeezing to even out the add-ins — it re-united cleanly with folds. LESSON: mix early (pincer/Rubaud while shaggy), fold late; never squeeze a formed dough.",
     verdict: "Planned — cold-bulked overnight (from Mon 11 PM); bake Tue morning.",
-    improvements: "Mix levain into the water first. Cold dough → a few extra minutes. Large tin bakes ~55 min total.",
+    improvements: "Mix levain into the water first. Cold dough → a few extra minutes. Large tin bakes ~55 min total. WET/SLACK dough was hard to handle (no bench scraper) — GET A BENCH SCRAPER; work with wet hands + keep the dough cold; consider -10–20 g water (→ ~68–70%). Roll tight, pinch the seam, place SEAM-DOWN in the tin.",
     photos: []
   },
   {
@@ -271,7 +271,7 @@ window.BAKES = [
     },
     notes: "Small shallow pastry tin (13.5×6.5×3 cm) — ~200 g dough. Chia already in the whole dough; FLAX + PUMPKIN (~16 g, cracked/soaked) added at the divide. MY loaf. Shares the levain and the overnight cold bulk.",
     verdict: "Planned — cold-bulked overnight (from Mon 11 PM); bake Tue morning.",
-    improvements: "Different size = different bake time; check by internal temp, not the clock.",
+    improvements: "Different size = different bake time; check by internal temp, not the clock. Wet dough hard to handle without a bench scraper — get one.",
     photos: []
   }
 ];
