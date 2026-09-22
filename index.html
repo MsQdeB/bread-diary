@@ -38,6 +38,7 @@
   <button data-tab="schedule" onclick="showTab('schedule')">Schedule</button>
   <button data-tab="starter" onclick="showTab('starter')">Starter</button>
   <button data-tab="checklists" onclick="showTab('checklists')">Checklists</button>
+  <button data-tab="guide" onclick="showTab('guide')">Guide</button>
   <button data-tab="costing" onclick="showTab('costing')">Costing</button>
   <button data-tab="troubleshoot" onclick="showTab('troubleshoot')">Troubleshoot</button>
 </nav>
@@ -180,6 +181,48 @@
   <section class="view" id="view-checklists">
     <p class="help" style="margin-top:0">Reusable checklists — ticks save in this browser. Each bake also has its own auto-generated checklist (open a bake → <b>Checklist</b>).</p>
     <div id="checklistTemplates"></div>
+  </section>
+
+  <!-- GUIDE -->
+  <section class="view" id="view-guide">
+    <div class="card pad">
+      <div class="section-title">Hydration % — the science</div>
+      <p><b>Hydration % = water ÷ flour × 100</b> (flour is always 100%; this is a <i>baker's percentage</i>). It includes the water in your levain — e.g. 100 g of a 100%-hydration levain adds ~50 g water + 50 g flour to the totals.</p>
+      <p>Water <b>(1)</b> hydrates the gluten proteins (glutenin + gliadin) → more water = stretchier but weaker gluten; <b>(2)</b> hydrates starch → sets the crumb at bake; <b>(3)</b> feeds fermentation and creates <b>steam</b> in the oven → oven spring + crisper crust. More water also makes the dough more fluid, so gas pockets <b>merge into bigger holes</b> → an open, lacy crumb.</p>
+      <p class="help">Higher hydration is <b>not</b> "better" — it's a trade-off. Lower = easier, tighter crumb. Higher = airier, harder.</p>
+    </div>
+
+    <div class="card pad" style="margin-top:14px">
+      <div class="section-title">The trade-off</div>
+      <div class="wrap-scroll"><table>
+        <thead><tr><th></th><th>Low (~60–68%)</th><th>High (~75–85%+)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Crumb</b></td><td>Tight, even, soft</td><td>Open, airy, big holes</td></tr>
+          <tr><td><b>Handling</b></td><td>Easy, clean, holds shape</td><td>Wet, sticky, slack</td></tr>
+          <tr><td><b>Gluten</b></td><td>Firm, strong</td><td>Extensible but weak</td></tr>
+          <tr><td><b>Rise</b></td><td>Reliable</td><td>Needs strength or spreads flat</td></tr>
+          <tr><td><b>Crust</b></td><td>Thicker, softer</td><td>Thinner, crisper</td></tr>
+          <tr><td><b>Risk</b></td><td>Dense / dry</td><td>Flat / gummy / hard to shape</td></tr>
+          <tr><td><b>Skill</b></td><td>Beginner ✅</td><td>Advanced</td></tr>
+          <tr><td><b>Examples</b></td><td>Bagels, sandwich, pan loaves, pizza</td><td>Ciabatta, focaccia, open sourdough, baguette</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="card pad" style="margin-top:14px">
+      <div class="section-title">What changes the "real" feel</div>
+      <ul>
+        <li><b>Whole grain</b> absorbs far more water → a 70% wholemeal dough handles like ~65% white. <i>(This is why your 71% + 25% wholemeal felt so wet.)</i></li>
+        <li><b>Fat (oil/butter) &amp; honey</b> lubricate → softer/wetter at the same %.</li>
+        <li><b>Seeds / chia</b> soak up water → can dry the dough out (pre-soak seeds).</li>
+        <li><b>Temperature</b> — warm dough feels stickier/wetter.</li>
+      </ul>
+      <p class="help">For easier handling: drop to ~68% (≈ −10 to −15 g water), master that, <i>then</i> climb. Higher hydration is a reward for good technique.</p>
+    </div>
+
+    <div class="section-title" style="margin-top:20px">Your bakes — hydration</div>
+    <div class="card pad"><div id="guideChart"></div></div>
+    <div class="card pad" style="margin-top:14px"><div id="guideTable"></div></div>
   </section>
 
   <!-- TROUBLESHOOT -->

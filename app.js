@@ -107,6 +107,7 @@ function showTab(name){
   if(name==="schedule"){ applySchedDefaults(); recalcSchedule(); }
   if(name==="starter") renderStarter();
   if(name==="checklists") renderChecklists();
+  if(name==="guide") renderGuide();
   if(name==="costing"){ renderCosting(); }
   if(name==="troubleshoot") renderTroubleshoot();
 }
@@ -608,6 +609,22 @@ function renderTroubleshoot(){
   document.getElementById("tsList").innerHTML=arr.map(t=>'<div class="card pad"><div style="font-weight:700">'+esc(t.title)+'</div>'+
     '<div class="section-title" style="margin-top:12px">Likely causes</div><ul style="margin:4px 0 0 18px">'+t.causes.map(c=>'<li>'+esc(c)+'</li>').join("")+'</ul>'+
     '<div class="section-title">Fixes</div><ul style="margin:4px 0 0 18px">'+t.fixes.map(c=>'<li>'+esc(c)+'</li>').join("")+'</ul></div>').join("") || '<p class="muted">No matches.</p>';
+}
+
+/* ---------- guide ---------- */
+function renderGuide(){
+  const bs=state.bakes.slice().sort((a,b)=>num(a.number)-num(b.number));
+  const chart=document.getElementById("guideChart");
+  const table=document.getElementById("guideTable");
+  if(!chart||!table) return;
+  if(!bs.length){ chart.innerHTML='<p class="muted">No bakes yet.</p>'; table.innerHTML=''; return; }
+  chart.innerHTML=barChart(bs.map(b=>({label:"#"+b.number, value:metrics(b).hydration, sub:metrics(b).hydration.toFixed(0)+"%"})),{dp:0,int:true});
+  let html='<div class="wrap-scroll"><table><thead><tr><th>#</th><th>Bake</th><th>Hydration</th><th>Whole grain</th><th>Seeds</th><th>Rating</th><th>Verdict</th></tr></thead><tbody>';
+  bs.forEach(b=>{ const m=metrics(b);
+    html+='<tr onclick="openDetail(\''+b.id+'\')" style="cursor:pointer"><td class="num">'+b.number+'</td><td>'+esc(b.title||"")+'</td><td class="num">'+m.hydration.toFixed(0)+'%</td><td class="num">'+m.wholePct.toFixed(0)+'%</td><td class="num">'+totalSeedWeight(b.recipe).toFixed(0)+' g</td><td>'+stars(ratingValue(b))+'</td><td class="muted">'+esc(b.verdict||"")+'</td></tr>';
+  });
+  html+='</tbody></table></div>';
+  table.innerHTML=html;
 }
 
 /* ---------- checklists ---------- */

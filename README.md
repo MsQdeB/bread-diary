@@ -46,6 +46,8 @@ then open http://localhost:8080
   **Bake-day prep**, and **Order/shop list**. Plus, **every bake gets its own
 auto-generated checklist** (open a bake → **Checklist**) built from that
   recipe's steps — tick it off, reset, or print.
+- **Guide** — hydration science: what hydration % means, the low-vs-high trade-off
+  table, what changes the "real" feel, plus **your own bakes charted** by hydration.
 - **Troubleshoot** — searchable library of common bread problems → causes & fixes.
 
 ## Data & storage
