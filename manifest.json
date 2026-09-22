@@ -1,7 +1,7 @@
 {
-  "name": "Bread Diary",
-  "short_name": "Bread",
-  "description": "A personal bread-baking diary: log, compare and cost your bakes.",
+  "name": "Unapologetic Home Baker — Bread Diary",
+  "short_name": "Home Baker",
+  "description": "Unapologetic Home Baker — Bake What I Like. A personal bread-baking diary: log, compare and cost your bakes.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

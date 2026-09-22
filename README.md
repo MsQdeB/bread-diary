@@ -1,4 +1,6 @@
-# 🍞 Bread Diary
+# 🍞 Unapologetic Home Baker — Bread Diary
+
+> “Bake What I Like.”
 
 A self-contained local web app for logging, comparing and costing bread bakes.
 No build step, no dependencies — everything runs in the browser.
