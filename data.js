@@ -149,9 +149,10 @@ window.BAKES = [
     dateNote: "levain Mon 7 PM · cold bulk from 11 PM · bake Tue AM",
     title: "Sourdough Tin Loaf — LARGE (20×10×9 cm)",
     leavening: "Sourdough",
-    status: "Planned",
-    rating: null,
-    tags: "tin loaf, balance",
+    status: "Baked",
+    rating: 4.5,
+    score: { crumb: 4.5, spring: 4, crust: 4, sour: 4, flavour: 4.5 },
+    tags: "tin loaf, large",
     makes: 1,
     sellPrice: null,
     recipe: {
@@ -182,9 +183,9 @@ window.BAKES = [
       cooling: "Cool on a rack ~1–2 h before slicing."
     },
     notes: "LARGE tin loaf (20×10×9 cm), ~800 g dough. White-forward balance (25% wholemeal). CHIA mixed into the WHOLE dough before the cold bulk (both loaves get chia). ~100 g levain total (a touch under the 109 g planned) + 0.8 g instant yeast for insurance. Dough got torn when squeezing to even out the add-ins — it re-united cleanly with folds. LESSON: mix early (pincer/Rubaud while shaggy), fold late; never squeeze a formed dough. Morning conditions dropped to ~26.6 °C / 99% (proof slower than 29 °C).",
-    verdict: "Planned — cold-bulked overnight (from Mon 11 PM); bake Tue morning.",
-    improvements: "Mix levain into the water first. Cold dough → a few extra minutes. Large tin bakes ~55 min total. WET/SLACK dough was hard to handle (no bench scraper) — GET A BENCH SCRAPER; work with wet hands + keep the dough cold; consider -10–20 g water (→ ~68–70%). Roll tight, pinch the seam, place SEAM-DOWN in the tin. SHAPING TIP: press EVERY fold to seal (fluffed side-edges = unsealed folds); for a tin loaf use a simple CARPET ROLL (skip the 1/3+1/3 side folds) — roll from the far edge, pressing each turn, then seam-down; the tin hides a messy seam.",
-    photos: []
+    verdict: "Excellent — open, even, airy crumb with chia throughout; blistered golden crust; NO gummy base (unlike bake #2). Mild flavour. Best bake so far.",
+    improvements: "Mix levain into the water first. Cold dough → a few extra minutes. Large tin bakes ~55 min total. WET/SLACK dough was hard to handle (no bench scraper) — GET A BENCH SCRAPER; work with wet hands + keep the dough cold; consider -10–20 g water (→ ~68–70%). Roll tight, pinch the seam, place SEAM-DOWN in the tin. SHAPING TIP: press EVERY fold to seal (fluffed side-edges = unsealed folds); for a tin loaf use a simple CARPET ROLL (skip the 1/3+1/3 side folds) — roll from the far edge, pressing each turn, then seam-down; the tin hides a messy seam. Slightly torn side crust from the seam — better tension next time.",
+    photos: ["images/bake4-loaf.jpg", "images/bake4-crumb.jpg"]
   },
   {
     id: "b5",
@@ -237,8 +238,9 @@ window.BAKES = [
     dateNote: "levain Mon 7 PM · cold bulk from 11 PM · bake Tue AM",
     title: "Sourdough Tin Loaf — SMALL (seeded, 13.5×6.5×3 cm)",
     leavening: "Sourdough",
-    status: "Planned",
-    rating: null,
+    status: "Baked",
+    rating: 3.5,
+    score: { crumb: 3, spring: 4, crust: 4, sour: 4, flavour: 4 },
     tags: "tin loaf, small, seeded, mine",
     makes: 1,
     sellPrice: null,
@@ -270,8 +272,8 @@ window.BAKES = [
       cooling: "Cool on a rack ~1 h."
     },
     notes: "Small shallow pastry tin (13.5×6.5×3 cm) — ~200 g dough. Chia already in the whole dough; FLAX + PUMPKIN (~16 g, cracked/soaked) added at the divide. MY loaf. Shares the levain and the overnight cold bulk.",
-    verdict: "Planned — cold-bulked overnight (from Mon 11 PM); bake Tue morning.",
-    improvements: "Different size = different bake time; check by internal temp, not the clock. Wet dough hard to handle without a bench scraper — get one.",
-    photos: []
+    verdict: "Good & mild, well-baked and rose above the shallow tin — but the FLAX + PUMPKIN clumped into a central seed band/'swirl' and left a hollow gap where they bunched. Tastes great; distribution needs work.",
+    improvements: "Different size = different bake time; check by internal temp, not the clock. Wet dough hard to handle without a bench scraper — get one. SEED DISTRIBUTION: flax+pumpkin clumped into a central band + hollow — scatter them THINLY & evenly across the whole flattened dough (not as one blob), fold in 2 stages, or mix them into the dough at the divide.",
+    photos: ["images/bake6-crumb.jpg", "images/bake6-seedswirl.jpg"]
   }
 ];
