@@ -113,6 +113,7 @@ body.dark .toast{background:#000;border:1px solid var(--line)}
 .prices input{width:110px}
 .recipe-card{background:#fff;color:#1a1a1a;padding:34px;border-radius:14px}
 .recipe-card h2{margin:.2em 0}
+body.readonly .edit-only{display:none!important}
 @media print{
   body{background:#fff}
   .noprint,nav.tabs,header.top,.toolbar,.toolbar2{display:none!important}

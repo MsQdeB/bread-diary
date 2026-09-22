@@ -8,6 +8,7 @@ let selected = new Set();
 let currentId = null;
 let editingId = null;
 let editingStarterId = null;
+const READONLY = (((location.hostname||"").endsWith("github.io")) || /[?&]view\b/.test(location.search)) && !/[?&]edit\b/.test(location.search);
 
 const RECIPE_FIELDS = [
   ["breadFlour","Bread flour"],["wholemealFlour","Wholemeal flour"],["plainFlour","Plain flour"],["otherFlour","Other flour"],
@@ -161,7 +162,7 @@ function renderTable(){
       '<td class="num">'+(m.levainPct?m.levainPct.toFixed(0)+"%":"—")+'</td>'+
       '<td class="num">'+m.saltPct.toFixed(1)+'%</td>'+
       '<td>'+esc((b.environment&&b.environment.temp)||"—")+'</td>'+
-      '<td class="num">'+money(c.perLoaf)+'</td>'+
+      '<td class="num edit-only">'+money(c.perLoaf)+'</td>'+
       '<td><span class="pill '+(/progress|planned/i.test(b.status||"")?"progress":"baked")+'">'+esc(b.status||"—")+'</span></td>'+
       '<td>'+stars(r)+'</td>';
     tb.appendChild(tr);
@@ -188,9 +189,9 @@ function openDetail(id){
     chip("Yeast",m.yeastPct.toFixed(2)+"%")+chip("Salt",m.saltPct.toFixed(1)+"%")+
     chip("Whole grain",m.wholePct.toFixed(0)+"%")+chip("Seeds",totalSeedWeight(b.recipe).toFixed(0)+" g")+
     chip("Room",esc((b.environment&&b.environment.temp)||"—"))+chip("Humidity",esc((b.environment&&b.environment.humidity)||"—"))+
-    chip("Cost/loaf",money(c.perLoaf))+
+    chip("Cost/loaf",money(c.perLoaf),"edit-only")+
     (num(b.bakedWeight)? chip("Baked weight",num(b.bakedWeight)+" g")+(m.doughWeight>num(b.bakedWeight)? chip("Bake loss",((m.doughWeight-num(b.bakedWeight))/m.doughWeight*100).toFixed(0)+"%") : "") : "")+
-    (c.batchN>1? chip("Shared batch","÷"+c.batchN) : "")+
+    (c.batchN>1? chip("Shared batch","÷"+c.batchN,"edit-only") : "")+
     '</div>';
 
   if(b.score||b.rating!=null){
@@ -204,12 +205,12 @@ function openDetail(id){
   RECIPE_FIELDS.forEach(([k,l])=>{ const v=num((b.recipe||{})[k]); if(v) html+='<dt>'+esc(l)+'</dt><dd class="num">'+v+' g</dd>'; });
   if((b.recipe||{}).otherFlourNote) html+='<dt>Other flour note</dt><dd>'+esc(b.recipe.otherFlourNote)+'</dd>';
   if((b.recipe||{}).otherSeedsNote) html+='<dt>Other seeds note</dt><dd>'+esc(b.recipe.otherSeedsNote)+'</dd>';
-  html+='</dl><h3 class="section-title">Cost</h3><dl class="kv">';
+  html+='</dl><div class="edit-only"><h3 class="section-title">Cost</h3><dl class="kv">';
   html+='<dt>Ingredients</dt><dd class="num">'+money(c.ing)+'</dd>';
   html+='<dt>Makes</dt><dd>'+c.makes+' loaf'+(c.makes>1?'es':'')+'</dd>';
   html+='<dt>Cost / loaf</dt><dd class="num"><b>'+money(c.perLoaf)+'</b></dd>';
   if(b.sellPrice){ const sp=num(b.sellPrice); const marg=sp? (sp-c.perLoaf)/sp*100:0; html+='<dt>Sell price</dt><dd class="num">'+money(sp)+' <span class="badge">'+marg.toFixed(0)+'% margin</span></dd>'; }
-  html+='</dl></div>';
+  html+='</dl></div></div>';
 
   html+='<div><h3 class="section-title">Process</h3><dl class="kv">';
   PROCESS_FIELDS.forEach(([k,l])=>{ const v=(b.process||{})[k]; if(v) html+='<dt>'+esc(l)+'</dt><dd>'+esc(v)+'</dd>'; });
@@ -227,7 +228,7 @@ function openDetail(id){
   document.getElementById("dBody").innerHTML=html;
   document.getElementById("detailOverlay").classList.add("open");
 }
-function chip(l,v){ return '<div class="chip"><b>'+v+'</b><span>'+l+'</span></div>'; }
+function chip(l,v,cls){ return '<div class="chip'+(cls?' '+cls:'')+'"><b>'+v+'</b><span>'+l+'</span></div>'; }
 function closeDetail(){ document.getElementById("detailOverlay").classList.remove("open"); }
 function editCurrent(){ closeDetail(); openForm(currentId); }
 function deleteCurrent(){
@@ -814,6 +815,7 @@ function reloadFromFile(){ if(!confirm("Discard browser edits and reload from th
 
 /* ---------- boot ---------- */
 load();
+if(READONLY) document.body.classList.add("readonly");
 document.getElementById("updated").textContent=new Date().toLocaleDateString();
 try{ if(localStorage.getItem("breadDiary.dark")==="1"){ document.body.classList.add("dark"); document.getElementById("darkBtn").textContent="☀️"; } }catch(e){}
 renderTable();
