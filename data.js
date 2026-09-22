@@ -183,7 +183,7 @@ window.BAKES = [
     },
     notes: "LARGE tin loaf (20×10×9 cm), ~800 g dough. White-forward balance (25% wholemeal). CHIA mixed into the WHOLE dough before the cold bulk (both loaves get chia). ~100 g levain total (a touch under the 109 g planned) + 0.8 g instant yeast for insurance. Dough got torn when squeezing to even out the add-ins — it re-united cleanly with folds. LESSON: mix early (pincer/Rubaud while shaggy), fold late; never squeeze a formed dough.",
     verdict: "Planned — cold-bulked overnight (from Mon 11 PM); bake Tue morning.",
-    improvements: "Mix levain into the water first. Cold dough → a few extra minutes. Large tin bakes ~55 min total. WET/SLACK dough was hard to handle (no bench scraper) — GET A BENCH SCRAPER; work with wet hands + keep the dough cold; consider -10–20 g water (→ ~68–70%). Roll tight, pinch the seam, place SEAM-DOWN in the tin.",
+    improvements: "Mix levain into the water first. Cold dough → a few extra minutes. Large tin bakes ~55 min total. WET/SLACK dough was hard to handle (no bench scraper) — GET A BENCH SCRAPER; work with wet hands + keep the dough cold; consider -10–20 g water (→ ~68–70%). Roll tight, pinch the seam, place SEAM-DOWN in the tin. SHAPING TIP: press EVERY fold to seal (fluffed side-edges = unsealed folds); for a tin loaf use a simple CARPET ROLL (skip the 1/3+1/3 side folds) — roll from the far edge, pressing each turn, then seam-down; the tin hides a messy seam.",
     photos: []
   },
   {
