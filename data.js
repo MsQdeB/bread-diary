@@ -154,6 +154,8 @@ window.BAKES = [
     score: { crumb: 4.5, spring: 4, crust: 4, sour: 4, flavour: 4.5 },
     tags: "tin loaf, large",
     makes: 1,
+    bakedWeight: 790,
+    batch: "2026-09-21 two-loaf",
     sellPrice: null,
     recipe: {
       breadFlour: 290,
@@ -243,6 +245,8 @@ window.BAKES = [
     score: { crumb: 3, spring: 4, crust: 4, sour: 4, flavour: 4 },
     tags: "tin loaf, small, seeded, mine",
     makes: 1,
+    bakedWeight: 191,
+    batch: "2026-09-21 two-loaf",
     sellPrice: null,
     recipe: {
       breadFlour: 73,

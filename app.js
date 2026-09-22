@@ -84,16 +84,17 @@ function ratingValue(b){
   if(b.score){ const v=SCORE_FIELDS.map(s=>num(b.score[s[0]])).filter(x=>x>0); if(v.length) return v.reduce((a,c)=>a+c,0)/v.length; }
   return null;
 }
+function batchShare(b){ if(!b.batch) return 1; const n=state.bakes.filter(x=>x.batch && x.batch===b.batch).length; return n||1; }
 function cost(b){
   const r=b.recipe||{}; let ing=0; const lines=[];
   (window.INGREDIENTS||[]).forEach(it=>{
     const g=num(r[it.key]); if(!g) return;
     const c=g/1000*num(state.prices[it.key]); ing+=c; lines.push({key:it.key,label:it.label,g,c});
   });
-  const m=makes(b), s=state.settings;
-  const energy=num(s.energyPerBake), pack=num(s.packagingPerLoaf)*m, labor=num(s.laborRate)*num(s.laborHours);
+  const m=makes(b), s=state.settings, n=batchShare(b);
+  const energy=num(s.energyPerBake)/n, pack=num(s.packagingPerLoaf)*m, labor=num(s.laborRate)*num(s.laborHours)/n;
   const total=ing+energy+pack+labor;
-  return { lines, ing, energy, pack, labor, total, makes:m, perLoaf: total/m, ingPerLoaf: ing/m, laborPerLoaf: labor/m, energyPerLoaf: energy/m, packPerLoaf: num(s.packagingPerLoaf) };
+  return { lines, ing, energy, pack, labor, total, makes:m, batchN:n, perLoaf: total/m, ingPerLoaf: ing/m, laborPerLoaf: labor/m, energyPerLoaf: energy/m, packPerLoaf: num(s.packagingPerLoaf) };
 }
 
 /* ---------- tabs ---------- */
@@ -187,7 +188,10 @@ function openDetail(id){
     chip("Yeast",m.yeastPct.toFixed(2)+"%")+chip("Salt",m.saltPct.toFixed(1)+"%")+
     chip("Whole grain",m.wholePct.toFixed(0)+"%")+chip("Seeds",totalSeedWeight(b.recipe).toFixed(0)+" g")+
     chip("Room",esc((b.environment&&b.environment.temp)||"—"))+chip("Humidity",esc((b.environment&&b.environment.humidity)||"—"))+
-    chip("Cost/loaf",money(c.perLoaf))+'</div>';
+    chip("Cost/loaf",money(c.perLoaf))+
+    (num(b.bakedWeight)? chip("Baked weight",num(b.bakedWeight)+" g")+(m.doughWeight>num(b.bakedWeight)? chip("Bake loss",((m.doughWeight-num(b.bakedWeight))/m.doughWeight*100).toFixed(0)+"%") : "") : "")+
+    (c.batchN>1? chip("Shared batch","÷"+c.batchN) : "")+
+    '</div>';
 
   if(b.score||b.rating!=null){
     html+='<h3 class="section-title">Scorecard</h3><div class="metric-chips">';
@@ -263,8 +267,10 @@ function openForm(id){
   RECIPE_FIELDS.forEach(([k,l])=>{ html+=fld("recipe."+k,l,num(r[k])||"","number",'step="0.1" min="0"'); });
   html+='</div><div class="row2">'+fld("recipe.otherFlourNote","Other flour note",r.otherFlourNote)+fld("recipe.otherSeedsNote","Other seeds note",r.otherSeedsNote)+'</div>';
 
-  html+='<h3 class="section-title">Yield & pricing</h3><div class="row2">'+
+  html+='<h3 class="section-title">Yield & pricing</h3><div class="row4">'+
     fld("makes","Makes (loaves)",b.makes,"number",'min="1" step="1"')+
+    fld("bakedWeight","Baked weight (g)",b.bakedWeight,"number",'min="0" step="1"')+
+    fld("batch","Batch tag (shared)",b.batch,"text",'placeholder="shared energy/labour"')+
     fld("sellPrice","Sell price / loaf",b.sellPrice,"number",'step="0.01" min="0"')+
   '</div>';
 
@@ -315,6 +321,8 @@ function saveForm(){
   const rv=gv("rating"); b.rating= rv===""||rv==null?null:num(rv);
   b.makes=num(gv("makes"))||num(state.settings.defaultMakes)||1;
   const sv=gv("sellPrice"); b.sellPrice= sv===""||sv==null?null:num(sv);
+  const bwt=gv("bakedWeight"); b.bakedWeight= bwt===""||bwt==null?null:num(bwt);
+  b.batch=gv("batch")||"";
   b.recipe=b.recipe||{}; b.environment=b.environment||{}; b.process=b.process||{}; b.score=b.score||{};
   RECIPE_FIELDS.forEach(([k])=>{ b.recipe[k]=num(gv("recipe."+k)); });
   b.recipe.otherFlourNote=gv("recipe.otherFlourNote")||""; b.recipe.otherSeedsNote=gv("recipe.otherSeedsNote")||"";
@@ -582,6 +590,7 @@ function renderCostDetail(){
     '<tr><td><b>Batch total ('+c.makes+' loaf'+(c.makes>1?'es':'')+')</b></td><td></td><td class="num"><b>'+money(tot)+'</b></td></tr>'+
     '<tr><td><b>Per loaf</b></td><td></td><td class="num"><b>'+money(tot/c.makes)+'</b></td></tr>'+
   '</tfoot></table></div>';
+  if(c.batchN>1) html+='<p class="help">Batch of '+c.batchN+' loaves — energy &amp; labour charged once and split (÷'+c.batchN+').</p>';
   if(b.sellPrice){ const sp=num(b.sellPrice); const marg=(sp-tot/c.makes); html+='<p class="help">Sell '+money(sp)+' → profit '+money(marg)+'/loaf ('+(sp? (marg/sp*100).toFixed(0):0)+'% margin).</p>'; }
   el.innerHTML=html;
 }
