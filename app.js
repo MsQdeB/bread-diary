@@ -162,7 +162,7 @@ function renderTable(){
       '<td class="num">'+(m.levainPct?m.levainPct.toFixed(0)+"%":"—")+'</td>'+
       '<td class="num">'+m.saltPct.toFixed(1)+'%</td>'+
       '<td>'+esc((b.environment&&b.environment.temp)||"—")+'</td>'+
-      '<td class="num edit-only">'+money(c.perLoaf)+'</td>'+
+      '<td class="num">'+money(c.perLoaf)+'</td>'+
       '<td><span class="pill '+(/progress|planned/i.test(b.status||"")?"progress":"baked")+'">'+esc(b.status||"—")+'</span></td>'+
       '<td>'+stars(r)+'</td>';
     tb.appendChild(tr);
@@ -189,9 +189,9 @@ function openDetail(id){
     chip("Yeast",m.yeastPct.toFixed(2)+"%")+chip("Salt",m.saltPct.toFixed(1)+"%")+
     chip("Whole grain",m.wholePct.toFixed(0)+"%")+chip("Seeds",totalSeedWeight(b.recipe).toFixed(0)+" g")+
     chip("Room",esc((b.environment&&b.environment.temp)||"—"))+chip("Humidity",esc((b.environment&&b.environment.humidity)||"—"))+
-    chip("Cost/loaf",money(c.perLoaf),"edit-only")+
+    chip("Cost/loaf",money(c.perLoaf))+
     (num(b.bakedWeight)? chip("Baked weight",num(b.bakedWeight)+" g")+(m.doughWeight>num(b.bakedWeight)? chip("Bake loss",((m.doughWeight-num(b.bakedWeight))/m.doughWeight*100).toFixed(0)+"%") : "") : "")+
-    (c.batchN>1? chip("Shared batch","÷"+c.batchN,"edit-only") : "")+
+    (c.batchN>1? chip("Shared batch","÷"+c.batchN) : "")+
     '</div>';
 
   if(b.score||b.rating!=null){
@@ -205,7 +205,7 @@ function openDetail(id){
   RECIPE_FIELDS.forEach(([k,l])=>{ const v=num((b.recipe||{})[k]); if(v) html+='<dt>'+esc(l)+'</dt><dd class="num">'+v+' g</dd>'; });
   if((b.recipe||{}).otherFlourNote) html+='<dt>Other flour note</dt><dd>'+esc(b.recipe.otherFlourNote)+'</dd>';
   if((b.recipe||{}).otherSeedsNote) html+='<dt>Other seeds note</dt><dd>'+esc(b.recipe.otherSeedsNote)+'</dd>';
-  html+='</dl><div class="edit-only"><h3 class="section-title">Cost</h3><dl class="kv">';
+  html+='</dl><div><h3 class="section-title">Cost</h3><dl class="kv">';
   html+='<dt>Ingredients</dt><dd class="num">'+money(c.ing)+'</dd>';
   html+='<dt>Makes</dt><dd>'+c.makes+' loaf'+(c.makes>1?'es':'')+'</dd>';
   html+='<dt>Cost / loaf</dt><dd class="num"><b>'+money(c.perLoaf)+'</b></dd>';
@@ -554,6 +554,7 @@ function renderCosting(){
     const extra = i.key==="levain" ? ' <button class="tiny" onclick="autoLevainPrice()" title="Set to (bread flour + water) / 2 — the cost of a 100% hydration levain">auto</button>' : '';
     return '<tr><td>'+esc(i.label)+extra+'</td><td><input type="number" step="0.01" value="'+num(state.prices[i.key])+'" oninput="setPrice(\''+i.key+'\',this.value)"></td></tr>';
   }).join("");
+  if(READONLY){ document.querySelectorAll('#view-costing input, #view-costing select, #view-costing button').forEach(el=>el.disabled=true); }
   const sel=document.getElementById("costPick");
   const prev=sel.value;
   sel.innerHTML=state.bakes.slice().sort((a,b)=>num(b.number)-num(a.number)).map(b=>'<option value="'+b.id+'">#'+b.number+' '+esc(b.title)+'</option>').join("");

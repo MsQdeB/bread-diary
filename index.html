@@ -39,7 +39,7 @@
   <button data-tab="starter" onclick="showTab('starter')">Starter</button>
   <button data-tab="checklists" onclick="showTab('checklists')">Checklists</button>
   <button data-tab="guide" onclick="showTab('guide')">Guide</button>
-  <button data-tab="costing" class="edit-only" onclick="showTab('costing')">Costing</button>
+  <button data-tab="costing" onclick="showTab('costing')">Costing</button>
   <button data-tab="troubleshoot" onclick="showTab('troubleshoot')">Troubleshoot</button>
 </nav>
 
@@ -65,7 +65,7 @@
             <tr>
               <th style="width:34px"></th><th>#</th><th>Date</th><th>Bake</th><th>Type</th>
               <th>Flour</th><th>Hydration</th><th>Levain</th><th>Salt</th><th>Room</th>
-              <th class="edit-only">Cost/loaf</th><th>Status</th><th>Rating</th>
+              <th>Cost/loaf</th><th>Status</th><th>Rating</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
@@ -156,7 +156,7 @@
   </section>
 
   <!-- COSTING -->
-  <section class="view edit-only" id="view-costing">
+  <section class="view" id="view-costing">
     <div class="section-title">Ingredient prices (per kg)</div>
     <div class="card pad">
       <div class="toolbar2">
