@@ -304,13 +304,13 @@ window.BAKES = [
       levain: 87,
       oil: 15,
       honey: 15,
-      chia: 0, flax: 0, pumpkinSeed: 0, sunflowerSeed: 0, otherSeeds: 0,
-      otherSeedsNote: ""
+      chia: 0, flax: 15, pumpkinSeed: 20, sunflowerSeed: 0, otherSeeds: 0,
+      otherSeedsNote: "Flax + pumpkin (~35 g), cracked + soaked, mixed EVENLY through the dough (no chia this time)."
     },
     environment: { temp: "~29 °C", humidity: "—" },
     process: {
       levainBuild: "Sun 5:00 PM: build levain — 20 g starter + 35 g bread flour + 35 g water (=90 g). Keep the rest of the starter as the keeper.",
-      mixing: "Dissolve the 87 g levain into 258 g WATER first, then add 290 g bread + 110 g wholemeal. Autolyse 30 min. Add salt 8 g + olive oil 15 g + honey 15 g. (No seeds/chia this time — easier shaping.)",
+      mixing: "Dissolve the 87 g levain into 258 g WATER first, then add 290 g bread + 110 g wholemeal. Autolyse 30 min. Add salt 8 g + olive oil 15 g + honey 15 g. Then mix in the cracked + soaked FLAX + PUMPKIN (~35 g) EVENLY (scatter thinly, fold repeatedly — don't leave a clump in the middle).",
       folds: "3 sets of folds, 30 min apart (wet hands). Focus: even tension.",
       bulk: "Room temp until puffy & domed (~40–50%).",
       retard: "—",
@@ -319,9 +319,9 @@ window.BAKES = [
       bake: "Mon AM: preheat 210 °C + steam 30 min. Score one centre slash (cold dough scores easily). Bake 210 °C / 15 min → 190 °C / ~40–45 min (added a few min since it's cold). Internal 93–96 °C.",
       cooling: "Cool on a rack ~1–2 h before slicing."
     },
-    notes: "68% hydration, 25% wholemeal, no seeds — a cleaner loaf to practise SHAPING (carpet roll, seal the folds) and use a bench scraper. Cold-proof method: shape Sunday night, bake Monday morning straight from the fridge.",
+    notes: "68% hydration, 25% wholemeal, flax + pumpkin seeds (~35 g, no chia) for a cleaner loaf to practise SHAPING (carpet roll, seal the folds). Work the seeds in EVENLY (learned from bake #6's seed-clump). Cold-proof method: shape Sunday night, bake Monday morning straight from the fridge.",
     verdict: "Planned — bake Mon 5 Oct morning.",
-    improvements: "Get a bench scraper. Shape with wet hands + cold dough. Seal every fold; seam down; tuck ends. Score one clean slash.",
+    improvements: "Get a bench scraper. Shape with wet hands + cold dough. Seal every fold; seam down; tuck ends. Score one clean slash. Distribute seeds EVENLY (thin scatter + repeated folds), not as a central blob.",
     photos: []
   }
 ];
