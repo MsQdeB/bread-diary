@@ -313,9 +313,9 @@ window.BAKES = [
       mixing: "WATER TOTAL = 258 g. Use ~50 g of it to SOAK the flax+pumpkin; the remaining ~208 g goes into the dough. Dissolve the 87 g levain into the ~208 g water, then add 290 g bread + 110 g wholemeal. Autolyse 30 min. Add salt 8 g + olive oil 15 g + honey 15 g (oil/honey are NOT water). Then mix in the soaked FLAX + PUMPKIN (~35 g + their ~50 g soak water) EVENLY (scatter thinly, fold repeatedly).",
       folds: "3 sets of folds, 30 min apart (wet hands). Focus: even tension.",
       bulk: "Room temp until puffy & domed (~40–50%).",
-      retard: "—",
+      retard: "Shaped into the tin and into the fridge Sun 23:13 (cold proof overnight).",
       shaping: "Shape into the oiled 20×10×9 cm tin — CARPET ROLL (roll from the far edge, press each turn), seam DOWN, tuck ends under. COLD-PROOF method: shape tonight, straight into the fridge.",
-      proof: "Cold proof in the tin in the fridge overnight. The FRIDGE IS THE FINAL RISE — bake straight from cold, no morning proof.",
+      proof: "COLD PROOF in the tin in the fridge (Sun 23:13 → ~9 h to a ~8 AM bake). The FRIDGE IS THE FINAL RISE — bake straight from cold, no morning proof.",
       bake: "Mon AM: preheat 210 °C + steam 30 min. Score one centre slash (cold dough scores easily). Bake 210 °C / 15 min → 190 °C / ~40–45 min (added a few min since it's cold). Internal 93–96 °C.",
       cooling: "Cool on a rack ~1–2 h before slicing."
     },
