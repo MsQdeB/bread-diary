@@ -321,7 +321,7 @@ window.BAKES = [
     },
     notes: "68% hydration, 25% wholemeal, flax + pumpkin seeds (~35 g, no chia) for a cleaner loaf to practise SHAPING (carpet roll, seal the folds). Work the seeds in EVENLY (learned from bake #6's seed-clump). IMPORTANT: seed-soak water comes OUT of the recipe water — 258 g total = ~50 g soak + ~208 g dough (never 258 + 50). Cold-proof method: shape Sunday night, bake Monday morning straight from the fridge.",
     verdict: "Planned — bake Mon 5 Oct morning.",
-    improvements: "Get a bench scraper. Shape with wet hands + cold dough. Seal every fold; seam down; tuck ends. Score one clean slash. Distribute seeds EVENLY (thin scatter + repeated folds), not as a central blob. REMEMBER: seed-soak water is taken FROM the recipe water (subtract it), not added on top.",
+    improvements: "Get a bench scraper. Shape with wet hands + cold dough. Seal every fold; seam down; tuck ends. Score one clean slash. Distribute seeds EVENLY (thin scatter + repeated folds), not as a central blob. REMEMBER: seed-soak water is taken FROM the recipe water (subtract it), not added on top. MIXING LESSON: over-mixed by hand after adding salt/oil/honey+seeds → dough got tight/'hard', elastic and TORE. Fix: mix only until incorporated (seconds), then REST 20–30 min and use FOLDS — never hand-knead or push seeds in.",
     photos: []
   }
 ];
