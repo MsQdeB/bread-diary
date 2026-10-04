@@ -279,5 +279,49 @@ window.BAKES = [
     verdict: "Good & mild, well-baked and rose above the shallow tin — but the FLAX + PUMPKIN clumped into a central seed band/'swirl' and left a hollow gap where they bunched. Tastes great; distribution needs work.",
     improvements: "Different size = different bake time; check by internal temp, not the clock. Wet dough hard to handle without a bench scraper — get one. SEED DISTRIBUTION: flax+pumpkin clumped into a central band + hollow — scatter them THINLY & evenly across the whole flattened dough (not as one blob), fold in 2 stages, or mix them into the dough at the divide. NOTE: baked weight 191 g.",
     photos: ["images/bake6-crumb.jpg", "images/bake6-seedswirl.jpg"]
+  },
+  {
+    id: "b7",
+    number: 7,
+    date: "2026-10-05",
+    dateNote: "levain Sun 5 PM · shaped + cold-proof overnight · bake Mon AM",
+    title: "Sourdough Tin Loaf — 68% (shaping practice)",
+    leavening: "Sourdough",
+    status: "Planned",
+    rating: null,
+    tags: "tin loaf, 68%, practice, cold-proof",
+    makes: 1,
+    sellPrice: null,
+    recipe: {
+      breadFlour: 290,
+      wholemealFlour: 110,
+      plainFlour: 0,
+      otherFlour: 0,
+      otherFlourNote: "",
+      water: 258,
+      salt: 8,
+      yeast: 0,
+      levain: 87,
+      oil: 15,
+      honey: 15,
+      chia: 0, flax: 0, pumpkinSeed: 0, sunflowerSeed: 0, otherSeeds: 0,
+      otherSeedsNote: ""
+    },
+    environment: { temp: "~29 °C", humidity: "—" },
+    process: {
+      levainBuild: "Sun 5:00 PM: build levain — 20 g starter + 35 g bread flour + 35 g water (=90 g). Keep the rest of the starter as the keeper.",
+      mixing: "Dissolve the 87 g levain into 258 g WATER first, then add 290 g bread + 110 g wholemeal. Autolyse 30 min. Add salt 8 g + olive oil 15 g + honey 15 g. (No seeds/chia this time — easier shaping.)",
+      folds: "3 sets of folds, 30 min apart (wet hands). Focus: even tension.",
+      bulk: "Room temp until puffy & domed (~40–50%).",
+      retard: "—",
+      shaping: "Shape into the oiled 20×10×9 cm tin — CARPET ROLL (roll from the far edge, press each turn), seam DOWN, tuck ends under. COLD-PROOF method: shape tonight, straight into the fridge.",
+      proof: "Cold proof in the tin in the fridge overnight. The FRIDGE IS THE FINAL RISE — bake straight from cold, no morning proof.",
+      bake: "Mon AM: preheat 210 °C + steam 30 min. Score one centre slash (cold dough scores easily). Bake 210 °C / 15 min → 190 °C / ~40–45 min (added a few min since it's cold). Internal 93–96 °C.",
+      cooling: "Cool on a rack ~1–2 h before slicing."
+    },
+    notes: "68% hydration, 25% wholemeal, no seeds — a cleaner loaf to practise SHAPING (carpet roll, seal the folds) and use a bench scraper. Cold-proof method: shape Sunday night, bake Monday morning straight from the fridge.",
+    verdict: "Planned — bake Mon 5 Oct morning.",
+    improvements: "Get a bench scraper. Shape with wet hands + cold dough. Seal every fold; seam down; tuck ends. Score one clean slash.",
+    photos: []
   }
 ];
