@@ -307,7 +307,7 @@ window.BAKES = [
       chia: 0, flax: 15, pumpkinSeed: 20, sunflowerSeed: 0, otherSeeds: 0,
       otherSeedsNote: "Flax + pumpkin (~35 g), cracked + soaked, mixed EVENLY through the dough (no chia this time)."
     },
-    environment: { temp: "~29 °C", humidity: "—" },
+    environment: { temp: "30 °C", humidity: "80 %" },
     process: {
       levainBuild: "Sun 5:00 PM: build levain — 20 g starter + 35 g bread flour + 35 g water (=90 g). Keep the rest of the starter as the keeper.",
       mixing: "Dissolve the 87 g levain into 258 g WATER first, then add 290 g bread + 110 g wholemeal. Autolyse 30 min. Add salt 8 g + olive oil 15 g + honey 15 g. Then mix in the cracked + soaked FLAX + PUMPKIN (~35 g) EVENLY (scatter thinly, fold repeatedly — don't leave a clump in the middle).",
