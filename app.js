@@ -612,7 +612,8 @@ const TROUBLE=[
   {title:"Tearing at the seam / top",tags:"tear seam split crack",causes:["Too much elasticity (over-developed)","Under-proofed","Not scored"],fixes:["Gentler handling, longer rest","Proof longer","Score deliberately before baking"]},
   {title:"Crumb too tight / closed",tags:"tight closed dense crumb",causes:["Low hydration","Hard shaping / degassed","Whole grain absorbing water"],fixes:["Raise hydration 5–10%","Gentler shaping","Increase water for whole-grain flours"]},
   {title:"Blown-out / cracked crust (no bloom)",tags:"crack blowout bloom score",causes:["Not scored","Skin formed during proof","Weak steam"],fixes:["Score confidently just before baking","Cover dough during proof","Add steam early"]},
-  {title:"Mold / off smell in starter",tags:"mold starter smell hooch",causes:["Neglect, or contamination","Long fridge storage"],fixes:["Mold (green/pink/orange) → discard & start fresh","Grey/brown liquid (hooch) is normal — pour off & feed","Feed 2–3× before baking"]}
+  {title:"Mold / off smell in starter",tags:"mold starter smell hooch",causes:["Neglect, or contamination","Long fridge storage"],fixes:["Mold (green/pink/orange) → discard & start fresh","Grey/brown liquid (hooch) is normal — pour off & feed","Feed 2–3× before baking"]},
+  {title:"Stuck to the tin",tags:"stuck bottom release tin",causes:["Bare/uncoated tin","Oil applied long before baking (soaks in / drains)","Cold dough straight into a cold tin → base sets late","Wet / high-hydration dough"],fixes:["Line the tin with PARCHMENT (guaranteed)","Re-grease + dust flour right before baking","Use a non-stick / darker tin","Let it cool ~5 min, then run a thin knife around the edge to release"]}
 ];
 function renderTroubleshoot(){
   const q=(document.getElementById("tsSearch")?.value||"").toLowerCase();
