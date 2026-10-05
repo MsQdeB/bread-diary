@@ -287,8 +287,9 @@ window.BAKES = [
     dateNote: "levain Sun 5 PM · shaped + cold-proof overnight · bake Mon AM",
     title: "Sourdough Tin Loaf — 68% (shaping practice)",
     leavening: "Sourdough",
-    status: "Planned",
-    rating: null,
+    status: "Baked",
+    rating: 4,
+    score: { crumb: 4, spring: 4, crust: 4, sour: 4, flavour: 4 },
     tags: "tin loaf, 68%, practice, cold-proof",
     makes: 1,
     sellPrice: null,
@@ -320,8 +321,8 @@ window.BAKES = [
       cooling: "Cool on a rack ~1–2 h before slicing."
     },
     notes: "68% hydration, 25% wholemeal, flax + pumpkin seeds (~35 g, no chia) for a cleaner loaf to practise SHAPING (carpet roll, seal the folds). Work the seeds in EVENLY (learned from bake #6's seed-clump). IMPORTANT: seed-soak water comes OUT of the recipe water — 258 g total = ~50 g soak + ~208 g dough (never 258 + 50). Cold-proof method: shape Sunday night, bake Monday morning straight from the fridge. OBSERVATION: during coil folds the dough felt LESS stretchy and the surface less smooth than bakes #2/#4 — likely the over-mix (tighter/elastic gluten) + the lower 68% hydration (stiffer) + the seeds/wholemeal. It smoothed & rose in the fridge overnight. AT BAKE: uneven rise (left higher than right) + a tear on top = uneven surface tension / weak spot in the skin (shaping). Lesson: build even, taut tension all around (carpet roll + tuck); a bench scraper aids drag-and-round. Score to control the opening.",
-    verdict: "Planned — bake Mon 5 Oct morning.",
-    improvements: "Get a bench scraper. Shape with wet hands + cold dough. Seal every fold; seam down; tuck ends. Score one clean slash. Distribute seeds EVENLY (thin scatter + repeated folds), not as a central blob. REMEMBER: seed-soak water is taken FROM the recipe water (subtract it), not added on top. MIXING LESSON: over-mixed by hand after adding salt/oil/honey+seeds → dough got tight/'hard', elastic and TORE. Fix: mix only until incorporated (seconds), then REST 20–30 min and use FOLDS — never hand-knead or push seeds in. WET-SHAPING TIP: if the dough is too soft/sticky to shape, CHILL the bowl 30–45 min first — cold firms it dramatically. Flour the BENCH (not hands), wet hands, quick carpet roll, seam down.",
-    photos: []
+    verdict: "Solid bake — even, open-ish crumb with flax+pumpkin distributed EVENLY (fixed bake #6's clump); good oven spring and blistered seeded crust; mild. Bakes 15+45+10 = 70 min (long — watch, cold start). Minus: shaping (uneven rise + tear) and a patch of dough stuck to the tin bottom.",
+    improvements: "Get a bench scraper. Shape with wet hands + cold dough. Seal every fold; seam down; tuck ends. Score one clean slash. Distribute seeds EVENLY (thin scatter + repeated folds), not as a central blob. REMEMBER: seed-soak water is taken FROM the recipe water (subtract it), not added on top. MIXING LESSON: over-mixed by hand after adding salt/oil/honey+seeds → dough got tight/'hard', elastic and TORE. Fix: mix only until incorporated (seconds), then REST 20–30 min and use FOLDS — never hand-knead or push seeds in. WET-SHAPING TIP: if the dough is too soft/sticky to shape, CHILL the bowl 30–45 min first — cold firms it dramatically. Flour the BENCH (not hands), wet hands, quick carpet roll, seam down. STUCK TO TIN: bare aluminium tin + oil applied only the night before (soaked/drained) + cold dough → base bonded. FIX: line the tin with PARCHMENT, or re-grease (+ flour) right before baking, or use a non-stick/darker tin.",
+    photos: ["images/bake7-loaf.jpg", "images/bake7-crumb.jpg", "images/bake7-slices.jpg", "images/bake7-tin.jpg"]
   }
 ];
