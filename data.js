@@ -329,8 +329,8 @@ window.BAKES = [
   {
     id: "b8",
     number: 8,
-    date: "2026-10-10",
-    dateNote: "CUSTOMER ORDER — pickup Sat 10 Oct 11 AM (HOT from the oven)",
+    date: "2026-10-11",
+    dateNote: "CUSTOMER ORDER — pickup Sun 11 Oct 11 AM (HOT from the oven)",
     title: "Seeded Tin Loaf — customer (flax + pumpkin)",
     leavening: "Sourdough",
     status: "Planned",
@@ -355,18 +355,18 @@ window.BAKES = [
     },
     environment: { temp: "~30 °C", humidity: "~80 %" },
     process: {
-      levainBuild: "Fri 4:00 PM: build levain — 20 g starter + 35 g bread flour + 35 g water (=90 g). Ready ~7 PM.",
-      mixing: "Fri ~7:00 PM: WATER 258 g total (~50 g to SOAK the seeds, ~208 g into the dough). Dissolve the levain into the ~208 g water, then add 290 g bread + 110 g wholemeal. Autolyse 30 min. Add salt 8 g + olive oil 15 g + honey 15 g (mix just until incorporated). Then FOLD in the soaked flax+pumpkin evenly.",
-      folds: "Fri ~7:45–8:45 PM: 3 sets of folds ~25–30 min apart. MIX LESS, FOLD MORE.",
-      bulk: "Fri ~8:45–9:30 PM: room temp until puffy & domed (~40–50%).",
+      levainBuild: "Sat 4:00 PM: build levain — 20 g starter + 35 g bread flour + 35 g water (=90 g). Ready ~7 PM.",
+      mixing: "Sat ~7:00 PM: WATER 258 g total (~50 g to SOAK the seeds, ~208 g into the dough). Dissolve the levain into the ~208 g water, then add 290 g bread + 110 g wholemeal. Autolyse 30 min. Add salt 8 g + olive oil 15 g + honey 15 g (mix just until incorporated). Then FOLD in the soaked flax+pumpkin evenly.",
+      folds: "Sat ~7:45–8:45 PM: 3 sets of folds ~25–30 min apart. MIX LESS, FOLD MORE.",
+      bulk: "Sat ~8:45–9:30 PM: room temp until puffy & domed (~40–50%).",
       retard: "—",
-      shaping: "Fri ~9:30–10:00 PM: shape into the tin — CARPET ROLL. Even, taut tension; SEAL every fold; seam DOWN; tuck ends.",
+      shaping: "Sat ~9:30–10:00 PM: shape into the tin — CARPET ROLL. Even, taut tension; SEAL every fold; seam DOWN; tuck ends.",
       proof: "COLD PROOF in the tin overnight (fridge) from ~10 PM. Bake straight from cold.",
-      bake: "Sat: preheat 210 °C + steam from ~9:30 AM. Score. Bake ~9:45 AM: 210 °C / 15 min → 190 °C / ~40–45 min → done ~10:45, HOT for the 11 AM pickup.",
+      bake: "Sun: preheat 210 °C + steam from ~9:30 AM. Score. Bake ~9:45 AM: 210 °C / 15 min → 190 °C / ~40–45 min → done ~10:45, HOT for the 11 AM pickup.",
       cooling: "SERVE HOT — hand over straight from the oven (in the tin / wrapped in a cloth). Customer wants the warm smell; no full cooling needed."
     },
-    notes: "CUSTOMER ORDER — same as bake #7 (68%, 25% wholemeal, flax+pumpkin, no chia). Pickup Sat 10 Oct 11 AM. CUSTOMER WANTS IT HOT from the oven → bake so it's just out ~10:45 and hand over right away; NO full cooling. (Note: hot bread slices messily — tell them to let it rest if they can.) Apply all bake #7 fixes.",
-    verdict: "Planned — bake Sat 10 Oct, hot for an 11 AM pickup.",
+    notes: "CUSTOMER ORDER — same as bake #7 (68%, 25% wholemeal, flax+pumpkin, no chia). Pickup SUN 11 Oct 11 AM. CUSTOMER WANTS IT HOT from the oven → bake so it's just out ~10:45 and hand over right away; NO full cooling. (Note: hot bread slices messily — tell them to let it rest if they can.) Apply all bake #7 fixes.",
+    verdict: "Planned — bake Sun 11 Oct, hot for an 11 AM pickup.",
     improvements: "APPLY BAKE #7 FIXES: (1) OIL the tin AND dust with FLOUR (or line with parchment) — do NOT skip the flour; (2) even, taut shaping (bench scraper / drag-and-round); (3) mix less, fold more; (4) bake to internal 93–96 °C / deep golden — don't pull pale. SERVE HOT: time the bake to finish ~10:45; hand over in the tin / wrapped in a cloth (keeps it warm).",
     photos: []
   }
