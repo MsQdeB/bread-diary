@@ -325,5 +325,49 @@ window.BAKES = [
     verdict: "Solid bake — even, open-ish crumb with flax+pumpkin distributed EVENLY (fixed bake #6's clump); good oven spring and blistered seeded crust; mild. Bakes 15+45+10 = 70 min (long — watch, cold start). Minus: shaping (uneven rise + tear) and a patch of dough stuck to the tin bottom.",
     improvements: "Get a bench scraper. Shape with wet hands + cold dough. Seal every fold; seam down; tuck ends. Score one clean slash. Distribute seeds EVENLY (thin scatter + repeated folds), not as a central blob. REMEMBER: seed-soak water is taken FROM the recipe water (subtract it), not added on top. MIXING LESSON: over-mixed by hand after adding salt/oil/honey+seeds → dough got tight/'hard', elastic and TORE. Fix: mix only until incorporated (seconds), then REST 20–30 min and use FOLDS — never hand-knead or push seeds in. WET-SHAPING TIP: if the dough is too soft/sticky to shape, CHILL the bowl 30–45 min first — cold firms it dramatically. Flour the BENCH (not hands), wet hands, quick carpet roll, seam down. STUCK TO TIN: bare aluminium tin + oil applied only the night before (soaked/drained) + forgot to dust with flour + cold dough → base bonded. FIX: line the tin with PARCHMENT, or oil + dust flour right before baking, or use a non-stick/darker tin.",
     photos: ["images/bake7-loaf.jpg", "images/bake7-crumb.jpg", "images/bake7-slices.jpg", "images/bake7-tin.jpg"]
+  },
+  {
+    id: "b8",
+    number: 8,
+    date: "2026-10-10",
+    dateNote: "CUSTOMER ORDER — pickup Sat 10 Oct, 11 AM",
+    title: "Seeded Tin Loaf — customer (flax + pumpkin)",
+    leavening: "Sourdough",
+    status: "Planned",
+    rating: null,
+    tags: "order, tin loaf, 68%, flax, pumpkin",
+    makes: 1,
+    sellPrice: null,
+    recipe: {
+      breadFlour: 290,
+      wholemealFlour: 110,
+      plainFlour: 0,
+      otherFlour: 0,
+      otherFlourNote: "",
+      water: 258,
+      salt: 8,
+      yeast: 0,
+      levain: 87,
+      oil: 15,
+      honey: 15,
+      chia: 0, flax: 15, pumpkinSeed: 20, sunflowerSeed: 0, otherSeeds: 0,
+      otherSeedsNote: "Flax 15 + pumpkin 20 (~35 g), cracked + soaked, mixed in EVENLY. Soak water ~50 g taken FROM the 258 g total."
+    },
+    environment: { temp: "~30 °C", humidity: "~80 %" },
+    process: {
+      levainBuild: "Fri 5:00 PM: build levain — 20 g starter + 35 g bread flour + 35 g water (=90 g).",
+      mixing: "Fri ~8:00 PM: WATER 258 g total (~50 g to SOAK the seeds, ~208 g into the dough). Dissolve the levain into the ~208 g water, then add 290 g bread + 110 g wholemeal. Autolyse 30 min. Add salt 8 g + olive oil 15 g + honey 15 g (mix just until incorporated — don't over-mix). Then FOLD in the soaked flax+pumpkin evenly.",
+      folds: "3 sets of folds ~25–30 min apart. MIX LESS, FOLD MORE.",
+      bulk: "Room temp until puffy & domed (~40–50%).",
+      retard: "—",
+      shaping: "Shape into the tin — CARPET ROLL. Build EVEN, TAUT tension all around; SEAL every fold; seam DOWN; tuck ends. (Fixes bake #7's uneven rise + tear.)",
+      proof: "COLD PROOF in the tin overnight (fridge). Bake straight from cold.",
+      bake: "Sat ~8:15 AM: preheat 210 °C + steam. Score one centre slash. Bake 210 °C / 15 min → 190 °C / ~40–45 min. Internal 93–96 °C.",
+      cooling: "Cool fully on a rack; bag/slice by ~10:45 AM for the 11 AM pickup."
+    },
+    notes: "CUSTOMER ORDER — same as bake #7 (68%, 25% wholemeal, flax+pumpkin, no chia). Pickup Sat 10 Oct 11 AM. Deadline loaf → bake with margin. Apply all bake #7 fixes.",
+    verdict: "Planned — bake Sat 10 Oct morning.",
+    improvements: "APPLY BAKE #7 FIXES: (1) OIL the tin AND dust with FLOUR (or line with parchment) — do NOT skip the flour; (2) even, taut shaping (bench scraper / drag-and-round); (3) mix less, fold more; (4) bake to internal 93–96 °C / deep golden — don't pull pale.",
+    photos: []
   }
 ];

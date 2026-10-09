@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#b5651d">
-<title>🍞 Unapologetic Home Baker — Bake Checklist</title>
+<title>🍞 Unapologetic Home Baker — Customer Order Checklist</title>
 <style>
   :root{--bg:#f6efe3;--panel:#fffaf1;--ink:#3a2a18;--muted:#8a7355;--line:#e4d6bd;--accent:#b5651d;--good:#5a7d3c;--bad:#b03a2e;--chip:#fbf2e2}
   *{box-sizing:border-box}
@@ -21,7 +21,7 @@
   .lbl{flex:1}
   .lbl b{display:block}
   .lbl small{color:var(--muted)}
-  .time{font-variant-numeric:tabular-nums;font-weight:600;color:var(--accent);min-width:70px;flex:none;font-size:13px;padding-top:2px}
+  .time{font-variant-numeric:tabular-nums;font-weight:600;color:var(--accent);min-width:78px;flex:none;font-size:13px;padding-top:2px}
   .bar{position:sticky;top:0;background:var(--bg);padding:10px 0;display:flex;gap:10px;align-items:center;z-index:5;flex-wrap:wrap}
   button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 14px;border-radius:10px}
   button:hover{border-color:var(--accent)}
@@ -29,7 +29,7 @@
   .progress{flex:1;height:10px;background:#eadfca;border-radius:6px;overflow:hidden;min-width:120px}
   .progress > i{display:block;height:100%;background:var(--good);width:0;transition:.25s}
   .note{background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px;margin-top:6px}
-  .tag{display:inline-block;font-size:11px;background:var(--chip);border:1px solid var(--line);border-radius:8px;padding:1px 7px;color:var(--muted)}
+  .fix{background:#fdece2;border:1px solid #f0cdb6;border-radius:10px;padding:10px 12px;font-size:14px;margin-top:6px}
   a{color:var(--accent)}
   table{width:100%;border-collapse:collapse;font-size:14px}
   td,th{padding:5px 8px;text-align:left;border-bottom:1px solid #f0e6d4}
@@ -41,8 +41,8 @@
 <body>
 <div class="wrap">
   <h1>🍞 Unapologetic Home Baker</h1>
-  <div class="sub" style="margin-bottom:2px">“Bake What I Like” — Combined Bake: Large + Small tin loaves</div>
-  <div class="sub">One dough, two tins · <b>Large 20×10×9 cm (~800 g)</b> + <b>Small 13.5×6.5×3 cm (~200 g)</b></div>
+  <div class="sub" style="margin-bottom:2px">“Bake What I Like” — CUSTOMER ORDER</div>
+  <div class="sub">Pickup <b>Sat 10 Oct, 11:00 AM</b> · Seeded tin loaf (flax + pumpkin) · same as bake #7</div>
 
   <div class="bar">
     <div class="progress"><i id="prog"></i></div>
@@ -53,78 +53,58 @@
   </div>
 
   <div class="card">
-    <h2>One combined batch (~1000 g dough)</h2>
+    <h2>Recipe (one loaf)</h2>
     <table>
       <tr><th>Ingredient</th><th>g</th></tr>
-      <tr><td>Bread flour</td><td>363</td></tr>
-      <tr><td>Wholemeal flour</td><td>138</td></tr>
-      <tr><td>Water</td><td>338</td></tr>
-      <tr><td>Levain</td><td>109</td></tr>
-      <tr><td>Salt</td><td>10</td></tr>
-      <tr><td>Olive oil</td><td>19</td></tr>
-      <tr><td>Honey</td><td>19</td></tr>
+      <tr><td>Bread flour</td><td>290</td></tr>
+      <tr><td>Wholemeal flour</td><td>110</td></tr>
+      <tr><td>Water (total)</td><td>258</td></tr>
+      <tr><td>Levain</td><td>87</td></tr>
+      <tr><td>Salt</td><td>8</td></tr>
+      <tr><td>Olive oil</td><td>15</td></tr>
+      <tr><td>Honey</td><td>15</td></tr>
+      <tr><td>Flaxseed (soaked)</td><td>15</td></tr>
+      <tr><td>Pumpkin seeds (cracked, soaked)</td><td>20</td></tr>
     </table>
-    <div class="note">Shared levain: <b>30 g starter + 40 g bread flour + 40 g water = 110 g</b>. Divide the finished dough: <b>~800 g → large</b>, <b>~200 g → small</b>. Both ≈ 71% hydration, 25% wholemeal.</div>
+    <div class="note">68% hydration, 25% wholemeal. <b>Water 258 g total = ~50 g for soaking seeds + ~208 g into the dough.</b> Oil/honey are NOT water.</div>
+  </div>
+
+  <div class="fix">
+    <b>⚑ Apply bake #7 fixes:</b> ① oil the tin <b>AND dust with flour</b> (or line with parchment) ② even, taut shaping ③ mix less, fold more ④ bake to <b>93–96 °C</b> — don't pull pale.
   </div>
 
   <div class="card">
-    <h2>Prep &amp; mix</h2>
-    <div class="task"><input type="checkbox" data-id="p1"><span class="lbl"><b>Build the shared levain</b><small>30 g starter + 40 g bread flour + 40 g water (=110 g). Ready ~3 h at 29 °C.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="p2"><span class="lbl"><b>Feed the keeper</b><small>Keep some starter back; feed 1:1:1; ~2 h room temp; fridge.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="m1"><span class="lbl"><b>Whisk levain + water + honey + oil</b><small>Dissolve the levain, honey and oil in the water FIRST (they mix far better this way).</small></span></div>
-    <div class="task"><input type="checkbox" data-id="m2"><span class="lbl"><b>Add flours → autolyse</b><small>363 g bread + 138 g wholemeal. Rest 30 min.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="m3"><span class="lbl"><b>Mix in salt (pincer/Rubaud)</b><small>Salt 10 g dissolved in a splash of water. Mix thoroughly NOW while shaggy — pincer (pinch+rotate) or Rubaud (stretch-slap). No tearing.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="m3b"><span class="lbl"><b>Fold in the chia (whole dough)</b><small>Gently with 1–2 folds (lamination) — don't squeeze.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="m4"><span class="lbl"><b>Optional: pinch of instant yeast</b><small>1–2 g ONLY if the levain looked sluggish/flat. Skip if it was domed &amp; lively.</small></span></div>
+    <h2>Friday 9 Oct — prep &amp; cold proof</h2>
+    <div class="task"><input type="checkbox" data-id="p1"><span class="lbl"><b>Feed the keeper</b><small>Keep some starter back; feed 1:1:1; ~2 h; fridge.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="p2"><span class="time">5:00 PM</span><span class="lbl"><b>Build the levain</b><small>20 g starter + 35 g bread flour + 35 g water (=90 g).</small></span></div>
+    <div class="task"><input type="checkbox" data-id="p3"><span class="lbl"><b>Soak seeds</b><small>Flax 15 + pumpkin 20 (cracked) in ~50 g water (from the 258 g). 20–30 min.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="p4"><span class="time">~8:00 PM</span><span class="lbl"><b>Mix + autolyse</b><small>Levain → ~208 g water → add 290 g bread + 110 g wholemeal. Rest 30 min.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="p5"><span class="time">~8:30 PM</span><span class="lbl"><b>Salt, oil, honey + seeds</b><small>8 g salt + 15 g oil + 15 g honey — mix only until incorporated. Fold in the soaked seeds EVENLY.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="p6"><span class="time">~9:00 PM</span><span class="lbl"><b>Fold #1</b><small>Wet hands. Don't knead.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="p7"><span class="time">~9:30 PM</span><span class="lbl"><b>Fold #2</b></span></div>
+    <div class="task"><input type="checkbox" data-id="p8"><span class="time">~10:00 PM</span><span class="lbl"><b>Fold #3</b></span></div>
+    <div class="task"><input type="checkbox" data-id="p9"><span class="time">~10:30 PM</span><span class="lbl"><b>Bulk until puffy</b><small>~40–50% rise, domed &amp; jiggly (30 °C = fast).</small></span></div>
+    <div class="task"><input type="checkbox" data-id="p10"><span class="lbl"><b>OIL the tin + DUST with flour</b><small>Don't skip the flour — it stops sticking (bake #7 lesson).</small></span></div>
+    <div class="task"><input type="checkbox" data-id="p11"><span class="time">~11:00 PM</span><span class="lbl"><b>Shape → tin</b><small>CARPET ROLL · even taut tension · seal every fold · seam DOWN · tuck ends.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="p12"><span class="lbl"><b>Cover → FRIDGE</b><small>Cold proof overnight. The fridge IS the final rise.</small></span></div>
   </div>
 
   <div class="card">
-    <h2>Folds &amp; bulk</h2>
-    <div class="task"><input type="checkbox" data-id="f1"><span class="time">+0 min</span><span class="lbl"><b>Fold #1</b><small>Wet hands. Stretch &amp; fold or coil fold.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="f2"><span class="time">+30 min</span><span class="lbl"><b>Fold #2</b></span></div>
-    <div class="task"><input type="checkbox" data-id="f3"><span class="time">+60 min</span><span class="lbl"><b>Fold #3</b><small>Dough smooth, domed, glossy.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="b1"><span class="lbl"><b>Bulk, then FRIDGE overnight</b><small>Fold in the chia (whole dough), then ~2 folds, then cover &amp; refrigerate for a COLD BULK overnight.</small></span></div>
-  </div>
-
-  <div class="card">
-    <h2>Morning — divide, seed, shape, proof</h2>
-    <div class="task"><input type="checkbox" data-id="d0"><span class="lbl"><b>Take the dough out of the fridge</b><small>Cold bulk is done. Cold dough is much less sticky — shape it cold.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="d1"><span class="lbl"><b>Divide the dough</b><small>~800 g → large · ~200 g → small.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="d1d"><span class="lbl"><b>Add FLAX+PUMPKIN to the SMALL loaf</b><small>~16 g cracked/soaked. Press flat, scatter, fold in. (Chia was already mixed into both doughs.)</small></span></div>
-    <div class="task"><input type="checkbox" data-id="d2"><span class="lbl"><b>Shape LARGE → 20×10×9 tin</b><small>Taut even roll, seam down. Oil the tin.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="d3"><span class="lbl"><b>Shape SMALL → 13.5×6.5×3 tin</b><small>Gently; shallow tin (loaf rises above the rim). Oil it well.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="d4"><span class="lbl"><b>Final proof at room temp</b><small>Cover; 30–45 min at 29 °C. Ready when domed + a poke springs back slowly. Don't over-proof.</small></span></div>
-  </div>
-
-  <div class="card">
-    <h2>Bake (⚠️ different times!)</h2>
-    <div class="task"><input type="checkbox" data-id="k1"><span class="lbl"><b>Preheat 210 °C + steam tray</b><small>≥30 min — once the loaves are shaped &amp; proofed.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="k2"><span class="lbl"><b>Score the LARGE loaf</b><small>One confident centre slash with a sharp blade.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="k3"><span class="time">0–15 min</span><span class="lbl"><b>Large in @ 210 °C</b><small>Don't open the door.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="k4"><span class="time">15 min</span><span class="lbl"><b>Drop to 190 °C — add the SMALL loaf</b><small>Remove steam tray, rotate the large.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="k5"><span class="time">~+25 min</span><span class="lbl"><b>SMALL loaf out</b><small>~20–25 min in oven. Check internal 93–96 °C. Tent with foil if it browns early.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="k6"><span class="time">~55 min</span><span class="lbl"><b>LARGE loaf out</b><small>Total ~55 min. Deep golden, hollow tap, internal 93–96 °C.</small></span></div>
-  </div>
-
-  <div class="card">
-    <h2>Cool &amp; finish</h2>
-    <div class="task"><input type="checkbox" data-id="z1"><span class="lbl"><b>Cool both on a rack</b><small>Large ~1–2 h, small ~1 h. Fully cool before slicing.</small></span></div>
-    <div class="task"><input type="checkbox" data-id="z2"><span class="lbl"><b>Slice &amp; enjoy</b> 🎉</span></div>
-    <div class="done-msg" id="done">All done — enjoy the two loaves! 🍞</div>
-  </div>
-
-  <div class="note">
-    <b>Notes:</b> One dough for both tins (same hydration/wholemeal). Mix <b>one bowl</b>.
-    <b>Chia in BOTH loaves</b> (mixed into the whole dough) · <b>flax+pumpkin → small loaf</b> at the divide.
-    Method: COLD BULK overnight → divide/shape/proof in the morning.
-    If the levain seemed sluggish, a pinch (1–2 g) of instant yeast is harmless insurance.
-    <b>Mixing tip:</b> mix salt/oil/honey/chia in THOROUGHLY while the dough is still shaggy (pincer/Rubaud). Once it's a smooth mass, use FOLDS only — never squeeze/rip.
-    Small shallow tin browns fast — watch it. No scoring on the small loaf needed (optional).
+    <h2>Saturday 10 Oct — bake &amp; finish</h2>
+    <div class="task"><input type="checkbox" data-id="s1"><span class="time">~7:45 AM</span><span class="lbl"><b>Preheat 210 °C + steam tray</b><small>≥30 min — oven fully hot.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s2"><span class="lbl"><b>Score</b><small>One confident centre slash (cold dough scores cleanly).</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s3"><span class="time">~8:15 AM</span><span class="lbl"><b>Bake 210 °C / 15 min</b><small>With steam. Don't open the door.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s4"><span class="lbl"><b>→190 °C / ~40–45 min</b><small>Remove steam tray, rotate. Tent foil if the top darkens early.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s5"><span class="lbl"><b>Done check</b><small>Deep golden, hollow tap, internal <b>93–96 °C</b>. Don't pull pale.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s6"><span class="lbl"><b>Cool fully on a rack</b><small>~1.5 h. Release the edges early so it doesn't stick.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s7"><span class="time">~10:45 AM</span><span class="lbl"><b>Bag (or slice) &amp; label</b><small>Wrap so it stays fresh for the customer.</small></span></div>
+    <div class="task"><input type="checkbox" data-id="s8"><span class="time">11:00 AM</span><span class="lbl"><b>Pickup</b> 🎉</span></div>
+    <div class="done-msg" id="done">Order done — good luck! 🍞</div>
   </div>
 </div>
 
 <script>
-  const KEY = "breadDiary.checklist.combined46";
+  const KEY = "breadDiary.checklist.b8";
   const boxes = [...document.querySelectorAll('.task input')];
   function load(){ let s={}; try{ s=JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){}
     boxes.forEach(b=>{ b.checked=!!s[b.dataset.id]; mark(b); }); update(); }
