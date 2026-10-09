@@ -9,6 +9,7 @@ let currentId = null;
 let editingId = null;
 let editingStarterId = null;
 const READONLY = (((location.hostname||"").endsWith("github.io")) || /[?&]view\b/.test(location.search)) && !/[?&]edit\b/.test(location.search);
+const SHARE_ID = new URLSearchParams(location.search).get("bake");
 
 const RECIPE_FIELDS = [
   ["breadFlour","Bread flour"],["wholemealFlour","Wholemeal flour"],["plainFlour","Plain flour"],["otherFlour","Other flour"],
@@ -855,12 +856,40 @@ async function saveToGitHub(){
   }
 }
 
+/* ---------- single-bake share view (?bake=ID) ---------- */
+function renderShareView(id){
+  const main=document.querySelector("main");
+  const b=state.bakes.find(x=>x.id===id);
+  const tabs=document.querySelector("nav.tabs"); if(tabs) tabs.style.display="none";
+  document.querySelectorAll("header .toolbar").forEach(t=>t.style.display="none");
+  const hsmall=document.querySelector("header h1 small"); if(hsmall) hsmall.style.display="none";
+  if(!b){ main.innerHTML='<p class="muted" style="text-align:center;padding:40px">That loaf wasn\'t found.</p>'; return; }
+  const m=metrics(b), r=b.recipe||{};
+  const ing=RECIPE_FIELDS.filter(([k])=>num(r[k])).map(([k,l])=>'<tr><td>'+esc(l)+'</td><td class="num">'+num(r[k])+' g</td></tr>').join("");
+  const steps=PROCESS_FIELDS.filter(([k])=>{ const v=(b.process||{})[k]; return v && v!=="—"; }).map(([k,l])=>'<p style="margin:10px 0"><b>'+esc(l)+'</b><br>'+esc(b.process[k])+'</p>').join("");
+  const photos=(b.photos&&b.photos.length)?'<div class="photos" style="margin:14px 0">'+b.photos.map(p=>'<img src="'+esc(p)+'">').join("")+'</div>':'';
+  const html='<div class="card pad" style="max-width:820px;margin:18px auto">'+
+      '<div style="text-align:center"><span class="pill '+leaveningClass(b.leavening)+'">'+esc(b.leavening||"")+'</span> <span class="muted">'+esc(b.date||"")+'</span></div>'+
+      '<h2 style="text-align:center;margin:6px 0">'+esc(b.title||"")+'</h2>'+
+      (b.verdict?'<p style="text-align:center" class="muted">'+esc(b.verdict)+'</p>':'')+
+      photos+
+      '<div class="section-title">Ingredients</div><div class="wrap-scroll"><table>'+ing+'</table></div>'+
+      '<p class="help">~'+m.hydration.toFixed(0)+'% hydration · '+m.wholePct.toFixed(0)+'% whole grain · dough ~'+m.doughWeight.toFixed(0)+' g</p>'+
+      '<div class="section-title">Method</div>'+steps+
+      '<p class="help" style="text-align:center;margin-top:22px">🍞 Unapologetic Home Baker — “Bake What I Like”</p>'+
+    '</div>';
+  main.innerHTML=html;
+}
+
 /* ---------- boot ---------- */
 load();
 if(READONLY) document.body.classList.add("readonly");
 document.getElementById("updated").textContent=new Date().toLocaleDateString();
 try{ if(localStorage.getItem("breadDiary.dark")==="1"){ document.body.classList.add("dark"); document.getElementById("darkBtn").textContent="☀️"; } }catch(e){}
-renderTable();
-renderTroubleshoot();
-if(location.hash){ const t=location.hash.slice(1); if(document.getElementById("view-"+t)) showTab(t); }
+if(SHARE_ID){ renderShareView(SHARE_ID); }
+else {
+  renderTable();
+  renderTroubleshoot();
+  if(location.hash){ const t=location.hash.slice(1); if(document.getElementById("view-"+t)) showTab(t); }
+}
 if("serviceWorker" in navigator){ navigator.serviceWorker.register("sw.js").catch(()=>{}); }
