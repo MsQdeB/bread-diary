@@ -21,6 +21,12 @@ publishes as a public site via GitHub Pages.
 | `sw.js`, `manifest.json`, `icon.svg` | PWA (offline, installable). |
 | `images/` | Bake photos referenced by `data.js`. |
 
+## Pushing policy — IMPORTANT
+**Do NOT push to GitHub (do NOT publish/deploy) until the OWNER explicitly says to push.**
+Make changes and **commit locally**, then **wait** for the owner's go-ahead. The live
+GitHub Pages site must only update when the owner asks. (They often want to
+preview locally first.)
+
 ## How updates work
 - **The agent** edits `data.js` / `config.js` and **pushes**; GitHub Pages rebuilds in ~1 min. (Preferred.)
 - The owner can also **"⬆ Save to GitHub"** from the app (edit mode) — it commits `data.js` + `config.js` via a PAT stored in their browser.
