@@ -365,7 +365,7 @@ window.BAKES = [
       bake: "Sun: preheat 210 °C + steam from ~9:30 AM. Score. Bake ~9:45 AM: 210 °C / 15 min → 190 °C / ~40–45 min → done ~10:45, HOT for the 11 AM pickup.",
       cooling: "SERVE HOT — hand over straight from the oven (in the tin / wrapped in a cloth). Customer wants the warm smell; no full cooling needed."
     },
-    notes: "CUSTOMER ORDER — same as bake #7 (68%, 25% wholemeal, flax+pumpkin, no chia). Pickup SUN 11 Oct 11 AM. CUSTOMER WANTS IT HOT from the oven → bake so it's just out ~10:45 and hand over right away; NO full cooling. (Note: hot bread slices messily — tell them to let it rest if they can.) Apply all bake #7 fixes.",
+    notes: "CUSTOMER ORDER — same as bake #7 (68%, 25% wholemeal, flax+pumpkin, no chia). Pickup SUN 11 Oct 11 AM. CUSTOMER WANTS IT HOT from the oven → bake so it's just out ~10:45 and hand over right away; NO full cooling. (Note: hot bread slices messily — tell them to let it rest if they can.) Apply all bake #7 fixes. FOLD-1 NOTE: dough felt STIFFER after adding honey/oil/seeds (salt tightens + 68% + seeds), and the bowl-bottom lagged for gluten — but NO surface tearing (better than #7; mixing less + resting more). Base fix: lift the whole dough from the bottom each fold. Keep added flour on the BENCH only, not into the dough.",
     verdict: "Planned — bake Sun 11 Oct, hot for an 11 AM pickup.",
     improvements: "APPLY BAKE #7 FIXES: (1) OIL the tin AND dust with FLOUR (or line with parchment) — do NOT skip the flour; (2) even, taut shaping (bench scraper / drag-and-round); (3) mix less, fold more; (4) bake to internal 93–96 °C / deep golden — don't pull pale. SERVE HOT: time the bake to finish ~10:45; hand over in the tin / wrapped in a cloth (keeps it warm).",
     photos: []
