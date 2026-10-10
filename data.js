@@ -353,9 +353,9 @@ window.BAKES = [
       chia: 0, flax: 15, pumpkinSeed: 20, sunflowerSeed: 0, otherSeeds: 0,
       otherSeedsNote: "Flax 15 + pumpkin 20 (~35 g), cracked + soaked, mixed in EVENLY. Soak water ~50 g taken FROM the 258 g total."
     },
-    environment: { temp: "~30 °C", humidity: "~80 %" },
+    environment: { temp: "27 °C", humidity: "95 %" },
     process: {
-      levainBuild: "Sat 4:00 PM: build levain — 20 g starter + 35 g bread flour + 35 g water (=90 g). Ready ~7 PM.",
+      levainBuild: "Sat 2:30 PM: build levain — 20 g starter + 35 g bread flour + 35 g water (=90 g). Room is 27 °C / 95% (cooler than before) → slower; peaks ~3.5–4.5 h (ready ~6–7 PM).",
       mixing: "Sat ~7:00 PM: WATER 258 g total (~50 g to SOAK the seeds, ~208 g into the dough). Dissolve the levain into the ~208 g water, then add 290 g bread + 110 g wholemeal. Autolyse 30 min. Add salt 8 g + olive oil 15 g + honey 15 g (mix just until incorporated). Then FOLD in the soaked flax+pumpkin evenly.",
       folds: "Sat ~7:45–8:45 PM: 3 sets of folds ~25–30 min apart. MIX LESS, FOLD MORE.",
       bulk: "Sat ~8:45–9:30 PM: room temp until puffy & domed (~40–50%).",
