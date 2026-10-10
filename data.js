@@ -360,8 +360,8 @@ window.BAKES = [
       folds: "Sat ~7:45–8:45 PM: 3 sets of folds ~25–30 min apart. MIX LESS, FOLD MORE.",
       bulk: "Sat ~8:45–9:30 PM: room temp until puffy & domed (~40–50%).",
       retard: "—",
-      shaping: "Sat ~9:30–10:00 PM: shape into the tin — CARPET ROLL. Even, taut tension; SEAL every fold; seam DOWN; tuck ends.",
-      proof: "COLD PROOF in the tin overnight (fridge) from ~10 PM. Bake straight from cold.",
+      shaping: "Sat ~9:20 PM: shaped into the tin — carpet roll. Tin oiled + DUSTED WITH FLOUR (anti-stick). Even, taut tension; SEAL every fold; seam DOWN; tuck ends.",
+      proof: "COLD PROOF in the tin overnight (fridge) from ~9:30 PM (~12 h to a ~9:45 AM bake). Bake straight from cold.",
       bake: "Sun: preheat 210 °C + steam from ~9:30 AM. Score. Bake ~9:45 AM: 210 °C / 15 min → 190 °C / ~40–45 min → done ~10:45, HOT for the 11 AM pickup.",
       cooling: "SERVE HOT — hand over straight from the oven (in the tin / wrapped in a cloth). Customer wants the warm smell; no full cooling needed."
     },
