@@ -370,5 +370,49 @@ window.BAKES = [
     verdict: "SUCCESS — baked Sun 11 Oct (15 min @ 210 °C + 45 min @ 190 °C + 10 min @ 190 °C = 70 min); baked weight 720 g. Even rise, good oven spring, deep golden seeded crust, and NO sticking to the tin (the oil + FLOUR dusting worked — bake #7 fix confirmed). Handed over HOT ~11 AM. Customer cuts at home → crumb shot pending.",
     improvements: "APPLY BAKE #7 FIXES: (1) OIL the tin AND dust with FLOUR (or line with parchment) — do NOT skip the flour; ✅ WORKED, no tin-stick; (2) even, taut shaping (bench scraper / drag-and-round); (3) mix less, fold more; (4) bake to internal 93–96 °C / deep golden — don't pull pale ✅ (needed 70 min). SERVE HOT: time the bake to finish ~10:45; hand over in the tin / wrapped in a cloth (keeps it warm). NEXT TIME: budget ~70 min (not 55–60) at this size/hydration; consider a quick internal-temp check to confirm 93–96 °C before pulling.",
     photos: ["images/bake8-tin.jpg", "images/bake8-loaf.jpg", "images/bake8-top.jpg", "images/bake8-side.jpg", "images/bake8-crust.jpg", "images/bake8-end.jpg"]
+  },
+  {
+    id: "b9",
+    number: 9,
+    date: "2026-10-12",
+    dateNote: "levain Sun 5 PM · shaped + cold-proof overnight · bake Mon AM",
+    title: "Sourdough Tin Loaf — 68% (seeded, flax + pumpkin)",
+    leavening: "Sourdough",
+    status: "Planned",
+    rating: null,
+    tags: "tin loaf, 68%, flax, pumpkin, cold-proof",
+    makes: 1,
+    sellPrice: null,
+    recipe: {
+      breadFlour: 290,
+      wholemealFlour: 110,
+      plainFlour: 0,
+      otherFlour: 0,
+      otherFlourNote: "",
+      water: 258,
+      salt: 8,
+      yeast: 0,
+      levain: 87,
+      oil: 15,
+      honey: 15,
+      chia: 0, flax: 15, pumpkinSeed: 20, sunflowerSeed: 0, otherSeeds: 0,
+      otherSeedsNote: "Flax 15 + pumpkin 20 (~35 g), cracked + soaked, mixed in EVENLY. Soak water ~50 g taken FROM the 258 g total."
+    },
+    environment: { temp: "27 °C", humidity: "95 %" },
+    process: {
+      levainBuild: "Sun 5:00 PM: build levain — 30 g starter + 30 g bread flour + 30 g water (= 90 g). RATIO 1:1:1 — a BIGGER inoculum than bakes #7/#8 (20 g, 1:1.75:1.75) to speed it up: peaks ~2.5–3 h at 27 °C (ready ~7:30–8 PM). Trade-off: faster but a tighter peak window — use it right AT peak (domed, jiggly, just doubled; not collapsing).",
+      mixing: "Sun ~8:00 PM: WATER 258 g total (~50 g to SOAK the seeds, ~208 g into the dough). Dissolve the 87 g levain into the ~208 g water, then add 290 g bread + 110 g wholemeal. Autolyse 30 min (shaggy is correct — no kneading). Add salt 8 g + olive oil 15 g + honey 15 g (mix just until incorporated). Then FOLD in the soaked flax+pumpkin evenly.",
+      folds: "Sun ~8:45–9:45 PM: 3 sets of folds ~30 min apart. MIX LESS, FOLD MORE.",
+      bulk: "Sun ~9:45–10:30 PM: room temp until puffy & domed (~40–50%).",
+      retard: "—",
+      shaping: "Sun ~10:30 PM: shape into the tin — carpet roll. Tin oiled + DUSTED WITH FLOUR (anti-stick). Even, taut tension; SEAL every fold; seam DOWN; tuck ends.",
+      proof: "COLD PROOF in the tin overnight (fridge) from ~10:45 PM (~10 h to a ~9 AM bake). Bake straight from cold.",
+      bake: "Mon AM: preheat 210 °C + steam 30 min. Score one centre slash. Bake 210 °C / 15 min → 190 °C / 45 min → 190 °C / +10 min (~70 min total, cold start) — deep golden, internal 93–96 °C.",
+      cooling: "Cool on a rack ~1–2 h before slicing (crumb shot when cut)."
+    },
+    notes: "Same loaf as bakes #7/#8: 68% hydration, 25% wholemeal, flax + pumpkin (~35 g, no chia). Own bake (not an order). LEVAIN CHANGE: 1:1:1 (30 g starter) instead of 1:1.75:1.75 — bigger inoculum for a SHORTER levain (5 PM start). Watch it: it will peak faster and the window is tighter, so mix as soon as it's domed & jiggly. APPLY ALL BAKE #7/#8 FIXES: (a) oil the tin AND dust with FLOUR (confirmed no-stick in #8); (b) autolyse = combine only until no dry flour (shaggy), never knead; (c) mix less, fold more — rest 20–30 min if the dough fights back / folds won't stick; (d) bake to deep golden, don't pull pale (needed ~70 min in #8); budget ~70 min. Seed-soak water (~50 g) comes OUT of the 258 g total water.",
+    verdict: "Planned — levain Sun 5 PM (1:1:1), bake Mon 12 Oct morning.",
+    improvements: "Levain: 1:1:1 (30 g starter) to shorten the build for a 5 PM start — use at peak. Same fixes as #7/#8: oil + FLOUR the tin; mix less / fold more; bake ~70 min to deep golden (93–96 °C).",
+    photos: []
   }
 ];
