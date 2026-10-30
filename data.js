@@ -414,5 +414,49 @@ window.BAKES = [
     verdict: "BAKED — first 72% / no-oil-no-honey loaf. GOOD: even seed distribution (lamination worked, no clump), deep golden blistered seeded crust, held its shape, released from the tin (no stick). MINUS: crumb slightly tight / a touch gummy at the base — the dough was UNDER-PROOFED (only a ~20 min bulk, then a cold retard that hardly rose; rescued with a ~1 h warm proof). Leaner + chewier than #7/#8 (no oil/honey). Baking was also fought by oven-temp trouble (steam tray crash).",
     improvements: "This bake IS the improvement — raise hydration 68% → 72% for a more open crumb, shaped with the new bench scraper. Levain 1:1:1 for a 5 PM start (use at peak). Keep the #7/#8 fixes: oil + FLOUR the tin; mix less / fold more; wet hands (no bench flour on the dough); bake ~70 min to deep golden (93–96 °C). If 72% goes well, next step is 75%. OIL/HONEY: omitted this bake to fix the hard fold-in step (add them EARLY next time if you want them back — honey into the mixing water, oil before the autolyse). OVEN: drop the big water tray — it crashed the temp to 160 °C and shielded the loaf; for a tin loaf skip steam or use boiling water in a PREHEATED small pan / ice cubes on the floor. PROOF: the ~20 min bulk was too short — bulk longer at room temp, or plan a warm proof; don't rely on the cold retard alone. Next: try a TRUE AUTOLYSE (flour+water → rest → then levain+salt) for an easier, more extensible dough, and/or dry seeds.",
     photos: ["images/bake9-levain.jpg", "images/bake9-dough.jpg", "images/bake9-seeds.jpg", "images/bake9-tin.jpg", "images/bake9-proof.jpg", "images/bake9-outoftin.jpg", "images/bake9-loaf.jpg", "images/bake9-top.jpg", "images/bake9-crumb.jpg"]
+  },
+  {
+    id: "b10",
+    number: 10,
+    date: "2026-10-31",
+    dateNote: "levain Fri 4 PM · TRUE AUTOLYSE · cold-proof overnight · bake Sat AM",
+    title: "Sourdough Tin Loaf — 72% (true autolyse, no oil/honey)",
+    leavening: "Sourdough",
+    status: "Planned",
+    rating: null,
+    tags: "tin loaf, 72%, flax, pumpkin, true-autolyse, no-oil",
+    makes: 1,
+    sellPrice: null,
+    recipe: {
+      breadFlour: 290,
+      wholemealFlour: 110,
+      plainFlour: 0,
+      otherFlour: 0,
+      otherFlourNote: "",
+      water: 276,
+      salt: 8,
+      yeast: 0,
+      levain: 87,
+      oil: 0,
+      honey: 0,
+      chia: 0, flax: 15, pumpkinSeed: 20, sunflowerSeed: 0, otherSeeds: 0,
+      otherSeedsNote: "Flax 15 + pumpkin 20 (~35 g), cracked + soaked, laminated in EVENLY. Soak water ~50 g taken FROM the 276 g total."
+    },
+    environment: { temp: "29 °C", humidity: "84 %" },
+    process: {
+      levainBuild: "Fri 4:00 PM: build levain — 30 g starter + 30 g bread flour + 30 g water (= 90 g), 1:1:1. At ~29 °C peaks ~2.5–3 h — domed, bubbly, at the band by ~6:45 PM.",
+      mixing: "TRUE AUTOLYSE (first time): ~6:50 PM — combine ONLY the flours + water: 290 g bread + 110 g wholemeal + ~226 g water. Mix just until no dry flour (shaggy — DON'T knead). Lid on, REST 45–60 min. NO salt, NO levain yet — a neutral rest hydrates + relaxes the gluten → more EXTENSIBLE dough (the fix for #9's stiff/hard-to-fold dough). Then ~7:45 PM: add the 87 g levain + 8 g salt (dissolve salt in a splash of water), fold gently to incorporate. Then LAMINATE in the soaked flax+pumpkin (+ their ~50 g soak water). REST 15–20 min.",
+      folds: "~8:15–9:15 PM: 3 sets of folds ~30 min apart. WET hands, no bench flour, lift from the bottom. If it fights back → REST 20–30 min; never force or tear.",
+      bulk: "~9:15–10:30 PM: bulk until PUFFY & DOMED (~40–50% rise) — DO NOT shape early (the #9 mistake). Room ~29 °C = fast, so watch it.",
+      retard: "—",
+      shaping: "~10:30 PM: shape into the tin (oiled + DUSTED WITH FLOUR). Carpet roll; even taut tension; seam down; tuck ends.",
+      proof: "COLD PROOF in the tin overnight (fridge) from ~10:45 PM. IMPORTANT (#9 lesson): do NOT assume the fridge does all the rising — next morning CHECK it; if it hasn't domed, WARM-PROOF at room temp (1–4 h at ~30 °C) until puffy & a poke springs back slowly, THEN bake.",
+      bake: "Preheat 210 °C (check the oven thermometer). NO big water tray under the loaf (it crashed the temp in #9). Steam optional — a few ice cubes on the oven floor, or skip for a tin loaf. Score one slash. Bake 210 °C / 15 min → 190 °C / 45 min → 190 °C / +10 min (~70 min) — deep golden, 93–96 °C.",
+      cooling: "Cool on a rack 1–2 h before slicing."
+    },
+    notes: "Second run at 72% with NO oil/honey, and the FIRST TRUE AUTOLYSE — flour + water only for 45–60 min, THEN levain + salt. Aim: a more extensible, easier-to-fold dough (bake #9 felt stiff/tight and tore). Everything else as #9: 25% wholemeal, flax + pumpkin (~35 g, no chia), 72% hydration (276 g water; ~50 g soaks the seeds), seed-soak water comes OUT of the 276 g. Own bake. LEVAIN 1:1:1 (30 g) — fast peak at 29 °C. KEY CHANGES FROM #9: (1) TRUE AUTOLYSE; (2) BULK TO 40–50% — do not shape early; (3) if the cold loaf hasn't risen, WARM-PROOF before baking (don't rely on the fridge alone); (4) NO big water tray in the oven — it crashed the temp to 160 °C last time.",
+    verdict: "Planned — levain Fri 4 PM, true autolyse, bake Sat AM.",
+    improvements: "First TRUE AUTOLYSE (flour+water rest, then levain+salt) to make the dough more extensible and easier to fold. Bulk to a proper 40–50%. Warm-proof if the cold loaf hasn't risen. No big water tray in the oven. Option: DRY seeds (laminated) next time, adding back ~25 g water.",
+    photos: []
   }
 ];
